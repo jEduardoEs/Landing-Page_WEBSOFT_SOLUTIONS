@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="WebSoft Solutions - Tecnología y seguridad en Guatemala. Accesorios, periféricos, sistemas CCTV, reparaciones y mantenimiento."/>
+<title>WebSoft Solutions | Tecnología & Seguridad</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --blue:#2B7FD4;--blue-dark:#1a5fa0;--blue-light:#e8f3fd;--blue-mid:#c5dff7;
+  --dark:#0d0f1a;--dark2:#141728;
+  --white:#fff;--gray2:#f4f7fb;--gray3:#e2eaf4;
+  --text:#1a1f36;--text2:#4a5568;--transition:.25s ease;
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:#fff;color:var(--text);overflow-x:hidden;line-height:1.65}
+.section-inner{max-width:1140px;margin:0 auto;padding:0 24px}
+.section-label{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;color:var(--blue);letter-spacing:3px;text-transform:uppercase;margin-bottom:14px}
+.section-label::before{content:'';width:22px;height:2px;background:var(--blue);border-radius:2px}
+.section-title{font-family:'Rajdhani',sans-serif;font-size:40px;font-weight:700;line-height:1.12;margin-bottom:16px;color:var(--text)}
+.section-title span{color:var(--blue)}
+.section-desc{color:var(--text2);font-size:16px;line-height:1.8;max-width:580px}
+svg.icon{width:22px;height:22px;fill:none;stroke:var(--blue);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.btn-primary{background:var(--blue);color:#fff;border:none;padding:14px 30px;border-radius:9px;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;display:inline-flex;align-items:center;gap:8px;cursor:pointer;text-decoration:none;transition:all var(--transition);box-shadow:0 4px 16px rgba(43,127,212,.3)}
+.btn-primary:hover{background:var(--blue-dark);transform:translateY(-2px);box-shadow:0 8px 24px rgba(43,127,212,.4)}
+.btn-secondary{background:#fff;color:var(--blue);padding:13px 28px;border-radius:9px;font-size:15px;font-weight:600;display:inline-flex;align-items:center;gap:8px;border:2px solid var(--blue);text-decoration:none;transition:all var(--transition)}
+.btn-secondary:hover{background:var(--blue-light)}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--gray3);padding:0 24px;transition:box-shadow var(--transition)}
+.nav-inner{max-width:1140px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:70px}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo-img{width:36px;height:36px;object-fit:contain}
+.logo-text{font-family:'Rajdhani',sans-serif;font-size:21px;font-weight:700;letter-spacing:.5px;color:var(--text)}
+.logo-text span{color:var(--blue)}
+.nav-links{display:flex;gap:30px;list-style:none}
+.nav-links a{text-decoration:none;color:var(--text2);font-size:14px;font-weight:500;transition:color var(--transition);position:relative;padding-bottom:4px}
+.nav-links a::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--blue);border-radius:2px;transform:scaleX(0);transition:transform var(--transition)}
+.nav-links a:hover{color:var(--blue)}
+.nav-links a:hover::after{transform:scaleX(1)}
+.nav-cta{background:var(--blue);color:#fff;border:none;padding:10px 22px;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:all var(--transition);box-shadow:0 2px 10px rgba(43,127,212,.25)}
+.nav-cta:hover{background:var(--blue-dark)}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+.nav-hamburger span{display:block;width:24px;height:2px;background:var(--text);border-radius:2px;transition:all var(--transition)}
+.mobile-menu{display:none;padding:16px 0 24px;border-top:1px solid var(--gray3)}
+.mobile-menu ul{list-style:none;display:flex;flex-direction:column;gap:4px}
+.mobile-menu a{display:block;padding:12px 0;color:var(--text2);font-size:16px;text-decoration:none}
+.mobile-menu a:hover{color:var(--blue)}
+.mobile-menu .btn-primary{margin-top:10px;width:100%;justify-content:center}
+.mobile-menu.open{display:block}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;padding:100px 24px 80px;position:relative;overflow:hidden;background:linear-gradient(145deg,#fff 0%,#eef6ff 40%,#deeeff 100%)}
+.hero-blob1{position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(43,127,212,.09) 0%,transparent 70%);right:-180px;top:-180px;pointer-events:none}
+.hero-blob2{position:absolute;width:450px;height:450px;border-radius:50%;background:radial-gradient(circle,rgba(43,127,212,.06) 0%,transparent 70%);left:-100px;bottom:-100px;pointer-events:none}
+.hero-grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(43,127,212,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(43,127,212,.04) 1px,transparent 1px);background-size:48px 48px;pointer-events:none}
+.hero-content{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:55% 45%;gap:56px;align-items:center;position:relative;z-index:2;width:100%}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(43,127,212,.1);border:1px solid rgba(43,127,212,.2);border-radius:24px;padding:7px 16px;font-size:12px;color:var(--blue);font-weight:600;margin-bottom:24px;letter-spacing:.5px}
+.badge-pulse{width:7px;height:7px;background:#25D366;border-radius:50%;animation:pulse 2s infinite;flex-shrink:0}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(37,211,102,.5)}70%{box-shadow:0 0 0 6px rgba(37,211,102,0)}}
+.hero h1{font-family:'Rajdhani',sans-serif;font-size:58px;font-weight:700;line-height:1.06;margin-bottom:22px;color:var(--text)}
+.hero h1 .blue{color:var(--blue)}
+.hero h1 .outline{-webkit-text-stroke:2px var(--blue);color:transparent}
+.hero-sub{color:var(--text2);font-size:17px;line-height:1.8;margin-bottom:36px;max-width:500px}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-bottom:44px}
+.hero-trust{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.trust-avatars{display:flex}
+.trust-avatar{width:34px;height:34px;border-radius:50%;background:var(--blue);border:2px solid #fff;display:flex;align-items:center;justify-content:center;font-family:'Rajdhani',sans-serif;font-size:13px;font-weight:700;color:#fff;margin-left:-8px}
+.trust-avatar:first-child{margin-left:0}
+.trust-text{font-size:13px;color:var(--text2)}
+.trust-text strong{color:var(--text)}
+
+/* HERO CARD */
+.hero-visual{display:flex;flex-direction:column;gap:16px}
+.hero-card-main{background:#fff;border:1px solid var(--gray3);border-radius:20px;padding:28px;box-shadow:0 24px 64px rgba(43,127,212,.1),0 4px 20px rgba(0,0,0,.04)}
+.hero-card-top{display:flex;align-items:center;gap:12px;margin-bottom:22px;padding-bottom:18px;border-bottom:1px solid var(--gray3)}
+.card-logo-box{width:44px;height:44px;background:var(--dark);border-radius:10px;display:flex;align-items:center;justify-content:center;padding:6px;flex-shrink:0}
+.card-logo-box img{width:100%;height:100%;object-fit:contain}
+.card-badge-live{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;color:#25D366;background:rgba(37,211,102,.1);padding:3px 8px;border-radius:10px;margin-top:2px}
+.card-badge-live::before{content:'';width:5px;height:5px;background:#25D366;border-radius:50%;animation:pulse 2s infinite}
+.hero-stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:18px}
+.hero-stat-box{background:var(--gray2);border-radius:10px;padding:12px;text-align:center}
+.hero-stat-num{font-family:'Rajdhani',sans-serif;font-size:22px;font-weight:700;color:var(--blue)}
+.hero-stat-label{font-size:11px;color:var(--text2);margin-top:2px}
+.hero-service-chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{background:var(--blue-light);border:1px solid rgba(43,127,212,.2);border-radius:20px;padding:5px 12px;font-size:12px;color:var(--blue);font-weight:500}
+
+/* Mini cards row */
+.hero-mini-cards{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.mini-card{background:#fff;border:1px solid var(--gray3);border-radius:14px;padding:16px;display:flex;align-items:center;gap:12px;box-shadow:0 4px 16px rgba(0,0,0,.04)}
+.mini-card-icon{width:38px;height:38px;background:var(--blue-light);border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.mini-card-text{font-size:13px;font-weight:600;color:var(--text);line-height:1.3}
+.mini-card-sub{font-size:11px;color:var(--text2);margin-top:2px}
+
+/* STRIP */
+.strip{background:var(--dark);padding:16px 24px}
+.strip-inner{max-width:1140px;margin:0 auto;display:flex;align-items:center;justify-content:space-around;gap:24px;flex-wrap:wrap}
+.strip-item{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.65);font-weight:500;white-space:nowrap}
+.strip-item svg{stroke:var(--blue)}
+
+/* SERVICES */
+.services{padding:100px 0;background:#fff}
+.services-header{text-align:center;margin-bottom:64px}
+.services-header .section-desc,.services-header .section-label{margin-left:auto;margin-right:auto;display:flex;justify-content:center}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.service-card{background:#fff;border:1.5px solid var(--gray3);border-radius:18px;padding:34px;transition:all var(--transition);position:relative;overflow:hidden}
+.service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue),#5ba3e8);transform:scaleX(0);transition:transform var(--transition);transform-origin:left}
+.service-card:hover{border-color:var(--blue-mid);transform:translateY(-6px);box-shadow:0 20px 48px rgba(43,127,212,.13)}
+.service-card:hover::before{transform:scaleX(1)}
+.svc-icon{width:54px;height:54px;background:var(--blue-light);border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:22px}
+.service-card h3{font-family:'Rajdhani',sans-serif;font-size:22px;font-weight:700;margin-bottom:10px;color:var(--text)}
+.service-card>p{color:var(--text2);font-size:14px;line-height:1.7;margin-bottom:20px}
+.svc-list{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:22px}
+.svc-list li{font-size:13.5px;color:var(--text2);display:flex;align-items:center;gap:10px}
+.svc-list li::before{content:'';width:6px;height:6px;background:var(--blue);border-radius:50%;flex-shrink:0}
+.svc-cta{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:var(--blue);cursor:pointer;text-decoration:none;letter-spacing:.3px}
+.svc-cta:hover{color:var(--blue-dark)}
+.svc-cta svg{width:14px;height:14px;stroke:currentColor;transition:transform var(--transition)}
+.svc-cta:hover svg{transform:translateX(4px)}
+
+/* PRODUCTS */
+.products{padding:100px 0;background:var(--gray2)}
+.products-header{margin-bottom:52px}
+.products-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.product-card{background:#fff;border:1.5px solid var(--gray3);border-radius:16px;padding:26px 20px;text-align:center;transition:all var(--transition);cursor:default}
+.product-card:hover{border-color:var(--blue);transform:translateY(-5px);box-shadow:0 14px 36px rgba(43,127,212,.1)}
+.prod-icon{width:58px;height:58px;background:var(--blue-light);border-radius:16px;margin:0 auto 16px;display:flex;align-items:center;justify-content:center}
+.product-card h4{font-family:'Rajdhani',sans-serif;font-size:17px;font-weight:700;margin-bottom:6px;color:var(--text)}
+.product-card p{font-size:12.5px;color:var(--text2);line-height:1.55}
+
+/* GALLERY */
+.gallery{padding:100px 0;background:#fff}
+.gallery-header{margin-bottom:52px}
+.gallery-notice{background:var(--blue-light);border:1px solid rgba(43,127,212,.2);border-radius:12px;padding:16px 20px;display:flex;align-items:flex-start;gap:12px;margin-bottom:36px}
+.gallery-notice svg{stroke:var(--blue);flex-shrink:0;margin-top:2px}
+.gallery-notice-text{font-size:13.5px;color:var(--text2);line-height:1.65}
+.gallery-notice-text strong{color:var(--blue);display:block;margin-bottom:4px}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.gallery-item{border-radius:14px;overflow:hidden;aspect-ratio:4/3;background:var(--gray2);border:1.5px solid var(--gray3);position:relative;cursor:pointer;transition:all var(--transition)}
+.gallery-item:hover{transform:scale(1.02);box-shadow:0 12px 32px rgba(43,127,212,.12);border-color:var(--blue)}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform var(--transition)}
+.gallery-item:hover img{transform:scale(1.05)}
+.gallery-item-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:var(--text2)}
+.gallery-item-placeholder svg{stroke:var(--gray3);width:36px;height:36px}
+.gallery-item-placeholder span{font-size:12px;color:var(--gray3)}
+.gallery-overlay{position:absolute;inset:0;background:rgba(13,15,26,.55);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity var(--transition)}
+.gallery-item:hover .gallery-overlay{opacity:1}
+.gallery-overlay svg{stroke:#fff;width:28px;height:28px}
+/* Lightbox */
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:999;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity var(--transition)}
+.lightbox.active{opacity:1;pointer-events:all}
+.lightbox img{max-width:90vw;max-height:88vh;border-radius:10px;object-fit:contain}
+.lightbox-close{position:absolute;top:20px;right:24px;background:none;border:none;color:#fff;font-size:32px;cursor:pointer;line-height:1;opacity:.7;transition:opacity var(--transition)}
+.lightbox-close:hover{opacity:1}
+.lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background var(--transition)}
+.lightbox-nav:hover{background:rgba(255,255,255,.2)}
+.lightbox-prev{left:20px}
+.lightbox-next{right:20px}
+.lightbox-caption{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.7);font-size:13px;text-align:center;white-space:nowrap}
+
+/* WHY */
+.why{padding:100px 0;background:var(--gray2)}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.why-features{display:flex;flex-direction:column;gap:6px;margin-top:36px}
+.why-feature{display:flex;gap:16px;align-items:flex-start;padding:20px;border-radius:14px;border:1px solid transparent;transition:all var(--transition)}
+.why-feature:hover{background:#fff;border-color:var(--gray3);box-shadow:0 4px 16px rgba(0,0,0,.04)}
+.why-icon{width:46px;height:46px;flex-shrink:0;background:var(--blue-light);border-radius:12px;display:flex;align-items:center;justify-content:center}
+.why-feature h4{font-family:'Rajdhani',sans-serif;font-size:17px;font-weight:700;color:var(--text);margin-bottom:4px}
+.why-feature p{font-size:13.5px;color:var(--text2);line-height:1.65}
+.why-box{background:linear-gradient(145deg,var(--dark) 0%,#0f1530 100%);border-radius:22px;padding:38px;box-shadow:0 30px 80px rgba(13,15,26,.18)}
+.why-box-label{font-family:'Rajdhani',sans-serif;font-size:11px;font-weight:700;color:rgba(255,255,255,.4);margin-bottom:24px;letter-spacing:3px;text-transform:uppercase}
+.counter-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px}
+.counter-item{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:22px}
+.counter-num{font-family:'Rajdhani',sans-serif;font-size:38px;font-weight:700;color:var(--blue);line-height:1}
+.counter-label{font-size:12px;color:rgba(255,255,255,.45);margin-top:6px}
+.why-quote{background:rgba(43,127,212,.1);border:1px solid rgba(43,127,212,.2);border-radius:14px;padding:22px}
+.why-quote p{font-size:14px;color:rgba(255,255,255,.7);line-height:1.7;font-style:italic}
+.why-quote cite{font-size:13px;font-weight:700;color:var(--blue);display:block;margin-top:12px;font-style:normal}
+
+/* TESTIMONIALS */
+.testimonials{padding:100px 0;background:#fff}
+.testimonials-header{text-align:center;margin-bottom:56px}
+.testimonials-header .section-label,.testimonials-header .section-desc{justify-content:center;margin:0 auto}
+.testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.testimonial-card{background:#fff;border:1.5px solid var(--gray3);border-radius:18px;padding:30px;transition:all var(--transition)}
+.testimonial-card:hover{border-color:var(--blue-mid);box-shadow:0 12px 32px rgba(43,127,212,.08)}
+.stars{display:flex;gap:3px;margin-bottom:16px}
+.star{color:#f5a623;font-size:16px}
+.testimonial-card blockquote{font-size:14.5px;color:var(--text2);line-height:1.75;margin-bottom:22px;font-style:italic}
+.testimonial-author{display:flex;align-items:center;gap:12px}
+.author-ava{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--blue),#5ba3e8);display:flex;align-items:center;justify-content:center;font-family:'Rajdhani',sans-serif;font-size:16px;font-weight:700;color:#fff;flex-shrink:0}
+.author-name{font-family:'Rajdhani',sans-serif;font-size:16px;font-weight:700;color:var(--text)}
+.author-role{font-size:12px;color:var(--text2)}
+
+/* CTA */
+.cta-section{padding:100px 0;background:linear-gradient(135deg,var(--dark) 0%,#0a0e22 100%);position:relative;overflow:hidden}
+.cta-blob{position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(43,127,212,.12) 0%,transparent 65%);right:-200px;top:-200px;pointer-events:none}
+.cta-inner{text-align:center;position:relative;z-index:2}
+.cta-section h2{font-family:'Rajdhani',sans-serif;font-size:48px;font-weight:700;color:#fff;margin-bottom:16px;line-height:1.1}
+.cta-section h2 span{color:var(--blue)}
+.cta-sub{color:rgba(255,255,255,.6);font-size:17px;max-width:500px;margin:0 auto 44px}
+.wa-btn{display:inline-flex;align-items:center;gap:12px;background:#25D366;color:#fff;padding:18px 44px;border-radius:14px;font-size:18px;font-weight:700;font-family:'DM Sans',sans-serif;cursor:pointer;border:none;transition:all var(--transition);box-shadow:0 6px 24px rgba(37,211,102,.35);text-decoration:none}
+.wa-btn:hover{background:#1ebe5a;transform:translateY(-2px);box-shadow:0 10px 36px rgba(37,211,102,.45)}
+.cta-info{margin-top:36px;display:flex;justify-content:center;gap:40px;flex-wrap:wrap}
+.cta-info-item{display:flex;align-items:center;gap:8px;font-size:14px;color:rgba(255,255,255,.5)}
+.cta-dot{width:6px;height:6px;background:var(--blue);border-radius:50%;flex-shrink:0}
+
+/* FOOTER */
+footer{background:#080b18;padding:56px 24px 32px}
+.footer-top{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+.footer-brand-logo{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.footer-logo-img{width:32px;height:32px;object-fit:contain}
+.footer-brand-name{font-family:'Rajdhani',sans-serif;font-size:20px;font-weight:700;color:#fff}
+.footer-brand-name span{color:var(--blue)}
+.footer-desc{font-size:13.5px;color:rgba(255,255,255,.38);line-height:1.75;max-width:260px;margin-bottom:20px}
+.footer-social{display:flex;gap:10px}
+.footer-social a{width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;transition:background var(--transition)}
+.footer-social a:hover{background:var(--blue)}
+.footer-social svg{width:16px;height:16px;stroke:#fff;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.footer-col-title{font-family:'Rajdhani',sans-serif;font-size:13px;font-weight:700;color:rgba(255,255,255,.9);letter-spacing:2px;text-transform:uppercase;margin-bottom:18px}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:11px}
+.footer-col ul li a{font-size:13.5px;color:rgba(255,255,255,.38);text-decoration:none;transition:color var(--transition)}
+.footer-col ul li a:hover{color:var(--blue)}
+.footer-bottom{max-width:1140px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.06);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.footer-copy{font-size:13px;color:rgba(255,255,255,.25)}
+
+/* FLOAT */
+.wa-float{position:fixed;bottom:28px;right:28px;z-index:200;width:60px;height:60px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4);cursor:pointer;text-decoration:none;transition:all var(--transition);animation:wa-pop .8s cubic-bezier(.34,1.56,.64,1) .5s both}
+.wa-float:hover{transform:scale(1.12);background:#1ebe5a}
+.wa-float-tooltip{position:absolute;right:70px;background:var(--dark);color:#fff;font-size:13px;font-weight:500;padding:8px 14px;border-radius:8px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity var(--transition)}
+.wa-float:hover .wa-float-tooltip{opacity:1}
+@keyframes wa-pop{from{transform:scale(0);opacity:0}to{transform:scale(1);opacity:1}}
+
+/* SCROLL FADE */
+.fade-in{opacity:0;transform:translateY(28px);transition:opacity .6s ease,transform .6s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .hero h1{font-size:46px}
+  .products-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-top{grid-template-columns:1fr 1fr;gap:32px}
+}
+@media(max-width:900px){
+  .nav-links,.nav-cta{display:none}
+  .nav-hamburger{display:flex}
+  .hero-content{grid-template-columns:1fr;gap:44px;text-align:center}
+  .hero-text{display:flex;flex-direction:column;align-items:center}
+  .hero h1{font-size:40px}
+  .hero-sub,.hero-btns,.hero-trust{justify-content:center}
+  .hero-sub{max-width:100%;text-align:center}
+  .hero-visual{width:100%;max-width:440px;margin:0 auto}
+  .services-grid{grid-template-columns:1fr}
+  .why-grid{grid-template-columns:1fr}
+  .testimonials-grid{grid-template-columns:1fr}
+  .gallery-grid{grid-template-columns:repeat(2,1fr)}
+  .section-title{font-size:32px}
+  .cta-section h2{font-size:36px}
+}
+@media(max-width:600px){
+  .products-grid{grid-template-columns:repeat(2,1fr)}
+  .hero-mini-cards{grid-template-columns:1fr}
+  .counter-grid{grid-template-columns:1fr 1fr}
+  .cta-info{flex-direction:column;align-items:center;gap:12px}
+  .wa-float{bottom:18px;right:18px;width:54px;height:54px}
+  .footer-top{grid-template-columns:1fr}
+  .gallery-grid{grid-template-columns:1fr 1fr}
+  .strip-inner{gap:16px}
+}
+@media(max-width:400px){
+  .hero h1{font-size:32px}
+  .gallery-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a class="nav-logo" href="#inicio">
+      <img class="logo-img" src="logo.png" alt="WebSoft Solutions"/>
+      <span class="logo-text">Web<span>Soft</span> Solutions</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#productos">Productos</a></li>
+      <li><a href="#galeria">Galería</a></li>
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+    <button class="nav-cta" onclick="openWA()">Cotizar ahora</button>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menú"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#servicios" onclick="closeMM()">Servicios</a></li>
+      <li><a href="#productos" onclick="closeMM()">Productos</a></li>
+      <li><a href="#galeria" onclick="closeMM()">Galería</a></li>
+      <li><a href="#nosotros" onclick="closeMM()">Nosotros</a></li>
+      <li><a href="#contacto" onclick="closeMM()">Contacto</a></li>
+      <li><button class="btn-primary" onclick="openWA()">📱 Cotizar por WhatsApp</button></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="inicio">
+  <div class="hero-blob1"></div>
+  <div class="hero-blob2"></div>
+  <div class="hero-grid-bg"></div>
+  <div class="hero-content">
+    <div class="hero-text">
+      <div class="hero-eyebrow"><span class="badge-pulse"></span>Disponible ahora · Guatemala</div>
+      <h1>Tecnología y<br><span class="blue">seguridad</span> para tu<br><span class="outline">negocio</span></h1>
+      <p class="hero-sub">Venta de accesorios, periféricos, instalación de sistemas CCTV y servicios técnicos especializados. Todo en un solo lugar.</p>
+      <div class="hero-btns">
+        <button class="btn-primary" onclick="openWA()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Cotizar por WhatsApp
+        </button>
+        <a href="#servicios" class="btn-secondary">Ver servicios →</a>
+      </div>
+      <div class="hero-trust">
+        <div class="trust-avatars">
+          <div class="trust-avatar">MC</div>
+          <div class="trust-avatar">JR</div>
+          <div class="trust-avatar">AL</div>
+          <div class="trust-avatar" style="font-size:10px">+</div>
+        </div>
+        <div class="trust-text"><strong>+500 clientes</strong> ya confían en nosotros</div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card-main">
+        <div class="hero-card-top">
+          <div class="card-logo-box"><img src="logo.png" alt="Logo.png"/></div>
+          <div>
+            <div style="font-family:Rajdhani,sans-serif;font-size:17px;font-weight:700;color:var(--text)">WebSoft Solutions</div>
+            <div class="card-badge-live">En línea ahora</div>
+          </div>
+        </div>
+        <div class="hero-stats-grid">
+          <div class="hero-stat-box"><div class="hero-stat-num">500+</div><div class="hero-stat-label">Clientes</div></div>
+          <div class="hero-stat-box"><div class="hero-stat-num">5+</div><div class="hero-stat-label">Años</div></div>
+          <div class="hero-stat-box"><div class="hero-stat-num">100%</div><div class="hero-stat-label">Garantía</div></div>
+        </div>
+        <div class="hero-service-chips">
+          <span class="chip">Periféricos</span>
+          <span class="chip">CCTV</span>
+          <span class="chip">Reparaciones</span>
+          <span class="chip">PC &amp; Laptops</span>
+        </div>
+      </div>
+      <div class="hero-mini-cards">
+        <div class="mini-card">
+          <div class="mini-card-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div><div class="mini-card-text">Instalación CCTV</div><div class="mini-card-sub">Profesional y garantizada</div></div>
+        </div>
+        <div class="mini-card">
+          <div class="mini-card-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+          <div><div class="mini-card-text">Reparación técnica</div><div class="mini-card-sub">PC, laptops y más</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STRIP -->
+<div class="strip">
+  <div class="strip-inner">
+    <div class="strip-item"><svg class="icon" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Instalación certificada</div>
+    <div class="strip-item"><svg class="icon" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>Productos con garantía</div>
+    <div class="strip-item"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Respuesta en &lt;1 hora</div>
+    <div class="strip-item"><svg class="icon" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>Atención personalizada</div>
+    <div class="strip-item"><svg class="icon" viewBox="0 0 24 24"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>Diagnóstico gratis</div>
+  </div>
+</div>
+
+<!-- SERVICIOS -->
+<section class="services" id="servicios">
+  <div class="section-inner">
+    <div class="services-header">
+      <div class="section-label">Lo que ofrecemos</div>
+      <h2 class="section-title">Nuestros <span>Servicios</span></h2>
+      <p class="section-desc">Soluciones completas en tecnología y seguridad para hogares, comercios y empresas en Guatemala.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card fade-in">
+        <div class="svc-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h3>Sistemas CCTV</h3>
+        <p>Instalación y configuración profesional de cámaras de seguridad. Monitorea tu negocio desde cualquier lugar.</p>
+        <ul class="svc-list">
+          <li>Cámaras IP, domo y analógicas</li>
+          <li>Configuración de DVR/NVR</li>
+          <li>Visualización remota desde celular</li>
+          <li>Mantenimiento preventivo y correctivo</li>
+          <li>Accesorios y repuestos disponibles</li>
+        </ul>
+        <a class="svc-cta" onclick="openWA()">Solicitar cotización <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+      <div class="service-card fade-in">
+        <div class="svc-icon"><svg class="icon" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+        <h3>PC &amp; Laptops</h3>
+        <p>Servicio técnico especializado en reparación y mantenimiento. Diagnóstico gratuito sin compromiso.</p>
+        <ul class="svc-list">
+          <li>Mantenimiento preventivo y correctivo</li>
+          <li>Reparación de hardware y pantallas</li>
+          <li>Instalación de software y sistemas OS</li>
+          <li>Limpieza profunda y optimización</li>
+          <li>Recuperación de datos</li>
+        </ul>
+        <a class="svc-cta" onclick="openWA()">Agendar servicio <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+      <div class="service-card fade-in">
+        <div class="svc-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div>
+        <h3>Venta de Tecnología</h3>
+        <p>Amplio catálogo de productos tecnológicos de calidad garantizada al mejor precio de Guatemala.</p>
+        <ul class="svc-list">
+          <li>Periféricos: teclados, mouse, audífonos</li>
+          <li>Accesorios para PC y laptop</li>
+          <li>Cables, conectores y adaptadores</li>
+          <li>Cámaras y accesorios CCTV</li>
+          <li>Componentes y repuestos</li>
+        </ul>
+        <a class="svc-cta" onclick="openWA()">Ver catálogo <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTOS -->
+<section class="products" id="productos">
+  <div class="section-inner">
+    <div class="products-header fade-in">
+      <div class="section-label">Catálogo</div>
+      <h2 class="section-title">Productos <span>destacados</span></h2>
+      <p class="section-desc">Todo lo que necesitas en tecnología, en un solo lugar y al mejor precio.</p>
+    </div>
+    <div class="products-grid">
+      <div class="product-card fade-in"><div class="prod-icon"><svg class="icon" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 20h8M12 18v2"/></svg></div><h4>Teclados</h4><p>Mecánicos, membrana e inalámbricos</p></div>
+      <div class="product-card fade-in"><div class="prod-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M5 12c0-4 2-7 7-7s7 3 7 7v4a3 3 0 01-3 3h-8a3 3 0 01-3-3v-4z"/></svg></div><h4>Mouse</h4><p>Ergonómicos, gaming e inalámbricos</p></div>
+      <div class="product-card fade-in"><div class="prod-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M3 18v-6a9 9 0 0118 0v6"/><path d="M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3v5zM3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3v5z"/></svg></div><h4>Audífonos</h4><p>Para trabajo, gaming y entretenimiento</p></div>
+      <div class="product-card fade-in"><div class="prod-icon"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 018 8c0 5.5-8 13-8 13S4 15.5 4 10a8 8 0 018-8z"/></svg></div><h4>Cámaras CCTV</h4><p>IP, domo, bala y bullet exterior</p></div>
+      <div class="product-card fade-in"><div class="prod-icon"><svg class="icon" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div><h4>DVR / NVR</h4><p>Grabadores de 4, 8 y 16 canales</p></div>
+      <div class="product-card fade-in"><div class="prod-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div><h4>Cables &amp; Conectores</h4><p>HDMI, USB, coaxial, UTP y más</p></div>
+      <div class="product-card fade-in"><div class="prod-icon"><svg class="icon" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div><h4>Accesorios PC</h4><p>Hubs, coolers, soportes, iluminación</p></div>
+      <div class="product-card fade-in"><div class="prod-icon"><svg class="icon" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg></div><h4>Accesorios Laptop</h4><p>Fundas, bases, adaptadores y más</p></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- GALERÍA -->
+<section class="gallery" id="galeria">
+  <div class="section-inner">
+    <div class="gallery-header fade-in">
+      <div class="section-label">Nuestro trabajo</div>
+      <h2 class="section-title">Galería de <span>Proyectos</span></h2>
+      <p class="section-desc">Conoce algunos de nuestros trabajos de instalación, productos y servicios realizados.</p>
+    </div>
+    <!--div class="gallery-notice fade-in">
+      <svg class="icon" viewBox="0 0 24 24" style="width:20px;height:20px"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      <div class="gallery-notice-text">
+        <strong>Para agregar fotos a la galería:</strong>
+        Crea una carpeta <code style="background:rgba(43,127,212,.1);padding:1px 6px;border-radius:4px;font-size:12px">galeria/</code> en tu repositorio de GitHub y sube tus imágenes. Luego edita la sección de imágenes en el <code style="background:rgba(43,127,212,.1);padding:1px 6px;border-radius:4px;font-size:12px">index.html</code> cambiando la ruta <code style="background:rgba(43,127,212,.1);padding:1px 6px;border-radius:4px;font-size:12px">src="galeria/tu-foto.jpg"</code> en cada tarjeta. Las fotos se mostrarán automáticamente con lightbox.
+      </div>
+    </div-->
+    <div class="gallery-grid" id="galleryGrid">
+      <!-- FOTO 1 — Cambia src="galeria/foto1.jpg" por tu imagen real -->
+      <div class="gallery-item fade-in" onclick="openLightbox(0)">
+        <img src="galeria/Foto1.jpeg" alt="Instalación CCTV" onerror="this.parentElement.innerHTML='<div class=gallery-item-placeholder><svg viewBox=&quot;0 0 24 24&quot; fill=none stroke=&quot;#c5dff7&quot; stroke-width=1.5 stroke-linecap=round><rect x=3 y=3 width=18 height=18 rx=2/><circle cx=8.5 cy=8.5 r=1.5/><polyline points=&quot;21 15 16 10 5 21&quot;/></svg><span>Instalación CCTV</span></div>'" />
+        <div class="gallery-overlay"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <!-- FOTO 2 -->
+      <div class="gallery-item fade-in" onclick="openLightbox(1)">
+        <img src="galeria/Foto2.jpeg" alt="Periféricos en stock" onerror="this.parentElement.innerHTML='<div class=gallery-item-placeholder><svg viewBox=&quot;0 0 24 24&quot; fill=none stroke=&quot;#c5dff7&quot; stroke-width=1.5 stroke-linecap=round><rect x=3 y=3 width=18 height=18 rx=2/><circle cx=8.5 cy=8.5 r=1.5/><polyline points=&quot;21 15 16 10 5 21&quot;/></svg><span>Periféricos en stock</span></div>'" />
+        <div class="gallery-overlay"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <!-- FOTO 3 -->
+      <div class="gallery-item fade-in" onclick="openLightbox(2)">
+        <img src="galeria/Foto3.jpeg" alt="Reparación de laptop" onerror="this.parentElement.innerHTML='<div class=gallery-item-placeholder><svg viewBox=&quot;0 0 24 24&quot; fill=none stroke=&quot;#c5dff7&quot; stroke-width=1.5 stroke-linecap=round><rect x=3 y=3 width=18 height=18 rx=2/><circle cx=8.5 cy=8.5 r=1.5/><polyline points=&quot;21 15 16 10 5 21&quot;/></svg><span>Reparación de laptop</span></div>'" />
+        <div class="gallery-overlay"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <!-- FOTO 4 -->
+      <div class="gallery-item fade-in" onclick="openLightbox(3)">
+        <img src="galeria/Foto4.jpeg" alt="Sistema de seguridad" onerror="this.parentElement.innerHTML='<div class=gallery-item-placeholder><svg viewBox=&quot;0 0 24 24&quot; fill=none stroke=&quot;#c5dff7&quot; stroke-width=1.5 stroke-linecap=round><rect x=3 y=3 width=18 height=18 rx=2/><circle cx=8.5 cy=8.5 r=1.5/><polyline points=&quot;21 15 16 10 5 21&quot;/></svg><span>Sistema de seguridad</span></div>'" />
+        <div class="gallery-overlay"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <!-- FOTO 5 -->
+      <div class="gallery-item fade-in" onclick="openLightbox(4)">
+        <img src="galeria/Foto5.jpeg"Productos tecnología" onerror="this.parentElement.innerHTML='<div class=gallery-item-placeholder><svg viewBox=&quot;0 0 24 24&quot; fill=none stroke=&quot;#c5dff7&quot; stroke-width=1.5 stroke-linecap=round><rect x=3 y=3 width=18 height=18 rx=2/><circle cx=8.5 cy=8.5 r=1.5/><polyline points=&quot;21 15 16 10 5 21&quot;/></svg><span>Productos tecnología</span></div>'" />
+        <div class="gallery-overlay"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <!-- FOTO 6 -->
+      <div class="gallery-item fade-in" onclick="openLightbox(5)">
+        <img src="galeria/Foto6.jpeg" alt="Instalación en empresa" onerror="this.parentElement.innerHTML='<div class=gallery-item-placeholder><svg viewBox=&quot;0 0 24 24&quot; fill=none stroke=&quot;#c5dff7&quot; stroke-width=1.5 stroke-linecap=round><rect x=3 y=3 width=18 height=18 rx=2/><circle cx=8.5 cy=8.5 r=1.5/><polyline points=&quot;21 15 16 10 5 21&quot;/></svg><span>Instalación en empresa</span></div>'" />
+        <div class="gallery-overlay"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <!-- FOTO 7 -->
+      <div class="gallery-item fade-in" onclick="openLightbox(5)">
+        <img src="galeria/Foto7.jpeg" alt="Instalación en empresa" onerror="this.parentElement.innerHTML='<div class=gallery-item-placeholder><svg viewBox=&quot;0 0 24 24&quot; fill=none stroke=&quot;#c5dff7&quot; stroke-width=1.5 stroke-linecap=round><rect x=3 y=3 width=18 height=18 rx=2/><circle cx=8.5 cy=8.5 r=1.5/><polyline points=&quot;21 15 16 10 5 21&quot;/></svg><span>Instalación en empresa</span></div>'" />
+        <div class="gallery-overlay"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+      <!-- FOTO 8 -->
+      <div class="gallery-item fade-in" onclick="openLightbox(5)">
+        <img src="galeria/Foto8.jpeg" alt="Instalación en empresa" onerror="this.parentElement.innerHTML='<div class=gallery-item-placeholder><svg viewBox=&quot;0 0 24 24&quot; fill=none stroke=&quot;#c5dff7&quot; stroke-width=1.5 stroke-linecap=round><rect x=3 y=3 width=18 height=18 rx=2/><circle cx=8.5 cy=8.5 r=1.5/><polyline points=&quot;21 15 16 10 5 21&quot;/></svg><span>Instalación en empresa</span></div>'" />
+        <div class="gallery-overlay"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" onclick="closeLightbox()">&#x2715;</button>
+  <button class="lightbox-nav lightbox-prev" onclick="navLightbox(-1)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
+  <img id="lightboxImg" src="" alt=""/>
+  <button class="lightbox-nav lightbox-next" onclick="navLightbox(1)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></button>
+  <div class="lightbox-caption" id="lightboxCaption"></div>
+</div>
+
+<!-- NOSOTROS -->
+<section class="why" id="nosotros">
+  <div class="section-inner">
+    <div class="why-grid">
+      <div>
+        <div class="section-label">¿Por qué elegirnos?</div>
+        <h2 class="section-title">Experiencia, calidad<br>y <span>confianza</span></h2>
+        <p class="section-desc">Más de 5 años brindando soluciones tecnológicas con respaldo profesional en Guatemala.</p>
+        <div class="why-features">
+          <div class="why-feature fade-in">
+            <div class="why-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+            <div><h4>Técnicos certificados</h4><p>Personal capacitado con experiencia comprobada en cada área de servicio técnico.</p></div>
+          </div>
+          <div class="why-feature fade-in">
+            <div class="why-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+            <div><h4>Productos de calidad garantizada</h4><p>Solo trabajamos con marcas reconocidas y garantizamos cada producto y servicio.</p></div>
+          </div>
+          <div class="why-feature fade-in">
+            <div class="why-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.69 11.5a19.79 19.79 0 01-3.07-8.67A2 2 0 013.6 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.91 7.91a16 16 0 006.59 6.59l.97-.97a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+            <div><h4>Atención rápida por WhatsApp</h4><p>Cotizaciones inmediatas y soporte personalizado, lunes a sábado de 8am a 6pm.</p></div>
+          </div>
+          <div class="why-feature fade-in">
+            <div class="why-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+            <div><h4>Garantía en todos nuestros trabajos</h4><p>Cada instalación, reparación y producto viene respaldado con garantía escrita.</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="why-box fade-in">
+        <div class="why-box-label">Nuestros números</div>
+        <div class="counter-grid">
+          <div class="counter-item"><div class="counter-num">500+</div><div class="counter-label">Clientes satisfechos</div></div>
+          <div class="counter-item"><div class="counter-num">5+</div><div class="counter-label">Años en el mercado</div></div>
+          <div class="counter-item"><div class="counter-num">100%</div><div class="counter-label">Garantía en servicio</div></div>
+          <div class="counter-item"><div class="counter-num">&lt;1h</div><div class="counter-label">Tiempo de respuesta</div></div>
+        </div>
+        <div class="why-quote">
+          <p>"Tu seguridad y productividad son nuestra prioridad. Cada instalación y reparación la realizamos con la misma dedicación que para nuestra propia empresa."</p>
+          <cite>— Equipo WebSoft Solutions</cite>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIOS -->
+<section class="testimonials">
+  <div class="section-inner">
+    <div class="testimonials-header">
+      <div class="section-label">Testimonios</div>
+      <h2 class="section-title">Lo que dicen nuestros <span>clientes</span></h2>
+      <p class="section-desc">La satisfacción de cada cliente es nuestro mayor logro y motivación.</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card fade-in">
+        <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <blockquote>"Instalaron mis cámaras de seguridad en el negocio en un solo día. El trabajo quedó impecable y ahora puedo ver todo desde mi celular. Excelente servicio y muy profesionales."</blockquote>
+        <div class="testimonial-author">
+          <div class="author-ava">MC</div>
+          <div><div class="author-name">María Castillo</div><div class="author-role">Propietaria de tienda · Zona 10</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card fade-in">
+        <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <blockquote>"Me repararon la laptop que ya había dado por perdida. Trabajo rápido, precio justo y me explicaron todo el proceso. Los recomiendo al 100% sin dudarlo."</blockquote>
+        <div class="testimonial-author">
+          <div class="author-ava">JR</div>
+          <div><div class="author-name">Juan Rodríguez</div><div class="author-role">Freelancer · Guatemala City</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card fade-in">
+        <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <blockquote>"Compramos varios periféricos para nuestra oficina. Muy satisfechos con la calidad de los productos y la atención recibida. Precios competitivos y entrega rápida."</blockquote>
+        <div class="testimonial-author">
+          <div class="author-ava">AL</div>
+          <div><div class="author-name">Ana López</div><div class="author-role">Gerente de oficina · Mixco</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA CONTACTO -->
+<section class="cta-section" id="contacto">
+  <div class="cta-blob"></div>
+  <div class="section-inner">
+    <div class="cta-inner">
+      <div class="section-label" style="justify-content:center;color:rgba(255,255,255,.4)">Contáctanos hoy</div>
+      <h2>¿Listo para<br><span>mejorar tu negocio?</span></h2>
+      <p class="cta-sub">Escríbenos ahora y recibe atención inmediata. Cotizaciones sin costo ni compromiso.</p>
+      <button class="wa-btn" onclick="openWA()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Escribir al 3671-4377
+      </button>
+      <div class="cta-info">
+        <div class="cta-info-item"><span class="cta-dot"></span>Guatemala City, Guatemala</div>
+        <div class="cta-info-item"><span class="cta-dot"></span>Lun – Sab · 8:00am – 6:00pm</div>
+        <div class="cta-info-item"><span class="cta-dot"></span>Respuesta en menos de 1 hora</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand-logo">
+        <img class="footer-logo-img" src="logo.png" alt="Logo"/>
+        <span class="footer-brand-name">Web<span>Soft</span> Solutions</span>
+      </div>
+      <p class="footer-desc">Tu aliado en tecnología y seguridad en Guatemala. Productos de calidad y servicios profesionales con garantía.</p>
+      <div class="footer-social">
+        <a href="#" title="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        <a href="#" title="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+        <a href="#" title="WhatsApp" onclick="openWA()"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Servicios</div>
+      <ul>
+        <li><a href="#servicios">Instalación CCTV</a></li>
+        <li><a href="#servicios">Reparación de PC</a></li>
+        <li><a href="#servicios">Mantenimiento laptops</a></li>
+        <li><a href="#servicios">Venta de accesorios</a></li>
+        <li><a href="#servicios">Periféricos</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Empresa</div>
+      <ul>
+        <li><a href="#nosotros">Quiénes somos</a></li>
+        <li><a href="#galeria">Galería</a></li>
+        <li><a href="#nosotros">Por qué elegirnos</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Contacto</div>
+      <ul>
+        <li><a href="#" onclick="openWA()">WhatsApp: 3671-4377</a></li>
+        <li><a href="#contacto">Guatemala City, GT</a></li>
+        <li><a href="#contacto">Lun – Sab 8am – 6pm</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025 WebSoft Solutions · Todos los derechos reservados</div>
+    <div class="footer-copy">Hecho con ❤️ en Guatemala 🇬🇹</div>
+  </div>
+</footer>
+
+<!-- Floating WA -->
+<a class="wa-float" onclick="openWA()" title="WhatsApp" aria-label="Contactar por WhatsApp">
+  <div class="wa-float-tooltip">¡Escríbenos ahora!</div>
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+// WhatsApp
+function openWA(){var m=encodeURIComponent("Hola WebSoft Solutions! Me interesa obtener más información sobre sus servicios.");window.open("https://wa.me/50236714377?text="+m,"_blank")}
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener("click",function(e){var t=document.querySelector(this.getAttribute("href"));if(t){e.preventDefault();t.scrollIntoView({behavior:"smooth"})}})});
+
+// Mobile menu
+var hb=document.getElementById("hamburger"),mm=document.getElementById("mobileMenu");
+if(hb&&mm)hb.addEventListener("click",function(){mm.classList.toggle("open")});
+function closeMM(){if(mm)mm.classList.remove("open")}
+
+// Navbar shadow
+var nb=document.getElementById("navbar");
+window.addEventListener("scroll",function(){if(nb)nb.style.boxShadow=window.scrollY>20?"0 2px 28px rgba(0,0,0,.09)":"none"});
+
+// Scroll fade-in
+if("IntersectionObserver"in window){
+  var obs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add("visible");obs.unobserve(e.target)}});
+  },{threshold:.08});
+  document.querySelectorAll(".fade-in").forEach(function(el){obs.observe(el)});
+}
+
+// Lightbox
+var galleryImgs=[];
+var galleryAltTexts=[];
+var currentIdx=0;
+
+window.addEventListener("load",function(){
+  var items=document.querySelectorAll(".gallery-item img");
+  items.forEach(function(img){galleryImgs.push(img.src);galleryAltTexts.push(img.alt)});
+});
+
+function openLightbox(idx){
+  var imgs=document.querySelectorAll(".gallery-item img");
+  if(!imgs[idx]||imgs[idx].naturalWidth===0)return;
+  currentIdx=idx;
+  document.getElementById("lightboxImg").src=imgs[idx].src;
+  document.getElementById("lightboxCaption").textContent=imgs[idx].alt;
+  document.getElementById("lightbox").classList.add("active");
+  document.body.style.overflow="hidden";
+}
+function closeLightbox(){
+  document.getElementById("lightbox").classList.remove("active");
+  document.body.style.overflow="";
+}
+function navLightbox(dir){
+  var imgs=document.querySelectorAll(".gallery-item img");
+  var validImgs=Array.from(imgs).filter(function(img){return img.naturalWidth>0});
+  if(!validImgs.length)return;
+  currentIdx=(currentIdx+dir+validImgs.length)%validImgs.length;
+  document.getElementById("lightboxImg").src=validImgs[currentIdx].src;
+  document.getElementById("lightboxCaption").textContent=validImgs[currentIdx].alt;
+}
+document.getElementById("lightbox").addEventListener("click",function(e){
+  if(e.target===this)closeLightbox();
+});
+document.addEventListener("keydown",function(e){
+  if(e.key==="Escape")closeLightbox();
+  if(e.key==="ArrowLeft")navLightbox(-1);
+  if(e.key==="ArrowRight")navLightbox(1);
+});
+</script>
+</body>
+</html>

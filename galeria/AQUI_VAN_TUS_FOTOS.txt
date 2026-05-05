@@ -1,0 +1,23 @@
+============================================
+  INSTRUCCIONES PARA SUBIR FOTOS A LA GALERÍA
+============================================
+
+1. Sube tus fotos a ESTA CARPETA (galeria/) en tu repositorio de GitHub.
+
+2. Las fotos deben llamarse:
+   - foto1.jpg
+   - foto2.jpg
+   - foto3.jpg
+   - foto4.jpg
+   - foto5.jpg
+   - foto6.jpg
+
+3. Si quieres usar nombres diferentes, edita el index.html
+   y cambia: src="galeria/foto1.jpg"
+   por:      src="galeria/TU-NOMBRE.jpg"
+
+4. También puedes cambiar el texto alt="..." para describir cada foto.
+
+5. Formatos soportados: .jpg, .jpeg, .png, .webp
+
+¡Listo! Las fotos aparecerán automáticamente en la galería con lightbox.
