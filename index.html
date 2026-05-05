@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <meta name="description" content="WebSoft Solutions - Tecnología y seguridad en Guatemala. Accesorios, periféricos, sistemas CCTV, reparaciones y mantenimiento."/>
 <title>WebSoft Solutions | Tecnología & Seguridad</title>
+<link rel="icon" type="image/png" href="logo.png"/>
+<link rel="apple-touch-icon" href="logo.png"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet"/>
@@ -275,6 +277,34 @@ footer{background:#080b18;padding:56px 24px 32px}
   .hero h1{font-size:32px}
   .gallery-grid{grid-template-columns:1fr}
 }
+/* === MOBILE GALLERY POLISH === */
+@media(max-width:900px){
+  .gallery-grid{grid-template-columns:repeat(2,1fr);gap:12px}
+  .gallery-item{border-radius:12px}
+}
+@media(max-width:480px){
+  .gallery-grid{grid-template-columns:repeat(2,1fr);gap:8px}
+  .gallery-item{border-radius:10px;aspect-ratio:1/1}
+  .products-grid{grid-template-columns:repeat(2,1fr);gap:10px}
+  .product-card{padding:18px 14px}
+  .prod-icon{width:46px;height:46px;border-radius:12px}
+  .product-card h4{font-size:14px}
+  .product-card p{font-size:11px}
+  .services-grid{gap:16px}
+  .service-card{padding:24px 20px}
+  .testimonials-grid{gap:14px}
+  .testimonial-card{padding:22px 18px}
+  .hero-stats-grid{gap:8px}
+  .hero-stat-box{padding:10px 8px}
+  .hero-stat-num{font-size:18px}
+  .strip-item{font-size:12px}
+  .strip-inner{gap:12px}
+  .footer-top{gap:24px}
+  .counter-grid{gap:10px}
+  .counter-item{padding:16px}
+  .counter-num{font-size:30px}
+}
+  
 </style>
 </head>
 <body>
