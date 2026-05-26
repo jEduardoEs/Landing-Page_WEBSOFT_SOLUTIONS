@@ -1,0 +1,162 @@
+[
+  {
+    "id": 1,
+    "name": "Mouse Inalámbrico Ergonómico",
+    "cat": "Periféricos",
+    "price": 85,
+    "desc": "Mouse óptico inalámbrico, DPI ajustable, batería recargable.",
+    "popular": true,
+    "tag": "Más vendido",
+    "active": true
+  },
+  {
+    "id": 2,
+    "name": "Teclado Mecánico USB",
+    "cat": "Periféricos",
+    "price": 120,
+    "desc": "Teclado mecánico retroiluminado, switches duraderos, layout español.",
+    "popular": true,
+    "tag": "Popular",
+    "active": true
+  },
+  {
+    "id": 3,
+    "name": "Audífonos con Micrófono",
+    "cat": "Periféricos",
+    "price": 150,
+    "desc": "Audífonos stereo con micrófono integrado, cancelación de ruido.",
+    "popular": true,
+    "tag": "Recomendado",
+    "active": true
+  },
+  {
+    "id": 4,
+    "name": "Cámara CCTV Domo IP 2MP",
+    "cat": "CCTV",
+    "price": 450,
+    "desc": "Cámara IP domo 2MP, visión nocturna 30m, resistente al agua IP67.",
+    "popular": true,
+    "tag": "Más vendido",
+    "active": true
+  },
+  {
+    "id": 5,
+    "name": "DVR 4 Canales 1080P",
+    "cat": "CCTV",
+    "price": 850,
+    "desc": "Grabador digital 4 canales Full HD. Detección de movimiento, acceso remoto.",
+    "popular": true,
+    "tag": "Popular",
+    "active": true
+  },
+  {
+    "id": 6,
+    "name": "Cable HDMI 4K 1.8m",
+    "cat": "Cables",
+    "price": 45,
+    "desc": "Cable HDMI 2.0 compatible con 4K a 60Hz. Blindado, conectores dorados.",
+    "popular": false,
+    "tag": "",
+    "active": true
+  },
+  {
+    "id": 7,
+    "name": "Hub USB 4 Puertos 3.0",
+    "cat": "Accesorios",
+    "price": 95,
+    "desc": "Concentrador USB 3.0 de alta velocidad, 4 puertos.",
+    "popular": false,
+    "tag": "",
+    "active": true
+  },
+  {
+    "id": 8,
+    "name": "Webcam Full HD 1080P",
+    "cat": "Periféricos",
+    "price": 195,
+    "desc": "Cámara web 1080P con micrófono. Plug and Play, compatible con Zoom y Teams.",
+    "popular": true,
+    "tag": "Nuevo",
+    "active": true
+  },
+  {
+    "id": 9,
+    "name": "Cámara CCTV Bullet Exterior",
+    "cat": "CCTV",
+    "price": 380,
+    "desc": "Cámara bullet exterior 2MP, IR 40m, IP66.",
+    "popular": false,
+    "tag": "",
+    "active": true
+  },
+  {
+    "id": 10,
+    "name": "NVR 8 Canales PoE",
+    "cat": "CCTV",
+    "price": 1250,
+    "desc": "Grabador IP 8 canales con PoE integrado. Soporta cámaras hasta 8MP.",
+    "popular": false,
+    "tag": "",
+    "active": true
+  },
+  {
+    "id": 11,
+    "name": "Mouse Pad XL",
+    "cat": "Accesorios",
+    "price": 55,
+    "desc": "Tapete XXL 800x350mm, superficie de tela de alta precisión.",
+    "popular": false,
+    "tag": "",
+    "active": true
+  },
+  {
+    "id": 12,
+    "name": "Adaptador USB-C a HDMI",
+    "cat": "Cables",
+    "price": 65,
+    "desc": "Adaptador USB-C a HDMI 4K. Compatible con MacBook y laptops USB-C.",
+    "popular": false,
+    "tag": "",
+    "active": true
+  },
+  {
+    "id": 13,
+    "name": "Fuente de Poder 650W",
+    "cat": "Componentes PC",
+    "price": 320,
+    "desc": "Fuente de poder 650W 80+ Bronze, modular.",
+    "popular": false,
+    "tag": "",
+    "active": true
+  },
+  {
+    "id": 14,
+    "name": "Memoria RAM 8GB DDR4",
+    "cat": "Componentes PC",
+    "price": 185,
+    "desc": "Módulo RAM DDR4 8GB 3200MHz. Compatible con Intel y AMD.",
+    "popular": true,
+    "tag": "Popular",
+    "active": true
+  },
+  {
+    "id": 15,
+    "name": "SSD 480GB SATA",
+    "cat": "Componentes PC",
+    "price": 245,
+    "desc": "Disco SSD 480GB SATA III. Velocidad de lectura 550MB/s.",
+    "popular": true,
+    "tag": "Recomendado",
+    "active": true
+  },
+  {
+    "id": 16,
+    "name": "Soporte Monitor Doble",
+    "cat": "Accesorios",
+    "price": 165,
+    "desc": "Soporte para dos monitores hasta 32 pulgadas. Ajuste completo.",
+    "popular": false,
+    "tag": "",
+    "active": true
+  }
+]
