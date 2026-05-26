@@ -155,7 +155,7 @@
     "cat": "Accesorios",
     "price": 165,
     "desc": "Soporte para dos monitores hasta 32 pulgadas. Ajuste completo.",
-    "popular": false,
+    "popular": true,
     "tag": "",
     "active": true
   },
