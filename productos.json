@@ -1,42 +1,42 @@
 [
   {
     "id": 1,
-    "name": "Mouse Inalámbrico Ergonómico",
-    "cat": "Periféricos",
+    "name": "Mouse InalÃ¡mbrico ErgonÃ³mico",
+    "cat": "PerifÃ©ricos",
     "price": 85,
-    "desc": "Mouse óptico inalámbrico, DPI ajustable, batería recargable.",
+    "desc": "Mouse Ã³ptico inalÃ¡mbrico, DPI ajustable, baterÃ­a recargable.",
     "popular": true,
-    "tag": "Más vendido",
+    "tag": "MÃ¡s vendido",
     "active": true
   },
   {
     "id": 2,
-    "name": "Teclado Mecánico USB",
-    "cat": "Periféricos",
+    "name": "Teclado MecÃ¡nico USB",
+    "cat": "PerifÃ©ricos",
     "price": 120,
-    "desc": "Teclado mecánico retroiluminado, switches duraderos, layout español.",
+    "desc": "Teclado mecÃ¡nico retroiluminado, switches duraderos, layout espaÃ±ol.",
     "popular": true,
     "tag": "Popular",
     "active": true
   },
   {
     "id": 3,
-    "name": "Audífonos con Micrófono",
-    "cat": "Periféricos",
+    "name": "AudÃ­fonos con MicrÃ³fono",
+    "cat": "PerifÃ©ricos",
     "price": 150,
-    "desc": "Audífonos stereo con micrófono integrado, cancelación de ruido.",
+    "desc": "AudÃ­fonos stereo con micrÃ³fono integrado, cancelaciÃ³n de ruido.",
     "popular": true,
     "tag": "Recomendado",
     "active": true
   },
   {
     "id": 4,
-    "name": "Cámara CCTV Domo IP 2MP",
+    "name": "CÃ¡mara CCTV Domo IP 2MP",
     "cat": "CCTV",
     "price": 450,
-    "desc": "Cámara IP domo 2MP, visión nocturna 30m, resistente al agua IP67.",
+    "desc": "CÃ¡mara IP domo 2MP, visiÃ³n nocturna 30m, resistente al agua IP67.",
     "popular": true,
-    "tag": "Más vendido",
+    "tag": "MÃ¡s vendido",
     "active": true
   },
   {
@@ -44,7 +44,7 @@
     "name": "DVR 4 Canales 1080P",
     "cat": "CCTV",
     "price": 850,
-    "desc": "Grabador digital 4 canales Full HD. Detección de movimiento, acceso remoto.",
+    "desc": "Grabador digital 4 canales Full HD. DetecciÃ³n de movimiento, acceso remoto.",
     "popular": true,
     "tag": "Popular",
     "active": true
@@ -72,19 +72,19 @@
   {
     "id": 8,
     "name": "Webcam Full HD 1080P",
-    "cat": "Periféricos",
+    "cat": "PerifÃ©ricos",
     "price": 195,
-    "desc": "Cámara web 1080P con micrófono. Plug and Play, compatible con Zoom y Teams.",
+    "desc": "CÃ¡mara web 1080P con micrÃ³fono. Plug and Play, compatible con Zoom y Teams.",
     "popular": true,
     "tag": "Nuevo",
     "active": true
   },
   {
     "id": 9,
-    "name": "Cámara CCTV Bullet Exterior",
+    "name": "CÃ¡mara CCTV Bullet Exterior",
     "cat": "CCTV",
     "price": 380,
-    "desc": "Cámara bullet exterior 2MP, IR 40m, IP66.",
+    "desc": "CÃ¡mara bullet exterior 2MP, IR 40m, IP66.",
     "popular": false,
     "tag": "",
     "active": true
@@ -94,7 +94,7 @@
     "name": "NVR 8 Canales PoE",
     "cat": "CCTV",
     "price": 1250,
-    "desc": "Grabador IP 8 canales con PoE integrado. Soporta cámaras hasta 8MP.",
+    "desc": "Grabador IP 8 canales con PoE integrado. Soporta cÃ¡maras hasta 8MP.",
     "popular": false,
     "tag": "",
     "active": true
@@ -104,7 +104,7 @@
     "name": "Mouse Pad XL",
     "cat": "Accesorios",
     "price": 55,
-    "desc": "Tapete XXL 800x350mm, superficie de tela de alta precisión.",
+    "desc": "Tapete XXL 800x350mm, superficie de tela de alta precisiÃ³n.",
     "popular": false,
     "tag": "",
     "active": true
@@ -134,7 +134,7 @@
     "name": "Memoria RAM 8GB DDR4",
     "cat": "Componentes PC",
     "price": 185,
-    "desc": "Módulo RAM DDR4 8GB 3200MHz. Compatible con Intel y AMD.",
+    "desc": "MÃ³dulo RAM DDR4 8GB 3200MHz. Compatible con Intel y AMD.",
     "popular": true,
     "tag": "Popular",
     "active": true
