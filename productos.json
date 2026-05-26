@@ -158,5 +158,15 @@
     "popular": false,
     "tag": "",
     "active": true
+  },
+  {
+    "id": 17,
+    "name": "kit de 4 camaras dahua estilo bullet",
+    "cat": "CCTV",
+    "price": 1250,
+    "desc": "¿Qué contiene el kit de cámaras?:\n1 DVR Penta Híbrido XVR con compresión H265 (DH-XVR1B04-I) CON INTELIGENCIA ARTIFICIA para 4 canales.\n4 cámaras en policarbonato tipo bullet con certificación IP67, infrarrojo de 20m.\n80 Metros de Cable UTP CAT5e (20mt por cámara)\n4 fuentes de poder de 12V 1A\n4 pares de Video Balun\n4 pares de conectores de corriente\nMouse para controlar el DVR.\nEste kit cuenta con disco duro de 500GB\nEl Kit  dahua XVR  de 4 cámaras al igual que los demás productos dahua cuenta con  las características de la marca como poder ver las cámaras por internet por medio de una App en celular o tableta así como instalar el software de Dahua (gratuito) en una computadora para controlar y ver las cámaras desde cualquier ubicación.\n\nIncluye todo para la instalación\nCámaras con detección de movimiento y visión nocturna\nDVR pentahíbrido: soporta formatos IPC, HDCVI, AHD, TVI y CVBS\nApp compatible con Android y iOS\nIncluye disco duro de 500 GB\nAjuste de iluminación programado\nFunción sobre escritura (Overwrite)\nConexión HDMI para pantalla\nConexión VGA para monitor\nPuerto USB para respaldo de videos\n*Instalación no incluida",
+    "popular": true,
+    "tag": "",
+    "active": true
   }
 ]
