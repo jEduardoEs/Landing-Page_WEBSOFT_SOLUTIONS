@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Catálogo de productos WebSoft Solutions - Periféricos, CCTV, componentes PC, cables y accesorios en Guastatoya, El Progreso y Guatemala."/>
+<title>Catálogo | WebSoft Solutions</title>
+<link rel="icon" type="image/png" href="logo.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet"/>
+<style>
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --blue:#2B7FD4;--blue-dark:#1a5fa0;--blue-light:#e8f3fd;--blue-mid:#c5dff7;
+  --dark:#0d0f1a;--white:#fff;--gray2:#f4f7fb;--gray3:#e2eaf4;
+  --text:#1a1f36;--text2:#4a5568;--green:#25D366;--tr:.25s ease;
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:#fff;color:var(--text);overflow-x:hidden;line-height:1.65}
+.si{max-width:1140px;margin:0 auto;padding:0 24px}
+h2.st{font-family:'Rajdhani',sans-serif;font-size:40px;font-weight:700;line-height:1.12;margin-bottom:16px;color:var(--text)}
+h2.st span{color:var(--blue)}
+.sl{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;color:var(--blue);letter-spacing:3px;text-transform:uppercase;margin-bottom:14px}
+.sl::before{content:'';width:22px;height:2px;background:var(--blue);border-radius:2px}
+.sd{color:var(--text2);font-size:16px;line-height:1.8;max-width:580px}
+svg.icon{width:22px;height:22px;fill:none;stroke:var(--blue);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.btn-p{background:var(--blue);color:#fff;border:none;padding:13px 28px;border-radius:9px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;display:inline-flex;align-items:center;gap:8px;cursor:pointer;text-decoration:none;transition:all var(--tr);box-shadow:0 4px 16px rgba(43,127,212,.3)}
+.btn-p:hover{background:var(--blue-dark);transform:translateY(-2px)}
+.btn-s{background:#fff;color:var(--blue);padding:12px 26px;border-radius:9px;font-size:14px;font-weight:600;display:inline-flex;align-items:center;gap:8px;border:2px solid var(--blue);text-decoration:none;transition:all var(--tr);font-family:'DM Sans',sans-serif;cursor:pointer}
+.btn-s:hover{background:var(--blue-light)}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--gray3);padding:0 24px;transition:box-shadow var(--tr)}
+.ni{max-width:1140px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:70px}
+.nl{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nli{width:36px;height:36px;object-fit:contain}
+.nlt{font-family:'Rajdhani',sans-serif;font-size:21px;font-weight:700;letter-spacing:.5px;color:var(--text)}
+.nlt span{color:var(--blue)}
+.nls{display:flex;gap:28px;list-style:none}
+.nls a{text-decoration:none;color:var(--text2);font-size:14px;font-weight:500;transition:color var(--tr);position:relative;padding-bottom:4px}
+.nls a::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--blue);border-radius:2px;transform:scaleX(0);transition:transform var(--tr)}
+.nls a:hover{color:var(--blue)}.nls a:hover::after{transform:scaleX(1)}
+.nls a.active{color:var(--blue)}.nls a.active::after{transform:scaleX(1)}
+.nc{background:var(--blue);color:#fff;border:none;padding:9px 20px;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:all var(--tr)}
+.nc:hover{background:var(--blue-dark)}
+.nh{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+.nh span{display:block;width:24px;height:2px;background:var(--text);border-radius:2px}
+.mm{display:none;padding:16px 0 24px;border-top:1px solid var(--gray3)}
+.mm ul{list-style:none;display:flex;flex-direction:column;gap:4px}
+.mm a{display:block;padding:11px 0;color:var(--text2);font-size:15px;text-decoration:none}
+.mm a:hover{color:var(--blue)}
+.mm.open{display:block}
+.nav-right{display:flex;align-items:center;gap:12px}
+
+/* CART ICON */
+.ci2{position:relative;cursor:pointer;padding:8px;border-radius:8px;transition:background var(--tr)}
+.ci2:hover{background:var(--gray2)}
+.ci2 svg{stroke:var(--text2)}
+.cbadge{position:absolute;top:2px;right:2px;background:var(--blue);color:#fff;font-size:10px;font-weight:700;width:17px;height:17px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+
+/* CART DRAWER */
+.cart-overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:499;display:none}
+.cart-overlay.open{display:block}
+.cart-drawer{position:fixed;right:0;top:0;bottom:0;width:380px;background:#fff;z-index:500;box-shadow:-8px 0 40px rgba(0,0,0,.12);transform:translateX(100%);transition:transform .3s ease;display:flex;flex-direction:column}
+.cart-drawer.open{transform:translateX(0)}
+.cdh{padding:18px 22px;border-bottom:1px solid var(--gray3);display:flex;align-items:center;justify-content:space-between}
+.cdt{font-family:'Rajdhani',sans-serif;font-size:20px;font-weight:700}
+.cdclose{background:none;border:none;font-size:22px;cursor:pointer;color:var(--text2);line-height:1;padding:4px}
+.cditems{flex:1;overflow-y:auto;padding:12px}
+.cd-empty{text-align:center;padding:60px 20px;color:var(--text2)}
+.cd-empty-icon{font-size:44px;margin-bottom:12px}
+.cditem{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--gray3)}
+.cditem-emoji{font-size:30px;flex-shrink:0;width:44px;text-align:center}
+.cditem-info{flex:1;min-width:0}
+.cditem-name{font-size:13px;font-weight:600;color:var(--text);margin-bottom:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cditem-price{font-size:13px;font-weight:700;color:var(--blue)}
+.cditem-qty{display:flex;align-items:center;gap:6px;margin-top:6px}
+.qb{width:24px;height:24px;border-radius:5px;border:1.5px solid var(--gray3);background:#fff;cursor:pointer;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;transition:all var(--tr)}
+.qb:hover{border-color:var(--blue);color:var(--blue)}
+.qv{font-size:13px;font-weight:700;min-width:22px;text-align:center}
+.qrm{background:none;border:none;color:var(--gray3);cursor:pointer;font-size:18px;margin-left:auto;line-height:1;transition:color var(--tr)}
+.qrm:hover{color:#ef4444}
+.cdf{padding:18px 22px;border-top:1px solid var(--gray3);background:var(--gray2)}
+.cdt2{display:flex;justify-content:space-between;font-size:15px;font-weight:700;margin-bottom:14px}
+.cdwa{width:100%;padding:13px;background:var(--green);color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:all var(--tr);font-family:'DM Sans',sans-serif}
+.cdwa:hover{background:#1ebe5a}
+
+/* PRODUCT CARD */
+.pcard{background:#fff;border:1.5px solid var(--gray3);border-radius:16px;padding:22px 16px;text-align:center;transition:all var(--tr);position:relative;overflow:hidden;display:flex;flex-direction:column}
+.pcard:hover{border-color:var(--blue);transform:translateY(-4px);box-shadow:0 12px 32px rgba(43,127,212,.12)}
+.ptag{position:absolute;top:10px;right:10px;background:var(--blue);color:#fff;font-size:10px;font-weight:700;padding:3px 8px;border-radius:20px;letter-spacing:.3px;text-transform:uppercase}
+.pcat{font-size:10px;font-weight:700;color:var(--blue);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px}
+.pname{font-family:'Rajdhani',sans-serif;font-size:16px;font-weight:700;color:var(--text);margin-bottom:8px;line-height:1.3}
+.pdesc{font-size:12px;color:var(--text2);line-height:1.55;margin-bottom:12px;flex:1}
+.pprice{font-size:22px;font-weight:800;color:var(--blue);margin-bottom:12px;font-family:'Rajdhani',sans-serif}
+.pbtns{display:flex;gap:8px}
+.pbuy{flex:1;background:var(--blue);color:#fff;border:none;padding:9px 12px;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;transition:all var(--tr);font-family:'DM Sans',sans-serif}
+.pbuy:hover{background:var(--blue-dark)}
+.padd{background:var(--blue-light);color:var(--blue);border:1.5px solid var(--blue-mid);padding:9px 12px;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;transition:all var(--tr);white-space:nowrap;font-family:'DM Sans',sans-serif}
+.padd:hover{background:var(--blue);color:#fff}
+
+/* FLOAT WA */
+.waf{position:fixed;bottom:28px;right:28px;z-index:200;width:58px;height:58px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4);cursor:pointer;text-decoration:none;transition:all var(--tr);animation:wapop .8s cubic-bezier(.34,1.56,.64,1) .5s both}
+.waf:hover{transform:scale(1.1);background:#1ebe5a}
+.waft{position:absolute;right:68px;background:var(--dark);color:#fff;font-size:12px;font-weight:500;padding:7px 12px;border-radius:8px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity var(--tr)}
+.waf:hover .waft{opacity:1}
+@keyframes wapop{from{transform:scale(0);opacity:0}to{transform:scale(1);opacity:1}}
+
+/* FOOTER */
+footer{background:#080b18;padding:36px 24px 24px}
+.ft{max-width:1140px;margin:0 auto;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:32px;margin-bottom:28px}
+.fbl{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.fli{width:30px;height:30px;object-fit:contain}
+.fln{font-family:'Rajdhani',sans-serif;font-size:19px;font-weight:700;color:#fff}
+.fln span{color:var(--blue)}
+.fd{font-size:13px;color:rgba(255,255,255,.38);line-height:1.7;max-width:280px}
+.fh{font-family:'Rajdhani',sans-serif;font-size:12px;font-weight:700;color:rgba(255,255,255,.7);letter-spacing:2px;text-transform:uppercase;margin-bottom:14px}
+.fl{list-style:none;display:flex;flex-direction:column;gap:9px}
+.fl li a{font-size:13px;color:rgba(255,255,255,.38);text-decoration:none;transition:color var(--tr)}
+.fl li a:hover{color:var(--blue)}
+.fsoc{display:flex;gap:8px;margin-top:14px}
+.fsoc a{width:32px;height:32px;border-radius:7px;background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;transition:background var(--tr)}
+.fsoc a:hover{background:var(--blue)}
+.fsoc svg{width:15px;height:15px;stroke:#fff;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.fb{max-width:1140px;margin:0 auto;padding-top:20px;border-top:1px solid rgba(255,255,255,.06);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.fc{font-size:12px;color:rgba(255,255,255,.25)}
+
+/* FADE */
+.fade-in{opacity:0;transform:translateY(24px);transition:opacity .55s ease,transform .55s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+
+/* RESPONSIVE */
+@media(max-width:900px){.nls,.nc{display:none}.nh{display:flex}.cart-drawer{width:100%}}
+@media(max-width:600px){.waf{bottom:18px;right:18px}}
+
+
+/* CATALOG PAGE */
+.cat-hero{background:linear-gradient(135deg,var(--dark) 0%,#0f1530 100%);padding:120px 24px 60px;position:relative;overflow:hidden}
+.cat-hero-blob{position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(43,127,212,.15) 0%,transparent 65%);right:-100px;top:-100px;pointer-events:none}
+.cat-hero-content{max-width:1140px;margin:0 auto;position:relative;z-index:2}
+.cat-hero h1{font-family:'Rajdhani',sans-serif;font-size:42px;font-weight:700;color:#fff;margin-bottom:10px}
+.cat-hero h1 span{color:var(--blue)}
+.cat-hero p{color:rgba(255,255,255,.6);font-size:15px;max-width:520px}
+.cat-breadcrumb{display:flex;align-items:center;gap:8px;font-size:12px;color:rgba(255,255,255,.4);margin-bottom:16px}
+.cat-breadcrumb a{color:rgba(255,255,255,.4);text-decoration:none;transition:color var(--tr)}
+.cat-breadcrumb a:hover{color:var(--blue)}
+.cat-breadcrumb span{color:rgba(255,255,255,.6)}
+
+/* FILTERS */
+.cat-body{padding:48px 24px 80px;background:var(--gray2);min-height:60vh}
+.cat-inner{max-width:1140px;margin:0 auto}
+.cat-toolbar{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;margin-bottom:28px;background:#fff;border:1px solid var(--gray3);border-radius:12px;padding:14px 18px}
+.cat-search{flex:1;min-width:200px;display:flex;align-items:center;gap:8px;border:1.5px solid var(--gray3);border-radius:8px;padding:8px 14px;background:#fff;transition:border-color var(--tr)}
+.cat-search:focus-within{border-color:var(--blue)}
+.cat-search input{border:none;outline:none;flex:1;font-family:'DM Sans',sans-serif;font-size:13px;color:var(--text);background:transparent}
+.cat-search svg{stroke:var(--text2);width:16px;height:16px;fill:none;flex-shrink:0}
+.cat-sort{padding:8px 12px;border:1.5px solid var(--gray3);border-radius:8px;font-size:13px;color:var(--text);outline:none;background:#fff;cursor:pointer;font-family:'DM Sans',sans-serif}
+.cat-sort:focus{border-color:var(--blue)}
+.cat-count{font-size:13px;color:var(--text2);white-space:nowrap}
+
+.cat-filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+.cf-btn{padding:7px 16px;border-radius:20px;border:1.5px solid var(--gray3);background:#fff;font-size:12px;font-weight:600;cursor:pointer;transition:all var(--tr);font-family:'DM Sans',sans-serif;color:var(--text2)}
+.cf-btn:hover{border-color:var(--blue);color:var(--blue)}
+.cf-btn.active{background:var(--blue);color:#fff;border-color:var(--blue)}
+
+.cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.cat-empty{text-align:center;padding:60px 20px;color:var(--text2);grid-column:1/-1}
+.cat-empty svg{stroke:var(--gray3);fill:none;width:44px;height:44px;margin:0 auto 14px;display:block}
+
+/* PCARD extras */
+.pcard.hidden{display:none}
+
+@media(max-width:900px){.nls,.nc{display:none}.nh{display:flex}.cat-grid{grid-template-columns:repeat(2,1fr)}.cart-drawer{width:100%}}
+@media(max-width:600px){.cat-grid{grid-template-columns:repeat(2,1fr)}.cat-hero h1{font-size:32px}}
+@media(max-width:400px){.cat-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cdh"><span class="cdt">Carrito de compras</span><button class="cdclose" onclick="closeCart()">&#x2715;</button></div>
+  <div class="cditems" id="cartItems"></div>
+  <div class="cdf">
+    <div class="cdt2"><span>Total estimado:</span><span id="cartTotal">Q 0.00</span></div>
+    <button class="cdwa" onclick="pedirCarrito()">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Solicitar por WhatsApp
+    </button>
+  </div>
+</div>
+<nav id="navbar">
+  <div class="ni">
+    <a class="nl" href="index.html"><img class="nli" src="logo.png" alt="WebSoft Solutions"/><span class="nlt">Web<span>Soft</span> Solutions</span></a>
+    <ul class="nls"><li><a href="index.html">Inicio</a></li><li><a href="catalogo.html"  class="active">Catálogo</a></li><li><a href="index.html#servicios">Servicios</a></li><li><a href="index.html#galeria">Galería</a></li><li><a href="index.html#nosotros">Nosotros</a></li><li><a href="index.html#contacto">Contacto</a></li></ul>
+    <div class="nav-right">
+      <div class="ci2" onclick="openCart()" title="Carrito">
+        <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="var(--text2)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        <span class="cbadge" id="cartBadge" style="display:none">0</span>
+      </div>
+      <button class="nc" onclick="openWA()">Cotizar ahora</button>
+    </div>
+    <button class="nh" id="hamburger"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mm" id="mobileMenu"><ul>
+    <li><a href='index.html'>Inicio</a></li><li><a href='catalogo.html'>Catálogo</a></li><li><a href='index.html#servicios'>Servicios</a></li><li><a href='index.html#galeria'>Galería</a></li><li><a href='index.html#nosotros'>Nosotros</a></li><li><a href='index.html#contacto'>Contacto</a></li>
+    <li><button class="btn-p" onclick="openWA()" style="margin-top:12px;width:100%;justify-content:center">Cotizar por WhatsApp</button></li>
+  </ul></div>
+</nav>
+
+<!-- HERO CATALOGO -->
+<section class="cat-hero">
+  <div class="cat-hero-blob"></div>
+  <div class="cat-hero-content">
+    <div class="cat-breadcrumb">
+      <a href="index.html">Inicio</a>
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      <span>Catálogo</span>
+    </div>
+    <h1>Catálogo de <span>Productos</span></h1>
+    <p>Tecnología de calidad con garantía en Guastatoya, El Progreso y Guatemala. Todos los precios son referenciales, contáctenos para disponibilidad.</p>
+  </div>
+</section>
+
+<!-- BODY -->
+<div class="cat-body">
+  <div class="cat-inner">
+
+    <!-- TOOLBAR -->
+    <div class="cat-toolbar">
+      <div class="cat-search">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input type="text" id="searchInput" placeholder="Buscar producto..." oninput="filtrar()"/>
+      </div>
+      <select class="cat-sort" id="sortSelect" onchange="filtrar()">
+        <option value="">Ordenar por</option>
+        <option value="asc">Precio: menor a mayor</option>
+        <option value="desc">Precio: mayor a menor</option>
+        <option value="name">Nombre A-Z</option>
+      </select>
+      <span class="cat-count" id="prodCount">16 productos</span>
+    </div>
+
+    <!-- FILTROS POR CATEGORÍA -->
+    <div class="cat-filters">
+      <button class="cf-btn active" data-cat="Todos" onclick="filtrar('Todos')">Todos</button>
+<button class="cf-btn" data-cat="Periféricos" onclick="filtrar('Periféricos')">Periféricos</button>
+<button class="cf-btn" data-cat="CCTV" onclick="filtrar('CCTV')">CCTV</button>
+<button class="cf-btn" data-cat="Cables" onclick="filtrar('Cables')">Cables</button>
+<button class="cf-btn" data-cat="Accesorios" onclick="filtrar('Accesorios')">Accesorios</button>
+<button class="cf-btn" data-cat="Componentes PC" onclick="filtrar('Componentes PC')">Componentes PC</button>
+    </div>
+
+    <!-- GRID -->
+    <div class="cat-grid" id="catGrid">
+      <div class="pcard fade-in" data-cat="Periféricos">
+  <div class="ptag">Más vendido</div>
+  <div class="pcat">Periféricos</div>
+  <div class="pname">Mouse Inalámbrico Ergonómico</div>
+  <div class="pdesc">Mouse óptico inalámbrico, DPI ajustable, batería recargable. Compatible con Windows y Mac.</div>
+  <div class="pprice">Q 85.00</div>
+  <div class="pbtns">
+    <button class="pbuy" onclick="solicitarProd(1)">Solicitar</button>
+    <button class="padd" onclick="addCart(1)">+ Carrito</button>
+  </div>
+</div>
+<div class="pcard fade-in" data-cat="Periféricos">
+  <div class="ptag">Popular</div>
+  <div class="pcat">Periféricos</div>
+  <div class="pname">Teclado Mecánico USB</div>
+  <div class="pdesc">Teclado mecánico retroiluminado, switches duraderos, layout español.</div>
+  <div class="pprice">Q 120.00</div>
+  <div class="pbtns">
+    <button class="pbuy" onclick="solicitarProd(2)">Solicitar</button>
+    <button class="padd" onclick="addCart(2)">+ Carrito</button>
+  </div>
+</div>
+<div class="pcard fade-in" data-cat="Periféricos">
+  <div class="ptag">Recomendado</div>
+  <div class="pcat">Periféricos</div>
+  <div class="pname">Audífonos con Micrófono</div>
+  <div class="pdesc">Audífonos stereo con micrófono integrado, cancelación de ruido, conector 3.5mm y USB.</div>
+  <div class="pprice">Q 150.00</div>
+  <div class="pbtns">
+    <button class="pbuy" onclick="solicitarProd(3)">Solicitar</button>
+    <button class="padd" onclick="addCart(3)">+ Carrito</button>
+  </div>
+</div>
+<div class="pcard fade-in" data-cat="CCTV">
+  <div class="ptag">Más vendido</div>
+  <div class="pcat">CCTV</div>
+  <div class="pname">Cámara CCTV Domo IP 2MP</div>
+  <div class="pdesc">Cámara IP domo 2MP, visión nocturna 30m, resistente al agua IP67. Incluye soporte.</div>
+  <div class="pprice">Q 450.00</div>
+  <div class="pbtns">
+    <button class="pbuy" onclick="solicitarProd(4)">Solicitar</button>
+    <button class="padd" onclick="addCart(4)">+ Carrito</button>
+  </div>
+</div>
+<div class="pcard fade-in" data-cat="CCTV">
+  <div class="ptag">Popular</div>
+  <div class="pcat">CCTV</div>
+  <div class="pname">DVR 4 Canales 1080P</div>
+  <div class="pdesc">Grabador digital 4 canales Full HD. Detección de movimiento, acceso remoto desde celular.</div>
+  <div class="pprice">Q 850.00</div>
+  <div class="pbtns">
+    <button class="pbuy" onclick="solicitarProd(5)">Solicitar</button>
+    <button class="padd" onclick="addCart(5)">+ Carrito</button>
+  </div>
+</div>
+<div class="pcard fade-in" data-cat="Cables">
+  
+  <div class="pcat">Cables</div>
+  <div class="pname">Cable HDMI 4K 1.8m</div>
+  <div class="pdesc">Cable HDMI 2.0 compatible con 4K a 60Hz. Blindado, conectores dorados.</div>
+  <div class="pprice">Q 45.00</div>
+  <div class="pbtns">
+    <button class="pbuy" onclick="solicitarProd(6)">Solicitar</button>
+    <button class="padd" onclick="addCart(6)">+ Carrito</button>
+  </div>
+</div>
+<div class="pcard fade-in" data-cat="Accesorios">
+  
+  <div class="pcat">Accesorios</div>
+  <div class="pname">Hub USB 4 Puertos 3.0</div>
+  <div class="pdesc">Concentrador USB 3.0 de alta velocidad, 4 puertos, cable integrado.</div>
+  <div class="pprice">Q 95.00</div>
+  <div class="pbtns">
+    <button class="pbuy" onclick="solicitarProd(7)">Solicitar</button>
+    <button class="padd" onclick="addCart(7)">+ Carrito</button>
+  </div>
+</div>
+<div class="pcard fade-in" data-cat="Periféricos">
+  <div class="ptag">Nuevo</div>
+  <div class="pcat">Periféricos</div>
+  <div class="pname">Webcam Full HD 1080P</div>
+  <div class="pdesc">Cámara web 1080P con micrófono incorporado. Plug and Play, compatible con Zoom y Teams.</div>
+  <div class="pprice">Q 195.00</div>
+  <div class="pbtns">
+    <button class="pbuy" onclick="solicitarProd(8)">Solicitar</button>
+    <button class="padd" onclick="addCart(8)">+ Carrito</button>
+  </div>
+</div>
+<div class="pcard fade-in" data-cat="CCTV">
+  
+  <div class="pcat">CCTV</div>
+  <div class="pname">Cámara CCTV Bullet Exterior</div>
+  <div class="pdesc">Cámara bullet exterior 2MP, IR 40m, IP66. Para estacionamientos y fachadas.</div>
+  <div class="pprice">Q 380.00</div>
+  <div class="pbtns">
+    <button class="pbuy" onclick="solicitarProd(9)">Solicitar</button>
+    <button class="padd" onclick="addCart(9)">+ Carrito</button>
+  </div>
+</div>
+<div class="pcard fade-in" data-cat="CCTV">
+  
+  <div class="pcat">CCTV</div>
+  <div class="pname">NVR 8 Canales PoE</div>
+  <div class="pdesc">Grabador IP 8 canales con PoE integrado. Soporta cámaras hasta 8MP.</div>
+  <div class="pprice">Q 1250.00</div>
+  <div class="pbtns">
+    <button class="pbuy" onclick="solicitarProd(10)">Solicitar</button>
+    <button class="padd" onclick="addCart(10)">+ Carrito</button>
+  </div>
+</div>
+<div class="pcard fade-in" data-cat="Accesorios">
+  
+  <div class="pcat">Accesorios</div>
+  <div class="pname">Mouse Pad XL</div>
+  <div class="pdesc">Tapete XXL 800x350mm, superficie de tela de alta precisión, base antideslizante.</div>
+  <div class="pprice">Q 55.00</div>
+  <div class="pbtns">
+    <button class="pbuy" onclick="solicitarProd(11)">Solicitar</button>
+    <button class="padd" onclick="addCart(11)">+ Carrito</button>
+  </div>
+</div>
+<div class="pcard fade-in" data-cat="Cables">
+  
+  <div class="pcat">Cables</div>
+  <div class="pname">Adaptador USB-C a HDMI</div>
+  <div class="pdesc">Adaptador USB-C a HDMI 4K. Compatible con MacBook, iPad Pro y laptops USB-C.</div>
+  <div class="pprice">Q 65.00</div>
+  <div class="pbtns">
+    <button class="pbuy" onclick="solicitarProd(12)">Solicitar</button>
+    <button class="padd" onclick="addCart(12)">+ Carrito</button>
+  </div>
+</div>
+<div class="pcard fade-in" data-cat="Componentes PC">
+  
+  <div class="pcat">Componentes PC</div>
+  <div class="pname">Fuente de Poder 650W</div>
+  <div class="pdesc">Fuente de poder 650W 80+ Bronze, modular, protección contra sobretensión.</div>
+  <div class="pprice">Q 320.00</div>
+  <div class="pbtns">
+    <button class="pbuy" onclick="solicitarProd(13)">Solicitar</button>
+    <button class="padd" onclick="addCart(13)">+ Carrito</button>
+  </div>
+</div>
+<div class="pcard fade-in" data-cat="Componentes PC">
+  <div class="ptag">Popular</div>
+  <div class="pcat">Componentes PC</div>
+  <div class="pname">Memoria RAM 8GB DDR4</div>
+  <div class="pdesc">Módulo RAM DDR4 8GB 3200MHz. Compatible con motherboards Intel y AMD.</div>
+  <div class="pprice">Q 185.00</div>
+  <div class="pbtns">
+    <button class="pbuy" onclick="solicitarProd(14)">Solicitar</button>
+    <button class="padd" onclick="addCart(14)">+ Carrito</button>
+  </div>
+</div>
+<div class="pcard fade-in" data-cat="Componentes PC">
+  <div class="ptag">Recomendado</div>
+  <div class="pcat">Componentes PC</div>
+  <div class="pname">SSD 480GB SATA</div>
+  <div class="pdesc">Disco SSD 480GB SATA III. Velocidad de lectura 550MB/s. Ideal para upgrade de laptop o PC.</div>
+  <div class="pprice">Q 245.00</div>
+  <div class="pbtns">
+    <button class="pbuy" onclick="solicitarProd(15)">Solicitar</button>
+    <button class="padd" onclick="addCart(15)">+ Carrito</button>
+  </div>
+</div>
+<div class="pcard fade-in" data-cat="Accesorios">
+  
+  <div class="pcat">Accesorios</div>
+  <div class="pname">Soporte Monitor Doble</div>
+  <div class="pdesc">Soporte para dos monitores hasta 32 pulgadas. Ajuste completo, base con abrazadera.</div>
+  <div class="pprice">Q 165.00</div>
+  <div class="pbtns">
+    <button class="pbuy" onclick="solicitarProd(16)">Solicitar</button>
+    <button class="padd" onclick="addCart(16)">+ Carrito</button>
+  </div>
+</div>
+    </div>
+  </div>
+</div>
+
+
+<footer>
+  <div class="ft">
+    <div>
+      <div class="fbl"><img class="fli" src="logo.png" alt="Logo"/><span class="fln">Web<span>Soft</span> Solutions</span></div>
+      <p class="fd">Tecnología y seguridad profesional en Guastatoya, El Progreso y Guatemala. Servicio técnico garantizado.</p>
+      <div class="fsoc">
+        <a href="#" title="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        <a href="#" title="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+        <a href="#" title="WhatsApp" onclick="openWA()"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></a>
+      </div>
+    </div>
+    <div>
+      <div class="fh">Servicios</div>
+      <ul class="fl">
+        <li><a href="index.html#servicios">Instalación CCTV</a></li>
+        <li><a href="index.html#servicios">Reparación de PC</a></li>
+        <li><a href="index.html#servicios">Mantenimiento laptops</a></li>
+        <li><a href="catalogo.html">Venta de productos</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="fh">Catálogo</div>
+      <ul class="fl">
+        <li><a href="catalogo.html?cat=Periféricos">Periféricos</a></li>
+        <li><a href="catalogo.html?cat=CCTV">Cámaras CCTV</a></li>
+        <li><a href="catalogo.html?cat=Componentes PC">Componentes PC</a></li>
+        <li><a href="catalogo.html?cat=Accesorios">Accesorios</a></li>
+        <li><a href="catalogo.html?cat=Cables">Cables y adaptadores</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="fh">Contacto</div>
+      <ul class="fl">
+        <li><a href="#" onclick="openWA()">WhatsApp: 3671-4377</a></li>
+        <li><a href="index.html#contacto">Guastatoya, El Progreso</a></li>
+        <li><a href="index.html#contacto">Guatemala City, GT</a></li>
+        <li><a href="index.html#contacto">Lun – Sáb 8:00am – 6:00pm</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="fb">
+    <div class="fc">© 2025 WebSoft Solutions · Guastatoya, El Progreso, Guatemala</div>
+    <div class="fc">Tecnología y seguridad profesional</div>
+  </div>
+</footer>
+<a class="waf" onclick="openWA()" title="WhatsApp">
+  <div class="waft">Escríbenos ahora</div>
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+
+var WA="50236714377";
+var PRODS=[{"id": 1, "name": "Mouse Inalámbrico Ergonómico", "cat": "Periféricos", "price": 85, "img": "🖱️", "desc": "Mouse óptico inalámbrico, DPI ajustable, batería recargable. Compatible con Windows y Mac.", "popular": true, "tag": "Más vendido"}, {"id": 2, "name": "Teclado Mecánico USB", "cat": "Periféricos", "price": 120, "img": "⌨️", "desc": "Teclado mecánico retroiluminado, switches duraderos, layout español.", "popular": true, "tag": "Popular"}, {"id": 3, "name": "Audífonos con Micrófono", "cat": "Periféricos", "price": 150, "img": "🎧", "desc": "Audífonos stereo con micrófono integrado, cancelación de ruido, conector 3.5mm y USB.", "popular": true, "tag": "Recomendado"}, {"id": 4, "name": "Cámara CCTV Domo IP 2MP", "cat": "CCTV", "price": 450, "img": "📷", "desc": "Cámara IP domo 2MP, visión nocturna 30m, resistente al agua IP67. Incluye soporte.", "popular": true, "tag": "Más vendido"}, {"id": 5, "name": "DVR 4 Canales 1080P", "cat": "CCTV", "price": 850, "img": "📹", "desc": "Grabador digital 4 canales Full HD. Detección de movimiento, acceso remoto desde celular.", "popular": true, "tag": "Popular"}, {"id": 6, "name": "Cable HDMI 4K 1.8m", "cat": "Cables", "price": 45, "img": "🔌", "desc": "Cable HDMI 2.0 compatible con 4K a 60Hz. Blindado, conectores dorados.", "popular": false, "tag": ""}, {"id": 7, "name": "Hub USB 4 Puertos 3.0", "cat": "Accesorios", "price": 95, "img": "🔋", "desc": "Concentrador USB 3.0 de alta velocidad, 4 puertos, cable integrado.", "popular": false, "tag": ""}, {"id": 8, "name": "Webcam Full HD 1080P", "cat": "Periféricos", "price": 195, "img": "📸", "desc": "Cámara web 1080P con micrófono incorporado. Plug and Play, compatible con Zoom y Teams.", "popular": true, "tag": "Nuevo"}, {"id": 9, "name": "Cámara CCTV Bullet Exterior", "cat": "CCTV", "price": 380, "img": "📷", "desc": "Cámara bullet exterior 2MP, IR 40m, IP66. Para estacionamientos y fachadas.", "popular": false, "tag": ""}, {"id": 10, "name": "NVR 8 Canales PoE", "cat": "CCTV", "price": 1250, "img": "🖥️", "desc": "Grabador IP 8 canales con PoE integrado. Soporta cámaras hasta 8MP.", "popular": false, "tag": ""}, {"id": 11, "name": "Mouse Pad XL", "cat": "Accesorios", "price": 55, "img": "🖱️", "desc": "Tapete XXL 800x350mm, superficie de tela de alta precisión, base antideslizante.", "popular": false, "tag": ""}, {"id": 12, "name": "Adaptador USB-C a HDMI", "cat": "Cables", "price": 65, "img": "🔗", "desc": "Adaptador USB-C a HDMI 4K. Compatible con MacBook, iPad Pro y laptops USB-C.", "popular": false, "tag": ""}, {"id": 13, "name": "Fuente de Poder 650W", "cat": "Componentes PC", "price": 320, "img": "⚡", "desc": "Fuente de poder 650W 80+ Bronze, modular, protección contra sobretensión.", "popular": false, "tag": ""}, {"id": 14, "name": "Memoria RAM 8GB DDR4", "cat": "Componentes PC", "price": 185, "img": "💾", "desc": "Módulo RAM DDR4 8GB 3200MHz. Compatible con motherboards Intel y AMD.", "popular": true, "tag": "Popular"}, {"id": 15, "name": "SSD 480GB SATA", "cat": "Componentes PC", "price": 245, "img": "💿", "desc": "Disco SSD 480GB SATA III. Velocidad de lectura 550MB/s. Ideal para upgrade de laptop o PC.", "popular": true, "tag": "Recomendado"}, {"id": 16, "name": "Soporte Monitor Doble", "cat": "Accesorios", "price": 165, "img": "🖥️", "desc": "Soporte para dos monitores hasta 32 pulgadas. Ajuste completo, base con abrazadera.", "popular": false, "tag": ""}];
+var cart={};
+
+function openWA(msg){
+  var m=msg||"Hola WebSoft Solutions! Me interesa obtener informacion sobre sus servicios en Guastatoya / El Progreso / Guatemala.";
+  window.open("https://wa.me/"+WA+"?text="+encodeURIComponent(m),"_blank");
+}
+
+function solicitarProd(id){
+  var p=PRODS.find(function(x){return x.id===id});
+  if(!p)return;
+  var msg="Hola WebSoft Solutions! Me interesa el siguiente producto:\n\n"
+    +"Producto: "+p.name+"\n"
+    +"Categoria: "+p.cat+"\n"
+    +"Precio referencial: Q "+p.price.toFixed(2)+"\n"
+    +"Descripcion: "+p.desc+"\n\n"
+    +"Solicito informacion de disponibilidad, tiempo de entrega y precio final.\n"
+    +"Ubicacion: Guastatoya / El Progreso / Guatemala.";
+  openWA(msg);
+}
+
+function openCart(){document.getElementById('cartDrawer').classList.add('open');document.getElementById('cartOverlay').classList.add('open');document.body.style.overflow='hidden';}
+function closeCart(){document.getElementById('cartDrawer').classList.remove('open');document.getElementById('cartOverlay').classList.remove('open');document.body.style.overflow='';}
+
+function updateCart(){
+  var total=0,count=0,html='';
+  Object.keys(cart).forEach(function(id){
+    var item=cart[id];total+=item.price*item.qty;count+=item.qty;
+    html+='<div class="cditem"><div class="cditem-emoji">'+item.img+'</div>'
+      +'<div class="cditem-info"><div class="cditem-name">'+item.name+'</div>'
+      +'<div class="cditem-price">Q '+item.price.toFixed(2)+' c/u</div>'
+      +'<div class="cditem-qty">'
+      +'<button class="qb" onclick="cQty('+id+',-1)">-</button>'
+      +'<span class="qv">'+item.qty+'</span>'
+      +'<button class="qb" onclick="cQty('+id+',1)">+</button>'
+      +'<button class="qrm" onclick="rmCart('+id+')">&times;</button>'
+      +'</div></div></div>';
+  });
+  if(!count)html='<div class="cd-empty"><div class="cd-empty-icon">&#x1F6D2;</div><p style="font-weight:600;margin-bottom:6px">El carrito está vacío</p><p style="font-size:13px;color:var(--text2)">Agrega productos para solicitar por WhatsApp</p></div>';
+  document.getElementById('cartItems').innerHTML=html;
+  document.getElementById('cartTotal').textContent='Q '+total.toFixed(2);
+  var b=document.getElementById('cartBadge');b.textContent=count;b.style.display=count?'flex':'none';
+}
+
+function addCart(id){
+  var p=PRODS.find(function(x){return x.id===id});if(!p)return;
+  if(cart[id])cart[id].qty++;else cart[id]={name:p.name,price:p.price,img:p.img,qty:1};
+  updateCart();openCart();
+}
+function cQty(id,d){if(!cart[id])return;cart[id].qty+=d;if(cart[id].qty<=0)delete cart[id];updateCart();}
+function rmCart(id){delete cart[id];updateCart();}
+function pedirCarrito(){
+  if(!Object.keys(cart).length)return;
+  var lines=["Hola WebSoft Solutions! Quisiera solicitar los siguientes productos:\n"];
+  var total=0;
+  Object.keys(cart).forEach(function(id){
+    var i=cart[id];lines.push("- "+i.name+" x"+i.qty+" = Q "+(i.price*i.qty).toFixed(2));total+=i.price*i.qty;
+  });
+  lines.push("\nTotal estimado: Q "+total.toFixed(2));
+  lines.push("\nUbicacion: Guastatoya / El Progreso / Guatemala.");
+  lines.push("Por favor confirmar disponibilidad y precio final.");
+  openWA(lines.join("\n"));
+}
+
+function initNav(){
+  var hb=document.getElementById('hamburger'),mm=document.getElementById('mobileMenu');
+  if(hb&&mm)hb.addEventListener('click',function(){mm.classList.toggle('open')});
+  var nb=document.getElementById('navbar');
+  window.addEventListener('scroll',function(){if(nb)nb.style.boxShadow=window.scrollY>20?'0 2px 24px rgba(0,0,0,.09)':'none'});
+}
+
+function initFade(){
+  if('IntersectionObserver'in window){
+    var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}});},{threshold:.08});
+    document.querySelectorAll('.fade-in').forEach(function(el){obs.observe(el)});
+  }
+}
+
+document.addEventListener('DOMContentLoaded',function(){initNav();initFade();updateCart();});
+
+
+var activeCat='Todos';
+
+function filtrar(cat){
+  if(cat!==undefined){activeCat=cat;document.querySelectorAll('.cf-btn').forEach(function(b){b.classList.toggle('active',b.dataset.cat===cat)});}
+  var q=document.getElementById('searchInput').value.toLowerCase();
+  var sort=document.getElementById('sortSelect').value;
+  var cards=Array.from(document.querySelectorAll('#catGrid .pcard'));
+  var visible=[];
+  cards.forEach(function(c){
+    var name=c.querySelector('.pname').textContent.toLowerCase();
+    var cat2=c.dataset.cat;
+    var match=(activeCat==='Todos'||cat2===activeCat)&&(!q||name.includes(q));
+    c.classList.toggle('hidden',!match);
+    if(match)visible.push(c);
+  });
+  // Sort
+  if(sort){
+    visible.sort(function(a,b){
+      if(sort==='name')return a.querySelector('.pname').textContent.localeCompare(b.querySelector('.pname').textContent);
+      var pa=parseFloat(a.querySelector('.pprice').textContent.replace('Q','').trim());
+      var pb=parseFloat(b.querySelector('.pprice').textContent.replace('Q','').trim());
+      return sort==='asc'?pa-pb:pb-pa;
+    });
+    var grid=document.getElementById('catGrid');
+    visible.forEach(function(c){grid.appendChild(c);});
+  }
+  document.getElementById('prodCount').textContent=visible.length+' producto'+(visible.length!==1?'s':'');
+}
+
+// Read URL param for category filter
+window.addEventListener('DOMContentLoaded',function(){
+  var params=new URLSearchParams(window.location.search);
+  var cat=params.get('cat');
+  if(cat)filtrar(cat);
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,172 @@
+[
+  {
+    "id": 1,
+    "name": "Mouse InalÃ¡mbrico ErgonÃ³mico",
+    "cat": "PerifÃ©ricos",
+    "price": 85,
+    "desc": "Mouse Ã³ptico inalÃ¡mbrico, DPI ajustable, baterÃ­a recargable.",
+    "popular": true,
+    "tag": "MÃ¡s vendido",
+    "active": true
+  },
+  {
+    "id": 2,
+    "name": "Teclado MecÃ¡nico USB",
+    "cat": "PerifÃ©ricos",
+    "price": 120,
+    "desc": "Teclado mecÃ¡nico retroiluminado, switches duraderos, layout espaÃ±ol.",
+    "popular": true,
+    "tag": "Popular",
+    "active": true
+  },
+  {
+    "id": 3,
+    "name": "AudÃ­fonos con MicrÃ³fono",
+    "cat": "PerifÃ©ricos",
+    "price": 150,
+    "desc": "AudÃ­fonos stereo con micrÃ³fono integrado, cancelaciÃ³n de ruido.",
+    "popular": true,
+    "tag": "Recomendado",
+    "active": true
+  },
+  {
+    "id": 4,
+    "name": "CÃ¡mara CCTV Domo IP 2MP",
+    "cat": "CCTV",
+    "price": 450,
+    "desc": "CÃ¡mara IP domo 2MP, visiÃ³n nocturna 30m, resistente al agua IP67.",
+    "popular": true,
+    "tag": "MÃ¡s vendido",
+    "active": true
+  },
+  {
+    "id": 5,
+    "name": "DVR 4 Canales 1080P",
+    "cat": "CCTV",
+    "price": 850,
+    "desc": "Grabador digital 4 canales Full HD. DetecciÃ³n de movimiento, acceso remoto.",
+    "popular": true,
+    "tag": "Popular",
+    "active": true
+  },
+  {
+    "id": 6,
+    "name": "Cable HDMI 4K 1.8m",
+    "cat": "Cables",
+    "price": 45,
+    "desc": "Cable HDMI 2.0 compatible con 4K a 60Hz. Blindado, conectores dorados.",
+    "popular": false,
+    "tag": "",
+    "active": true
+  },
+  {
+    "id": 7,
+    "name": "Hub USB 4 Puertos 3.0",
+    "cat": "Accesorios",
+    "price": 95,
+    "desc": "Concentrador USB 3.0 de alta velocidad, 4 puertos.",
+    "popular": false,
+    "tag": "",
+    "active": true
+  },
+  {
+    "id": 8,
+    "name": "Webcam Full HD 1080P",
+    "cat": "PerifÃ©ricos",
+    "price": 195,
+    "desc": "CÃ¡mara web 1080P con micrÃ³fono. Plug and Play, compatible con Zoom y Teams.",
+    "popular": true,
+    "tag": "Nuevo",
+    "active": true
+  },
+  {
+    "id": 9,
+    "name": "CÃ¡mara CCTV Bullet Exterior",
+    "cat": "CCTV",
+    "price": 380,
+    "desc": "CÃ¡mara bullet exterior 2MP, IR 40m, IP66.",
+    "popular": false,
+    "tag": "",
+    "active": true
+  },
+  {
+    "id": 10,
+    "name": "NVR 8 Canales PoE",
+    "cat": "CCTV",
+    "price": 1250,
+    "desc": "Grabador IP 8 canales con PoE integrado. Soporta cÃ¡maras hasta 8MP.",
+    "popular": false,
+    "tag": "",
+    "active": true
+  },
+  {
+    "id": 11,
+    "name": "Mouse Pad XL",
+    "cat": "Accesorios",
+    "price": 55,
+    "desc": "Tapete XXL 800x350mm, superficie de tela de alta precisiÃ³n.",
+    "popular": false,
+    "tag": "",
+    "active": true
+  },
+  {
+    "id": 12,
+    "name": "Adaptador USB-C a HDMI",
+    "cat": "Cables",
+    "price": 65,
+    "desc": "Adaptador USB-C a HDMI 4K. Compatible con MacBook y laptops USB-C.",
+    "popular": false,
+    "tag": "",
+    "active": true
+  },
+  {
+    "id": 13,
+    "name": "Fuente de Poder 650W",
+    "cat": "Componentes PC",
+    "price": 320,
+    "desc": "Fuente de poder 650W 80+ Bronze, modular.",
+    "popular": false,
+    "tag": "",
+    "active": true
+  },
+  {
+    "id": 14,
+    "name": "Memoria RAM 8GB DDR4",
+    "cat": "Componentes PC",
+    "price": 185,
+    "desc": "MÃ³dulo RAM DDR4 8GB 3200MHz. Compatible con Intel y AMD.",
+    "popular": true,
+    "tag": "Popular",
+    "active": true
+  },
+  {
+    "id": 15,
+    "name": "SSD 480GB SATA",
+    "cat": "Componentes PC",
+    "price": 245,
+    "desc": "Disco SSD 480GB SATA III. Velocidad de lectura 550MB/s.",
+    "popular": true,
+    "tag": "Recomendado",
+    "active": true
+  },
+  {
+    "id": 16,
+    "name": "Soporte Monitor Doble",
+    "cat": "Accesorios",
+    "price": 165,
+    "desc": "Soporte para dos monitores hasta 32 pulgadas. Ajuste completo.",
+    "popular": true,
+    "tag": "",
+    "active": true
+  },
+  {
+    "id": 17,
+    "name": "kit de 4 camaras dahua estilo bullet",
+    "cat": "CCTV",
+    "price": 1250,
+    "desc": "¿Qué contiene el kit de cámaras?:\n1 DVR Penta Híbrido XVR con compresión H265 (DH-XVR1B04-I) CON INTELIGENCIA ARTIFICIA para 4 canales.\n4 cámaras en policarbonato tipo bullet con certificación IP67, infrarrojo de 20m.\n80 Metros de Cable UTP CAT5e (20mt por cámara)\n4 fuentes de poder de 12V 1A\n4 pares de Video Balun\n4 pares de conectores de corriente\nMouse para controlar el DVR.\nEste kit cuenta con disco duro de 500GB\nEl Kit  dahua XVR  de 4 cámaras al igual que los demás productos dahua cuenta con  las características de la marca como poder ver las cámaras por internet por medio de una App en celular o tableta así como instalar el software de Dahua (gratuito) en una computadora para controlar y ver las cámaras desde cualquier ubicación.\n\nIncluye todo para la instalación\nCámaras con detección de movimiento y visión nocturna\nDVR pentahíbrido: soporta formatos IPC, HDCVI, AHD, TVI y CVBS\nApp compatible con Android y iOS\nIncluye disco duro de 500 GB\nAjuste de iluminación programado\nFunción sobre escritura (Overwrite)\nConexión HDMI para pantalla\nConexión VGA para monitor\nPuerto USB para respaldo de videos\n*Instalación no incluida",
+    "popular": true,
+    "tag": "",
+    "active": true
+  }
+]
