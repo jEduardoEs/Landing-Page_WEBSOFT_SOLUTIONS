@@ -84,6 +84,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,
 .cdt2{display:flex;justify-content:space-between;font-size:15px;font-weight:700;margin-bottom:14px}
 .cdwa{width:100%;padding:13px;background:var(--green);color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:all var(--tr);font-family:'DM Sans',sans-serif}
 .cdwa:hover{background:#1ebe5a}
+.cdpedido{width:100%;padding:12px;background:var(--blue);color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:all var(--tr);font-family:'DM Sans',sans-serif;margin-bottom:8px}
+.cdpedido:hover{background:var(--blue-dark)}
+.cdbtn-row{display:flex;flex-direction:column;gap:0}
+.cdiva{font-size:12px;color:var(--text2);margin-bottom:10px}
 
 /* PRODUCT CARD */
 .pcard{background:#fff;border:1.5px solid var(--gray3);border-radius:16px;padding:22px 16px;text-align:center;transition:all var(--tr);position:relative;overflow:hidden;display:flex;flex-direction:column}
@@ -98,6 +102,29 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,
 .pbuy:hover{background:var(--blue-dark)}
 .padd{background:var(--blue-light);color:var(--blue);border:1.5px solid var(--blue-mid);padding:9px 12px;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;transition:all var(--tr);white-space:nowrap;font-family:'DM Sans',sans-serif}
 .padd:hover{background:var(--blue);color:#fff}
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:600;display:none;align-items:center;justify-content:center;padding:20px}
+.modal-overlay.open{display:flex}
+.modal{background:#fff;border-radius:18px;padding:32px;width:100%;max-width:520px;box-shadow:0 24px 80px rgba(0,0,0,.2);max-height:90vh;overflow-y:auto}
+.modal h3{font-family:'Rajdhani',sans-serif;font-size:22px;font-weight:700;margin-bottom:6px}
+.modal p{font-size:13px;color:var(--text2);margin-bottom:22px}
+.mfield{margin-bottom:14px}
+.mfield label{display:block;font-size:11px;font-weight:700;color:var(--text2);text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
+.mfield input,.mfield textarea{width:100%;padding:10px 14px;border:1.5px solid var(--gray3);border-radius:9px;font-family:'DM Sans',sans-serif;font-size:14px;color:var(--text);outline:none;transition:border-color var(--tr)}
+.mfield input:focus,.mfield textarea:focus{border-color:var(--blue)}
+.mfield textarea{resize:vertical;min-height:70px}
+.mgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.mbtns{display:flex;gap:10px;margin-top:20px}
+.mbtn-cancel{flex:1;padding:12px;background:var(--gray2);color:var(--text2);border:none;border-radius:9px;font-size:14px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif}
+.mbtn-send{flex:2;padding:12px;background:var(--blue);color:#fff;border:none;border-radius:9px;font-size:14px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif}
+.mbtn-send:hover{background:var(--blue-dark)}
+.mbtn-wa{flex:1;padding:12px;background:var(--green);color:#fff;border:none;border-radius:9px;font-size:14px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif}
+.pstock-low{position:absolute;top:10px;left:10px;background:#fef3c7;color:#d97706;font-size:9px;font-weight:700;padding:2px 7px;border-radius:20px}
+.pstock-out{position:absolute;top:10px;left:10px;background:#fef2f2;color:#dc2626;font-size:9px;font-weight:700;padding:2px 7px;border-radius:20px}
+.pimg{width:80px;height:80px;object-fit:contain;margin:0 auto 10px;display:block;border-radius:8px}
+.pemoji{font-size:44px;margin-bottom:10px;display:block}
+.prod-loading{text-align:center;padding:60px;color:var(--text2)}
+.spinner{width:36px;height:36px;border:3px solid var(--gray3);border-top-color:var(--blue);border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 12px}
+@keyframes spin{to{transform:rotate(360deg)}}
 
 /* FLOAT WA */
 .waf{position:fixed;bottom:28px;right:28px;z-index:200;width:58px;height:58px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4);cursor:pointer;text-decoration:none;transition:all var(--tr);animation:wapop .8s cubic-bezier(.34,1.56,.64,1) .5s both}
@@ -182,11 +209,38 @@ footer{background:#080b18;padding:36px 24px 24px}
   <div class="cdh"><span class="cdt">Carrito de compras</span><button class="cdclose" onclick="closeCart()">&#x2715;</button></div>
   <div class="cditems" id="cartItems"></div>
   <div class="cdf">
-    <div class="cdt2"><span>Total estimado:</span><span id="cartTotal">Q 0.00</span></div>
+    <div class="cdt2"><span>Total:</span><span id="cartTotal">Q 0.00</span></div>
+    <div class="cdiva" id="cartIva"></div>
+    <div class="cdbtn-row">
+    <button class="cdpedido" onclick="abrirModalPedido()">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      Hacer pedido en línea
+    </button>
     <button class="cdwa" onclick="pedirCarrito()">
       <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
       Solicitar por WhatsApp
     </button>
+  </div>
+</div>
+
+<!-- MODAL PEDIDO -->
+<div class="modal-overlay" id="modalPedido">
+  <div class="modal">
+    <h3>Datos para tu pedido</h3>
+    <p>Completa tus datos y te contactaremos para confirmar.</p>
+    <div class="mgrid">
+      <div class="mfield"><label>Nombre completo *</label><input id="pNombre" placeholder="Tu nombre" required/></div>
+      <div class="mfield"><label>Teléfono *</label><input id="pTel" placeholder="5555-5555" required/></div>
+    </div>
+    <div class="mfield"><label>Email</label><input id="pEmail" type="email" placeholder="correo@ejemplo.com"/></div>
+    <div class="mfield"><label>NIT (CF si no tiene)</label><input id="pNit" placeholder="CF"/></div>
+    <div class="mfield"><label>Dirección de entrega</label><input id="pDir" placeholder="Guastatoya, El Progreso..."/></div>
+    <div class="mfield"><label>Notas adicionales</label><textarea id="pNotas" placeholder="Instrucciones especiales..."></textarea></div>
+    <div class="mbtns">
+      <button class="mbtn-cancel" onclick="cerrarModal()">Cancelar</button>
+      <button class="mbtn-wa" onclick="enviarPedidoWA()">WA</button>
+      <button class="mbtn-send" onclick="enviarPedido()">Enviar pedido</button>
+    </div>
   </div>
 </div>
 <nav id="navbar">
@@ -485,124 +539,203 @@ footer{background:#080b18;padding:36px 24px 24px}
 </a>
 
 <script>
+var WA = "50236714377";
+var POS_URL = "https://websoft-pos-web.vercel.app";
+var IVA = 0.05;
+var PRODS_ALL = [];
+var PRODS_FILTERED = [];
+var cart = {};
+var activeCat = '';
+var busqueda = '';
+var sortOrder = 'default';
 
-var WA="50236714377";
-var PRODS=[{"id": 1, "name": "Mouse Inalámbrico Ergonómico", "cat": "Periféricos", "price": 85, "img": "🖱️", "desc": "Mouse óptico inalámbrico, DPI ajustable, batería recargable. Compatible con Windows y Mac.", "popular": true, "tag": "Más vendido"}, {"id": 2, "name": "Teclado Mecánico USB", "cat": "Periféricos", "price": 120, "img": "⌨️", "desc": "Teclado mecánico retroiluminado, switches duraderos, layout español.", "popular": true, "tag": "Popular"}, {"id": 3, "name": "Audífonos con Micrófono", "cat": "Periféricos", "price": 150, "img": "🎧", "desc": "Audífonos stereo con micrófono integrado, cancelación de ruido, conector 3.5mm y USB.", "popular": true, "tag": "Recomendado"}, {"id": 4, "name": "Cámara CCTV Domo IP 2MP", "cat": "CCTV", "price": 450, "img": "📷", "desc": "Cámara IP domo 2MP, visión nocturna 30m, resistente al agua IP67. Incluye soporte.", "popular": true, "tag": "Más vendido"}, {"id": 5, "name": "DVR 4 Canales 1080P", "cat": "CCTV", "price": 850, "img": "📹", "desc": "Grabador digital 4 canales Full HD. Detección de movimiento, acceso remoto desde celular.", "popular": true, "tag": "Popular"}, {"id": 6, "name": "Cable HDMI 4K 1.8m", "cat": "Cables", "price": 45, "img": "🔌", "desc": "Cable HDMI 2.0 compatible con 4K a 60Hz. Blindado, conectores dorados.", "popular": false, "tag": ""}, {"id": 7, "name": "Hub USB 4 Puertos 3.0", "cat": "Accesorios", "price": 95, "img": "🔋", "desc": "Concentrador USB 3.0 de alta velocidad, 4 puertos, cable integrado.", "popular": false, "tag": ""}, {"id": 8, "name": "Webcam Full HD 1080P", "cat": "Periféricos", "price": 195, "img": "📸", "desc": "Cámara web 1080P con micrófono incorporado. Plug and Play, compatible con Zoom y Teams.", "popular": true, "tag": "Nuevo"}, {"id": 9, "name": "Cámara CCTV Bullet Exterior", "cat": "CCTV", "price": 380, "img": "📷", "desc": "Cámara bullet exterior 2MP, IR 40m, IP66. Para estacionamientos y fachadas.", "popular": false, "tag": ""}, {"id": 10, "name": "NVR 8 Canales PoE", "cat": "CCTV", "price": 1250, "img": "🖥️", "desc": "Grabador IP 8 canales con PoE integrado. Soporta cámaras hasta 8MP.", "popular": false, "tag": ""}, {"id": 11, "name": "Mouse Pad XL", "cat": "Accesorios", "price": 55, "img": "🖱️", "desc": "Tapete XXL 800x350mm, superficie de tela de alta precisión, base antideslizante.", "popular": false, "tag": ""}, {"id": 12, "name": "Adaptador USB-C a HDMI", "cat": "Cables", "price": 65, "img": "🔗", "desc": "Adaptador USB-C a HDMI 4K. Compatible con MacBook, iPad Pro y laptops USB-C.", "popular": false, "tag": ""}, {"id": 13, "name": "Fuente de Poder 650W", "cat": "Componentes PC", "price": 320, "img": "⚡", "desc": "Fuente de poder 650W 80+ Bronze, modular, protección contra sobretensión.", "popular": false, "tag": ""}, {"id": 14, "name": "Memoria RAM 8GB DDR4", "cat": "Componentes PC", "price": 185, "img": "💾", "desc": "Módulo RAM DDR4 8GB 3200MHz. Compatible con motherboards Intel y AMD.", "popular": true, "tag": "Popular"}, {"id": 15, "name": "SSD 480GB SATA", "cat": "Componentes PC", "price": 245, "img": "💿", "desc": "Disco SSD 480GB SATA III. Velocidad de lectura 550MB/s. Ideal para upgrade de laptop o PC.", "popular": true, "tag": "Recomendado"}, {"id": 16, "name": "Soporte Monitor Doble", "cat": "Accesorios", "price": 165, "img": "🖥️", "desc": "Soporte para dos monitores hasta 32 pulgadas. Ajuste completo, base con abrazadera.", "popular": false, "tag": ""}];
-var cart={};
-
-function openWA(msg){
-  var m=msg||"Hola WebSoft Solutions! Me interesa obtener informacion sobre sus servicios en Guastatoya / El Progreso / Guatemala.";
-  window.open("https://wa.me/"+WA+"?text="+encodeURIComponent(m),"_blank");
+function getEmoji(cat) {
+  var m = {"Periféricos":"🖥️","CCTV":"📷","Componentes PC":"💾","Accesorios":"🔧","Cables":"🔌"};
+  return m[cat] || "📦";
 }
 
-function solicitarProd(id){
-  var p=PRODS.find(function(x){return x.id===id});
-  if(!p)return;
-  var msg="Hola WebSoft Solutions! Me interesa el siguiente producto:\n\n"
-    +"Producto: "+p.name+"\n"
-    +"Categoria: "+p.cat+"\n"
-    +"Precio referencial: Q "+p.price.toFixed(2)+"\n"
-    +"Descripcion: "+p.desc+"\n\n"
-    +"Solicito informacion de disponibilidad, tiempo de entrega y precio final.\n"
-    +"Ubicacion: Guastatoya / El Progreso / Guatemala.";
-  openWA(msg);
+async function loadProductos() {
+  try {
+    var res = await fetch(POS_URL + "/api/tienda/productos", { headers: { "Accept": "application/json" } });
+    var data = await res.json();
+    PRODS_ALL = data.productos || [];
+    // Update category filters
+    var cats = data.categorias || [];
+    var filterDiv = document.querySelector('.cf-filters');
+    if (filterDiv && cats.length) {
+      var btns = '<button class="cf-btn active" data-cat="" onclick="filtrar('')">Todos</button>';
+      cats.forEach(function(cat) {
+        btns += '<button class="cf-btn" data-cat="' + cat + '" onclick="filtrar('' + cat + '')">' + cat + '</button>';
+      });
+      filterDiv.innerHTML = btns;
+    }
+    filtrar();
+  } catch(e) {
+    // Fallback
+    console.warn("POS no disponible, usando productos estáticos");
+    PRODS_ALL = [
+      {id:1,nombre:"Mouse Inalámbrico Ergonómico",categoria:"Periféricos",precio:85,descripcion:"Mouse óptico inalámbrico, DPI ajustable, batería recargable.",stock:10},
+      {id:2,nombre:"Teclado Mecánico USB",categoria:"Periféricos",precio:120,descripcion:"Teclado mecánico retroiluminado, switches duraderos.",stock:8},
+      {id:3,nombre:"Audífonos con Micrófono",categoria:"Periféricos",precio:150,descripcion:"Stereo con micrófono integrado, cancelación de ruido.",stock:5},
+      {id:4,nombre:"Cámara CCTV Domo IP 2MP",categoria:"CCTV",precio:450,descripcion:"Visión nocturna 30m, resistente al agua IP67.",stock:6},
+      {id:5,nombre:"DVR 4 Canales 1080P",categoria:"CCTV",precio:850,descripcion:"Grabador 4 canales Full HD, acceso remoto.",stock:4},
+      {id:6,nombre:"Webcam Full HD 1080P",categoria:"Periféricos",precio:195,descripcion:"1080P con micrófono, Plug and Play.",stock:7},
+      {id:7,nombre:"Memoria RAM 8GB DDR4",categoria:"Componentes PC",precio:185,descripcion:"DDR4 3200MHz. Compatible Intel y AMD.",stock:12},
+      {id:8,nombre:"SSD 480GB SATA",categoria:"Componentes PC",precio:245,descripcion:"SATA III 550MB/s. Ideal para upgrade.",stock:9},
+      {id:9,nombre:"Cable HDMI 4K 1.8m",categoria:"Cables",precio:45,descripcion:"HDMI 2.0 compatible 4K a 60Hz.",stock:20},
+      {id:10,nombre:"Hub USB 4 Puertos 3.0",categoria:"Accesorios",precio:95,descripcion:"USB 3.0 alta velocidad, 4 puertos.",stock:15},
+      {id:11,nombre:"Mouse Pad XL",categoria:"Accesorios",precio:55,descripcion:"800x350mm, superficie alta precisión.",stock:18},
+      {id:12,nombre:"NVR 8 Canales PoE",categoria:"CCTV",precio:1250,descripcion:"IP 8 canales PoE. Soporta hasta 8MP.",stock:3},
+    ];
+    filtrar();
+  }
 }
 
-function openCart(){document.getElementById('cartDrawer').classList.add('open');document.getElementById('cartOverlay').classList.add('open');document.body.style.overflow='hidden';}
-function closeCart(){document.getElementById('cartDrawer').classList.remove('open');document.getElementById('cartOverlay').classList.remove('open');document.body.style.overflow='';}
+function filtrar(cat, search, sort) {
+  if (cat !== undefined) activeCat = cat;
+  if (search !== undefined) busqueda = search;
+  if (sort !== undefined) sortOrder = sort;
 
-function updateCart(){
-  var total=0,count=0,html='';
-  Object.keys(cart).forEach(function(id){
-    var item=cart[id];total+=item.price*item.qty;count+=item.qty;
-    html+='<div class="cditem"><div class="cditem-emoji">'+item.img+'</div>'
-      +'<div class="cditem-info"><div class="cditem-name">'+item.name+'</div>'
-      +'<div class="cditem-price">Q '+item.price.toFixed(2)+' c/u</div>'
-      +'<div class="cditem-qty">'
-      +'<button class="qb" onclick="cQty('+id+',-1)">-</button>'
-      +'<span class="qv">'+item.qty+'</span>'
-      +'<button class="qb" onclick="cQty('+id+',1)">+</button>'
-      +'<button class="qrm" onclick="rmCart('+id+')">&times;</button>'
-      +'</div></div></div>';
+  // Update active button
+  document.querySelectorAll('.cf-btn').forEach(function(b) {
+    b.classList.toggle('active', b.dataset.cat === activeCat);
   });
-  if(!count)html='<div class="cd-empty"><div class="cd-empty-icon">&#x1F6D2;</div><p style="font-weight:600;margin-bottom:6px">El carrito está vacío</p><p style="font-size:13px;color:var(--text2)">Agrega productos para solicitar por WhatsApp</p></div>';
-  document.getElementById('cartItems').innerHTML=html;
-  document.getElementById('cartTotal').textContent='Q '+total.toFixed(2);
-  var b=document.getElementById('cartBadge');b.textContent=count;b.style.display=count?'flex':'none';
+
+  var q = busqueda.toLowerCase();
+  PRODS_FILTERED = PRODS_ALL.filter(function(p) {
+    var matchCat = !activeCat || p.categoria === activeCat;
+    var matchQ = !q || p.nombre.toLowerCase().includes(q) || (p.descripcion||'').toLowerCase().includes(q) || (p.codigo||'').toLowerCase().includes(q);
+    return matchCat && matchQ;
+  });
+
+  if (sortOrder === 'asc') PRODS_FILTERED.sort(function(a,b){ return a.precio - b.precio; });
+  else if (sortOrder === 'desc') PRODS_FILTERED.sort(function(a,b){ return b.precio - a.precio; });
+  else if (sortOrder === 'nombre') PRODS_FILTERED.sort(function(a,b){ return a.nombre.localeCompare(b.nombre); });
+
+  renderGrid();
 }
 
-function addCart(id){
-  var p=PRODS.find(function(x){return x.id===id});if(!p)return;
-  if(cart[id])cart[id].qty++;else cart[id]={name:p.name,price:p.price,img:p.img,qty:1};
-  updateCart();openCart();
+function renderGrid() {
+  var grid = document.getElementById('catGrid');
+  if (!grid) return;
+  var count = document.getElementById('prodCount');
+  if (count) count.textContent = PRODS_FILTERED.length + ' productos';
+
+  if (!PRODS_FILTERED.length) {
+    grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:80px 20px;color:var(--text2)"><div style="font-size:44px;margin-bottom:16px">🔍</div><h3 style="font-family:Rajdhani,sans-serif;font-size:22px;margin-bottom:8px">Sin resultados</h3><p>Intenta con otra categoría o término de búsqueda.</p></div>';
+    return;
+  }
+
+  grid.innerHTML = PRODS_FILTERED.map(function(p) {
+    var stockBadge = p.stock === 0
+      ? '<div class="pstock-out">Agotado</div>'
+      : p.stock <= 5
+      ? '<div class="pstock-low">⚡ Últimas ' + p.stock + '</div>'
+      : '';
+    var img = p.imagenUrl
+      ? '<img class="pimg" src="' + p.imagenUrl + '" alt="' + p.nombre + '" onerror="this.style.display='none'">'
+      : '<span class="pemoji">' + getEmoji(p.categoria) + '</span>';
+    var disabled = p.stock === 0 ? ' disabled' : '';
+    return '<div class="pcard fade-in">'
+      + stockBadge + img
+      + '<div class="pcat">' + (p.categoria||'') + '</div>'
+      + '<div class="pname">' + p.nombre + '</div>'
+      + '<div class="pdesc">' + (p.descripcion||'') + '</div>'
+      + '<div class="pprice">Q ' + Number(p.precio).toFixed(2) + '</div>'
+      + '<div class="pbtns">'
+      + '<button class="pbuy"' + disabled + ' onclick="solicitarProd(' + p.id + ')">Solicitar</button>'
+      + '<button class="padd"' + disabled + ' onclick="addCart(' + p.id + ')">+ Carrito</button>'
+      + '</div></div>';
+  }).join('');
+  initFade();
+}
+
+// Cart
+function addCart(id) {
+  var p = PRODS_ALL.find(function(x) { return x.id === id; });
+  if (!p || p.stock === 0) return;
+  if (cart[id]) cart[id].qty++; else cart[id] = { id:p.id, nombre:p.nombre, precio:p.precio, imagenUrl:p.imagenUrl, emoji:getEmoji(p.categoria), qty:1, stock:p.stock };
+  if (cart[id].qty > cart[id].stock) { cart[id].qty = cart[id].stock; alert("Stock máximo: " + cart[id].stock); }
+  updateCart(); openCart();
 }
 function cQty(id,d){if(!cart[id])return;cart[id].qty+=d;if(cart[id].qty<=0)delete cart[id];updateCart();}
 function rmCart(id){delete cart[id];updateCart();}
-function pedirCarrito(){
-  if(!Object.keys(cart).length)return;
-  var lines=["Hola WebSoft Solutions! Quisiera solicitar los siguientes productos:\n"];
-  var total=0;
+function updateCart(){
+  var total=0,count=0,html='';
   Object.keys(cart).forEach(function(id){
-    var i=cart[id];lines.push("- "+i.name+" x"+i.qty+" = Q "+(i.price*i.qty).toFixed(2));total+=i.price*i.qty;
+    var item=cart[id];total+=item.precio*item.qty;count+=item.qty;
+    var imgHtml=item.imagenUrl?'<img src="'+item.imagenUrl+'" style="width:48px;height:48px;object-fit:contain;border-radius:8px;background:#f4f7fb;flex-shrink:0">':'<div class="cditem-img">'+item.emoji+'</div>';
+    html+='<div class="cditem">'+imgHtml+'<div class="cditem-info"><div class="cditem-name">'+item.nombre+'</div><div class="cditem-price">Q '+item.precio.toFixed(2)+' c/u</div><div class="cditem-qty"><button class="qb" onclick="cQty('+id+',-1)">-</button><span class="qv">'+item.qty+'</span><button class="qb" onclick="cQty('+id+',1)">+</button><button class="qrm" onclick="rmCart('+id+')">&times;</button></div></div></div>';
   });
-  lines.push("\nTotal estimado: Q "+total.toFixed(2));
-  lines.push("\nUbicacion: Guastatoya / El Progreso / Guatemala.");
-  lines.push("Por favor confirmar disponibilidad y precio final.");
-  openWA(lines.join("\n"));
+  if(!count)html='<div class="cd-empty"><div class="cd-empty-icon">&#x1F6D2;</div><p style="font-weight:600;margin-bottom:6px">El carrito está vacío</p></div>';
+  document.getElementById('cartItems').innerHTML=html;
+  var iva=total*IVA;
+  document.getElementById('cartTotal').textContent='Q '+(total+iva).toFixed(2);
+  var ivaEl=document.getElementById('cartIva');if(ivaEl)ivaEl.textContent=count?'Incluye IVA (5%): Q '+iva.toFixed(2):'';
+  var b=document.getElementById('cartBadge');b.textContent=count;b.style.display=count?'flex':'none';
 }
+function openCart(){document.getElementById('cartDrawer').classList.add('open');document.getElementById('cartOverlay').classList.add('open');document.body.style.overflow='hidden';}
+function closeCart(){document.getElementById('cartDrawer').classList.remove('open');document.getElementById('cartOverlay').classList.remove('open');document.body.style.overflow='';}
+
+// Pedido
+function abrirModalPedido(){if(!Object.keys(cart).length){alert("El carrito está vacío");return;}closeCart();var m=document.getElementById('modalPedido');if(m)m.classList.add('open');}
+function cerrarModal(){var m=document.getElementById('modalPedido');if(m)m.classList.remove('open');}
+async function enviarPedido(){
+  var nombre=document.getElementById('pNombre').value.trim();
+  var tel=document.getElementById('pTel').value.trim();
+  if(!nombre||!tel){alert("Nombre y teléfono son requeridos");return;}
+  var items=Object.values(cart).map(function(i){return{productoId:i.id,nombre:i.nombre,precio:i.precio,cantidad:i.qty,imagenUrl:i.imagenUrl};});
+  var btn=document.querySelector('.mbtn-send');btn.textContent='Enviando...';btn.disabled=true;
+  try{
+    var res=await fetch(POS_URL+"/api/tienda/pedidos",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({clienteNombre:nombre,clienteEmail:document.getElementById('pEmail').value||(tel+"@ws.gt"),clienteTelefono:tel,clienteNit:document.getElementById('pNit').value||'CF',clienteDireccion:document.getElementById('pDir').value,notas:document.getElementById('pNotas').value,items:items})});
+    var data=await res.json();
+    if(data.ok){cerrarModal();cart={};updateCart();alert("✅ Pedido "+data.numero+" registrado. Te contactaremos al "+tel);var msg="Hola WebSoft! Pedido en línea: "+data.numero+" - Nombre: "+nombre+" - Tel: "+tel;window.open("https://wa.me/"+WA+"?text="+encodeURIComponent(msg),"_blank");}
+    else alert("Error: "+(data.error||"No se pudo enviar"));
+  }catch(e){enviarPedidoWA();}
+  btn.textContent='Enviar pedido';btn.disabled=false;
+}
+function enviarPedidoWA(){
+  var nombre=document.getElementById('pNombre').value||'';var tel=document.getElementById('pTel').value||'';
+  var lines=["Hola WebSoft! Pedido:
+"];if(nombre)lines.push("Nombre: "+nombre);if(tel)lines.push("Tel: "+tel);
+  var total=0;Object.values(cart).forEach(function(i){lines.push("- "+i.nombre+" x"+i.qty+" = Q "+(i.precio*i.qty).toFixed(2));total+=i.precio*i.qty;});
+  lines.push("TOTAL (con IVA): Q "+(total*1.05).toFixed(2));
+  cerrarModal();window.open("https://wa.me/"+WA+"?text="+encodeURIComponent(lines.join("
+")),"_blank");
+}
+function pedirCarrito(){abrirModalPedido();}
+
+function solicitarProd(id){
+  var p=PRODS_ALL.find(function(x){return x.id===id;});if(!p)return;
+  var msg="Hola WebSoft! Me interesa: "+p.nombre+" (Q "+Number(p.precio).toFixed(2)+"). Solicito disponibilidad en Guastatoya/GT.";
+  window.open("https://wa.me/"+WA+"?text="+encodeURIComponent(msg),"_blank");
+}
+function openWA(msg){window.open("https://wa.me/"+WA+"?text="+encodeURIComponent(msg||"Hola WebSoft Solutions!"),"_blank");}
 
 function initNav(){
   var hb=document.getElementById('hamburger'),mm=document.getElementById('mobileMenu');
-  if(hb&&mm)hb.addEventListener('click',function(){mm.classList.toggle('open')});
+  if(hb&&mm)hb.addEventListener('click',function(){mm.classList.toggle('open');});
   var nb=document.getElementById('navbar');
-  window.addEventListener('scroll',function(){if(nb)nb.style.boxShadow=window.scrollY>20?'0 2px 24px rgba(0,0,0,.09)':'none'});
+  window.addEventListener('scroll',function(){if(nb)nb.style.boxShadow=window.scrollY>20?'0 2px 24px rgba(0,0,0,.09)':'none';});
 }
-
 function initFade(){
-  if('IntersectionObserver'in window){
-    var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}});},{threshold:.08});
-    document.querySelectorAll('.fade-in').forEach(function(el){obs.observe(el)});
-  }
+  if('IntersectionObserver'in window){var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}});},{threshold:.08});document.querySelectorAll('.fade-in:not(.visible)').forEach(function(el){obs.observe(el);});}
+  else document.querySelectorAll('.fade-in').forEach(function(el){el.classList.add('visible');});
 }
 
-document.addEventListener('DOMContentLoaded',function(){initNav();initFade();updateCart();});
-
-
-var activeCat='Todos';
-
-function filtrar(cat){
-  if(cat!==undefined){activeCat=cat;document.querySelectorAll('.cf-btn').forEach(function(b){b.classList.toggle('active',b.dataset.cat===cat)});}
-  var q=document.getElementById('searchInput').value.toLowerCase();
-  var sort=document.getElementById('sortSelect').value;
-  var cards=Array.from(document.querySelectorAll('#catGrid .pcard'));
-  var visible=[];
-  cards.forEach(function(c){
-    var name=c.querySelector('.pname').textContent.toLowerCase();
-    var cat2=c.dataset.cat;
-    var match=(activeCat==='Todos'||cat2===activeCat)&&(!q||name.includes(q));
-    c.classList.toggle('hidden',!match);
-    if(match)visible.push(c);
-  });
+document.addEventListener('DOMContentLoaded', function() {
+  initNav(); initFade(); updateCart();
+  // Read cat from URL
+  var urlParams = new URLSearchParams(window.location.search);
+  var catParam = urlParams.get('cat') || '';
+  activeCat = catParam;
+  loadProductos();
+  // Search input
+  var si = document.getElementById('searchInput');
+  if (si) si.addEventListener('input', function() { filtrar(undefined, this.value); });
   // Sort
-  if(sort){
-    visible.sort(function(a,b){
-      if(sort==='name')return a.querySelector('.pname').textContent.localeCompare(b.querySelector('.pname').textContent);
-      var pa=parseFloat(a.querySelector('.pprice').textContent.replace('Q','').trim());
-      var pb=parseFloat(b.querySelector('.pprice').textContent.replace('Q','').trim());
-      return sort==='asc'?pa-pb:pb-pa;
-    });
-    var grid=document.getElementById('catGrid');
-    visible.forEach(function(c){grid.appendChild(c);});
-  }
-  document.getElementById('prodCount').textContent=visible.length+' producto'+(visible.length!==1?'s':'');
-}
-
-// Read URL param for category filter
-window.addEventListener('DOMContentLoaded',function(){
-  var params=new URLSearchParams(window.location.search);
-  var cat=params.get('cat');
-  if(cat)filtrar(cat);
+  var so = document.getElementById('sortSelect');
+  if (so) so.addEventListener('change', function() { filtrar(undefined, undefined, this.value); });
 });
 </script>
 </body>
-</html>
