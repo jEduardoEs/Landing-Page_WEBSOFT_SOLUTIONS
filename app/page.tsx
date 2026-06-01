@@ -188,7 +188,7 @@ export default function HomePage() {
             </div>
             <h2 style={{ fontFamily: 'Rajdhani, sans-serif', fontSize: 40, fontWeight: 700, marginBottom: 16 }}>Nuestros <span style={{ color: 'var(--blue)' }}>Servicios</span></h2>
           </div>
-          <div className="services-grid" className="testimonials-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 22 }}>
+          <div className="services-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 22 }}>
             {[
               { icon: 'M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z', title: 'Sistemas CCTV', desc: 'Instalación y configuración profesional de cámaras de seguridad.', items: ['Cámaras IP, domo y analógicas','Configuración de DVR/NVR','Visualización remota desde celular','Mantenimiento preventivo'], href: '/catalogo?cat=CCTV' },
               { icon: 'M2 3h20v14H2z M8 21h8 M12 17v4', title: 'PC y Laptops', desc: 'Servicio técnico especializado. Diagnóstico gratuito sin compromiso.', items: ['Mantenimiento preventivo y correctivo','Reparación de hardware y pantallas','Instalación de software y sistemas','Recuperación de datos'], href: null },
@@ -301,7 +301,7 @@ export default function HomePage() {
           <div style={{ textAlign: 'center', marginBottom: 52 }} className="fade-up">
             <h2 style={{ fontFamily: 'Rajdhani, sans-serif', fontSize: 40, fontWeight: 700, marginBottom: 16 }}>Lo que dicen nuestros <span style={{ color: 'var(--blue)' }}>clientes</span></h2>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 22 }}>
+          <div className="testimonials-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 22 }}>
             {[
               { t: 'María Castillo', r: 'Propietaria · Guastatoya', q: '"Instalaron mis cámaras en el negocio en un solo día. El trabajo quedó impecable y ahora monitoreo todo desde mi celular."', i: 'MC' },
               { t: 'Juan Rodríguez', r: 'Freelancer · El Progreso', q: '"Me repararon la laptop que ya había dado por perdida. Trabajo rápido, precio justo y me explicaron todo."', i: 'JR' },
