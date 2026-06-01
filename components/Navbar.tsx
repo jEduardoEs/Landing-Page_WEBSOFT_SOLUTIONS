@@ -22,7 +22,7 @@ export default function Navbar({ cartCount = 0, onCartOpen }: NavbarProps) {
   const openWA = () => window.open(`https://wa.me/${WA}?text=${encodeURIComponent('Hola WebSoft Solutions! Me interesa obtener información sobre sus servicios.')}`, '_blank')
 
   return (
-    <nav style={{
+    <nav className='nav-glass' style={{
       position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100,
       background: 'rgba(255,255,255,.97)', backdropFilter: 'blur(16px)',
       borderBottom: '1px solid var(--gray3)', padding: '0 24px',

@@ -17,7 +17,7 @@ export default function ProductCard({ producto: p, onAddCart }: Props) {
   }
 
   return (
-    <div style={{
+    <div className='pcard-ios' style={{
       background: '#fff', border: '1.5px solid var(--gray3)', borderRadius: 16,
       padding: '16px', textAlign: 'center', display: 'flex', flexDirection: 'column',
       position: 'relative', overflow: 'hidden', transition: 'all .25s',

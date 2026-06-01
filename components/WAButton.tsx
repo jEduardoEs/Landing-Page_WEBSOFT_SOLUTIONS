@@ -5,7 +5,7 @@ export default function WAButton() {
   return (
     <a href={`https://wa.me/${WA}?text=${encodeURIComponent('Hola WebSoft Solutions! Me interesa obtener información.')}`}
       target="_blank" rel="noopener noreferrer"
-      style={{ position: 'fixed', bottom: 28, right: 28, zIndex: 200, width: 58, height: 58, borderRadius: '50%', background: 'var(--green)', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 4px 20px rgba(37,211,102,.4)', textDecoration: 'none', transition: 'all .25s', animation: 'wapop .8s cubic-bezier(.34,1.56,.64,1) .5s both' }}
+      className='wa-glass' style={{ position: 'fixed', bottom: 28, right: 28, zIndex: 200, width: 58, height: 58, borderRadius: '50%', background: 'var(--green)', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 4px 20px rgba(37,211,102,.4)', textDecoration: 'none', transition: 'all .25s', animation: 'wapop .8s cubic-bezier(.34,1.56,.64,1) .5s both' }}
       onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = 'scale(1.1)'; (e.currentTarget as HTMLElement).style.background = '#1ebe5a' }}
       onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = ''; (e.currentTarget as HTMLElement).style.background = 'var(--green)' }}>
       <svg width={26} height={26} viewBox="0 0 24 24" fill="white">

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import IOSProvider from '@/components/IOSProvider'
 
 export const metadata: Metadata = {
   title: 'WebSoft Solutions | Tecnología y Seguridad · Guastatoya, El Progreso',
@@ -12,11 +13,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="es">
       <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
       </head>
-      <body>{children}</body>
+      <body><IOSProvider />{children}</body>
     </html>
   )
 }

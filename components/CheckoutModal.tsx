@@ -179,7 +179,7 @@ export default function CheckoutModal({ open, items, onClose, onSuccess }: Props
   return (
     <div style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,.6)', zIndex: 600, display: 'flex', alignItems: 'flex-end', justifyContent: 'center', padding: 0 }}
       onClick={e => e.target === e.currentTarget && step !== 'confirmado' && cerrar()}>
-      <div style={{ background: '#fff', borderRadius: '18px 18px 0 0', width: '100%', maxWidth: 540, maxHeight: '92vh', display: 'flex', flexDirection: 'column', boxShadow: '0 -8px 40px rgba(0,0,0,.2)' }}>
+      <div className='checkout-glass' style={{ background: '#fff', borderRadius: '18px 18px 0 0', width: '100%', maxWidth: 540, maxHeight: '92vh', display: 'flex', flexDirection: 'column', boxShadow: '0 -8px 40px rgba(0,0,0,.2)' }}>
 
         {/* Drag handle */}
         <div style={{ display: 'flex', justifyContent: 'center', padding: '12px 0 0' }}>

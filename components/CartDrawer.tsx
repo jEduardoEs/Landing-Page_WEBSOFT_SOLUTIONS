@@ -31,7 +31,7 @@ export default function CartDrawer({ open, items, onClose, onQty, onRemove, onPe
       {open && <div onClick={onClose} style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,.45)', zIndex: 499 }} />}
 
       {/* Drawer */}
-      <div style={{
+      <div className='cart-glass' style={{
         position: 'fixed', right: 0, top: 0, bottom: 0, width: 'min(400px, 100vw)',
         background: '#fff', zIndex: 500,
         boxShadow: '-8px 0 40px rgba(0,0,0,.12)',
