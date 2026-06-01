@@ -388,9 +388,9 @@ async function loadProductos() {
     var cats = data.categorias || [];
     var filterDiv = document.querySelector('.cat-filters');
     if (filterDiv && cats.length) {
-      var btns = '<button class="cf-btn active" data-cat="" onclick="filtrar('')">Todos</button>';
+      var btns = '<button class="cf-btn active" data-cat="" onclick="filtrar(\'\')">Todos</button>';
       cats.forEach(function(cat) {
-        btns += '<button class="cf-btn" data-cat="' + cat + '" onclick="filtrar('' + cat + '')">' + cat + '</button>';
+        btns += '<button class="cf-btn" data-cat="' + cat + '" onclick="filtrar(\'' + cat + '\')">' + cat + '</button>';
       });
       filterDiv.innerHTML = btns;
     }
@@ -458,7 +458,7 @@ function renderGrid() {
       ? '<div class="pstock-low">⚡ Últimas ' + p.stock + '</div>'
       : '';
     var img = p.imagenUrl
-      ? '<img class="pimg" src="' + p.imagenUrl + '" alt="' + p.nombre + '" onerror="this.style.display='none'">'
+      ? '<img class="pimg" src="' + p.imagenUrl + '" alt="' + p.nombre + '" onerror="this.style.display=\'none\'">'
       : '<span class="pemoji">' + getEmoji(p.categoria) + '</span>';
     var disabled = p.stock === 0 ? ' disabled' : '';
     return '<div class="pcard fade-in">'
@@ -521,12 +521,10 @@ async function enviarPedido(){
 }
 function enviarPedidoWA(){
   var nombre=document.getElementById('pNombre').value||'';var tel=document.getElementById('pTel').value||'';
-  var lines=["Hola WebSoft! Pedido:
-"];if(nombre)lines.push("Nombre: "+nombre);if(tel)lines.push("Tel: "+tel);
+  var lines=["Hola WebSoft! Pedido:\n"];if(nombre)lines.push("Nombre: "+nombre);if(tel)lines.push("Tel: "+tel);
   var total=0;Object.values(cart).forEach(function(i){lines.push("- "+i.nombre+" x"+i.qty+" = Q "+(i.precio*i.qty).toFixed(2));total+=i.precio*i.qty;});
   lines.push("TOTAL (con IVA): Q "+(total*1.05).toFixed(2));
-  cerrarModal();window.open("https://wa.me/"+WA+"?text="+encodeURIComponent(lines.join("
-")),"_blank");
+  cerrarModal();window.open("https://wa.me/"+WA+"?text="+encodeURIComponent(lines.join("\n")),"_blank");
 }
 function pedirCarrito(){abrirModalPedido();}
 
