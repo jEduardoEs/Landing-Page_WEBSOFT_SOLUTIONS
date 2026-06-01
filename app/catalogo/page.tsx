@@ -92,7 +92,7 @@ function CatalogoContent() {
       <div style={{ padding: '48px 24px 80px', background: 'var(--gray2)', minHeight: '60vh' }}>
         <div style={{ maxWidth: 1140, margin: '0 auto' }}>
           {/* Toolbar */}
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 14, marginBottom: 28, background: '#fff', border: '1px solid var(--gray3)', borderRadius: 12, padding: '14px 18px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 10, marginBottom: 20, background: '#fff', border: '1px solid var(--gray3)', borderRadius: 12, padding: '12px 14px' }}>
             <div style={{ flex: 1, minWidth: 200, display: 'flex', alignItems: 'center', gap: 8, border: '1.5px solid var(--gray3)', borderRadius: 8, padding: '8px 14px' }}>
               <svg width={16} height={16} viewBox="0 0 24 24" fill="none" stroke="var(--text2)" strokeWidth={2}><circle cx={11} cy={11} r={8}/><path d="m21 21-4.35-4.35"/></svg>
               <input style={inp} placeholder="Buscar producto..." value={busqueda} onChange={e => setBusqueda(e.target.value)} />
@@ -129,7 +129,7 @@ function CatalogoContent() {
               <p>Intenta con otra categoría o término de búsqueda.</p>
             </div>
           ) : (
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 18 }}>
+            <div className='prod-grid-4' style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 18 }}>
               {filtrados.map(p => <ProductCard key={p.id} producto={p} onAddCart={addCart} />)}
             </div>
           )}

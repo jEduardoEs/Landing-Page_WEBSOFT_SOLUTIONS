@@ -71,3 +71,46 @@ body {
   cursor: pointer;
 }
 .btn-secondary:hover { background: var(--blue-light); }
+
+/* ── Mobile responsiveness ──────────────────────────────── */
+@media (max-width: 768px) {
+  /* Nav */
+  .desktop-nav { display: none !important; }
+  .mobile-only { display: flex !important; }
+
+  /* Hero */
+  .hero-grid { grid-template-columns: 1fr !important; text-align: center; }
+  .hero-grid h1 { font-size: 36px !important; }
+  .hero-btns { justify-content: center !important; }
+  .hero-trust { justify-content: center !important; }
+
+  /* Products grid */
+  .prod-grid-4 { grid-template-columns: repeat(2, 1fr) !important; }
+
+  /* Services */
+  .services-grid { grid-template-columns: 1fr !important; }
+
+  /* Why us */
+  .why-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+
+  /* Gallery */
+  .gallery-grid { grid-template-columns: repeat(2, 1fr) !important; }
+
+  /* Testimonials */
+  .testimonials-grid { grid-template-columns: 1fr !important; }
+
+  /* CTA */
+  .cta-info { flex-direction: column !important; align-items: center !important; gap: 10px !important; }
+
+  /* Footer */
+  .footer-grid { flex-direction: column !important; gap: 24px !important; }
+
+  /* Strip */
+  .strip-inner { gap: 12px !important; justify-content: flex-start !important; flex-wrap: wrap !important; }
+}
+
+@media (max-width: 480px) {
+  .prod-grid-4 { grid-template-columns: 1fr !important; }
+  .gallery-grid { grid-template-columns: 1fr !important; }
+  .hero-grid h1 { font-size: 30px !important; }
+}

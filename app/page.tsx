@@ -62,7 +62,7 @@ export default function HomePage() {
       <section style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', padding: '100px 24px 80px', position: 'relative', overflow: 'hidden', background: 'linear-gradient(145deg,#fff 0%,#eef6ff 40%,#deeeff 100%)' }}>
         <div style={{ position: 'absolute', width: 700, height: 700, borderRadius: '50%', background: 'radial-gradient(circle,rgba(43,127,212,.09) 0%,transparent 70%)', right: -180, top: -180, pointerEvents: 'none' }} />
         <div style={{ position: 'absolute', inset: 0, backgroundImage: 'linear-gradient(rgba(43,127,212,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(43,127,212,.04) 1px,transparent 1px)', backgroundSize: '48px 48px', pointerEvents: 'none' }} />
-        <div style={{ maxWidth: 1140, margin: '0 auto', display: 'grid', gridTemplateColumns: '55% 45%', gap: 56, alignItems: 'center', position: 'relative', zIndex: 2, width: '100%' }}>
+        <div className="hero-grid" style={{ maxWidth: 1140, margin: '0 auto', display: 'grid', gridTemplateColumns: '55% 45%', gap: 56, alignItems: 'center', position: 'relative', zIndex: 2, width: '100%' }}>
           <div>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'rgba(43,127,212,.1)', border: '1px solid rgba(43,127,212,.2)', borderRadius: 24, padding: '7px 16px', fontSize: 12, color: 'var(--blue)', fontWeight: 600, marginBottom: 24 }}>
               <span style={{ width: 7, height: 7, background: 'var(--green)', borderRadius: '50%', animation: 'pulse 2s infinite', flexShrink: 0 }} />
@@ -166,7 +166,7 @@ export default function HomePage() {
               <p style={{ color: 'var(--text2)' }}>Cargando productos...</p>
             </div>
           ) : (
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 18 }}>
+            <div className="prod-grid-4" style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 18 }}>
               {productos.map(p => <ProductCard key={p.id} producto={p} onAddCart={addCart} />)}
             </div>
           )}
@@ -188,7 +188,7 @@ export default function HomePage() {
             </div>
             <h2 style={{ fontFamily: 'Rajdhani, sans-serif', fontSize: 40, fontWeight: 700, marginBottom: 16 }}>Nuestros <span style={{ color: 'var(--blue)' }}>Servicios</span></h2>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 22 }}>
+          <div className="services-grid" className="testimonials-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 22 }}>
             {[
               { icon: 'M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z', title: 'Sistemas CCTV', desc: 'Instalación y configuración profesional de cámaras de seguridad.', items: ['Cámaras IP, domo y analógicas','Configuración de DVR/NVR','Visualización remota desde celular','Mantenimiento preventivo'], href: '/catalogo?cat=CCTV' },
               { icon: 'M2 3h20v14H2z M8 21h8 M12 17v4', title: 'PC y Laptops', desc: 'Servicio técnico especializado. Diagnóstico gratuito sin compromiso.', items: ['Mantenimiento preventivo y correctivo','Reparación de hardware y pantallas','Instalación de software y sistemas','Recuperación de datos'], href: null },
@@ -217,7 +217,7 @@ export default function HomePage() {
       {/* NOSOTROS */}
       <section style={{ padding: '90px 0', background: 'var(--gray2)' }} id="nosotros">
         <div style={{ maxWidth: 1140, margin: '0 auto', padding: '0 24px' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 60, alignItems: 'center' }}>
+          <div className="why-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 60, alignItems: 'center' }}>
             <div className="fade-up">
               <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, fontSize: 11, fontWeight: 700, color: 'var(--blue)', letterSpacing: 3, textTransform: 'uppercase', marginBottom: 14 }}>
                 <span style={{ width: 22, height: 2, background: 'var(--blue)', borderRadius: 2, display: 'inline-block' }} />Por qué elegirnos
@@ -268,7 +268,7 @@ export default function HomePage() {
             </div>
             <h2 style={{ fontFamily: 'Rajdhani, sans-serif', fontSize: 40, fontWeight: 700, marginBottom: 16 }}>Galería de <span style={{ color: 'var(--blue)' }}>Proyectos</span></h2>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 14 }}>
+          <div className="gallery-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 14 }}>
             {galeria.map((src, i) => (
               <div key={src} onClick={() => { setLbIdx(i); setLbOpen(true) }} className="fade-up"
                 style={{ borderRadius: 13, overflow: 'hidden', aspectRatio: '4/3', position: 'relative', cursor: 'pointer', transition: 'all .25s', border: '1.5px solid var(--gray3)' }}
