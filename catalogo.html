@@ -284,9 +284,9 @@ footer{background:#080b18;padding:36px 24px 24px}
     <div class="cat-toolbar">
       <div class="cat-search">
         <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-        <input type="text" id="searchInput" placeholder="Buscar producto..." oninput="filtrar()"/>
+        <input type="text" id="searchInput" placeholder="Buscar producto..." oninput="filtrar(undefined, this.value)"/>
       </div>
-      <select class="cat-sort" id="sortSelect" onchange="filtrar()">
+      <select class="cat-sort" id="sortSelect" onchange="filtrar(undefined, undefined, this.value)">
         <option value="">Ordenar por</option>
         <option value="asc">Precio: menor a mayor</option>
         <option value="desc">Precio: mayor a menor</option>
