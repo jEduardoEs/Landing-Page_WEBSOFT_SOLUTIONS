@@ -215,7 +215,7 @@ export default function ProductoPage({ params }: { params: { id: string } }) {
                   </span>
                   <div style={{ display: 'flex', gap: 6, alignItems: 'center' }}>
                     {['/bancos/visa.png', '/bancos/mastercard.png', '/bancos/amex.png'].map(src => (
-                      <img key={src} src={src} alt="" style={{ height: 18, width: 'auto', objectFit: 'contain', mixBlendMode: 'multiply' }} />
+                      <img key={src} src={src} alt="" style={{ height: 18, width: 'auto', objectFit: 'contain' }} />
                     ))}
                   </div>
                   <button onClick={() => setCuotasOpen(true)} style={{ fontSize: 12, fontWeight: 600, color: '#2B7FD4', background: 'none', border: 'none', cursor: 'pointer', textDecoration: 'underline', fontFamily: 'DM Sans, sans-serif', padding: 0 }}>

@@ -62,7 +62,7 @@ export default function CuotasModal({ precio, onClose }: Props) {
                       src={banco.logo}
                       alt={banco.nombre}
                       fill
-                      style={{ objectFit: 'contain', objectPosition: 'left center', mixBlendMode: 'multiply' }}
+                      style={{ objectFit: 'contain', objectPosition: 'left center' }}
                     />
                   </div>
                   <span style={{ fontSize: 14, fontWeight: 600, color: '#1a1f36' }}>{banco.nombre}</span>
