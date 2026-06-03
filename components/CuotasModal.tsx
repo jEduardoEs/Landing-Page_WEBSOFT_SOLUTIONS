@@ -57,12 +57,12 @@ export default function CuotasModal({ precio, onClose }: Props) {
                 style={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '14px 20px', background: expanded === banco.nombre ? '#fafbfc' : '#fff', border: 'none', cursor: 'pointer', fontFamily: 'DM Sans, sans-serif', transition: 'background .15s' }}
               >
                 <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
-                  <div style={{ width: 80, height: 32, position: 'relative', flexShrink: 0 }}>
+                  <div style={{ width: 80, height: 32, position: 'relative', flexShrink: 0, background: '#fff' }}>
                     <Image
                       src={banco.logo}
                       alt={banco.nombre}
                       fill
-                      style={{ objectFit: 'contain', objectPosition: 'left center' }}
+                      style={{ objectFit: 'contain', objectPosition: 'left center', mixBlendMode: 'multiply' }}
                     />
                   </div>
                   <span style={{ fontSize: 14, fontWeight: 600, color: '#1a1f36' }}>{banco.nombre}</span>
