@@ -115,6 +115,55 @@ body {
   .hero-grid h1 { font-size: 30px !important; }
 }
 
+/* ── Product detail page ────────────────────────────────── */
+.detail-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+.detail-related-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+
+@media (max-width: 900px) {
+  .detail-grid-2 { grid-template-columns: 1fr !important; gap: 28px !important; }
+  .detail-related-4 { grid-template-columns: repeat(2, 1fr) !important; }
+  .detail-card { padding: 20px !important; }
+}
+
+@media (max-width: 768px) {
+  /* Product cards */
+  .prod-grid-4 { grid-template-columns: repeat(2, 1fr) !important; gap: 12px !important; }
+
+  /* Detail page */
+  .detail-grid-2 { grid-template-columns: 1fr !important; gap: 20px !important; }
+  .detail-related-4 { grid-template-columns: repeat(2, 1fr) !important; }
+  .detail-container { padding: 16px 16px 60px !important; }
+  .detail-card { padding: 18px !important; border-radius: 14px !important; }
+  .detail-name { font-size: 22px !important; }
+  .detail-price { font-size: 30px !important; }
+  .detail-qty-row { flex-wrap: wrap !important; }
+
+  /* Catalog */
+  .catalog-container { padding: 16px 16px 60px !important; }
+
+  /* Checkout on mobile - slide up from bottom */
+  .checkout-glass {
+    width: 100% !important;
+    min-width: unset !important;
+    border-radius: 20px 20px 0 0 !important;
+    position: fixed !important;
+    bottom: 0 !important;
+    top: auto !important;
+    max-height: 90vh !important;
+    overflow-y: auto !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .prod-grid-4 { grid-template-columns: 1fr !important; }
+  .detail-related-4 { grid-template-columns: 1fr !important; }
+  .detail-card { padding: 14px !important; }
+  .detail-thumbs { gap: 6px !important; }
+  .detail-thumb { width: 48px !important; height: 48px !important; }
+  .detail-badges { gap: 6px !important; }
+  .detail-name { font-size: 20px !important; }
+}
+
 /* ── Liquid Glass — iOS only ─────────────────────────────── */
 .ios-device {
   --glass-bg: rgba(255, 255, 255, 0.55);

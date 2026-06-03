@@ -51,7 +51,7 @@ function PaymentForm({ total, onPaid, onBack, loading, setLoading }: {
         <div style={{ background: '#fef2f2', border: '1px solid #fecaca', borderRadius: 8, padding: '10px 14px', fontSize: 13, color: '#dc2626', marginBottom: 14 }}>{error}</div>
       )}
       <div style={{ display: 'flex', alignItems: 'center', gap: 8, background: '#f0fdf4', border: '1px solid #bbf7d0', borderRadius: 8, padding: '10px 14px', marginBottom: 18 }}>
-        <svg width={14} height={14} viewBox="0 0 24 24" fill="none" stroke="#16a34a" strokeWidth={2}><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <svg width={14} height={14} viewBox="0 0 24 24" fill="none" stroke="#16a34a" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3L4 5v7c0 6 8 10 8 10z"/></svg>
         <span style={{ fontSize: 11, color: '#166534' }}>Pago seguro con cifrado SSL. Tus datos no se almacenan en nuestros servidores.</span>
       </div>
       <div style={{ display: 'flex', gap: 10 }}>
