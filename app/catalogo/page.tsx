@@ -287,7 +287,10 @@ function CatalogoContent() {
                 </div>
               ) : filtrados.length === 0 ? (
                 <div style={{ textAlign: 'center', padding: 80, color: '#94a3b8' }}>
-                  <div style={{ fontSize: 44, marginBottom: 16 }}>🔍</div>
+                  <svg width={56} height={56} viewBox="0 0 24 24" fill="none" stroke="#2B7FD4" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" style={{ opacity: .4, marginBottom: 16 }}>
+              <circle cx={11} cy={11} r={8}/>
+              <path d="m21 21-4.35-4.35"/>
+            </svg>
                   <h3 style={{ fontFamily: 'Rajdhani, sans-serif', fontSize: 22, marginBottom: 8, color: '#1a1f36' }}>Sin resultados</h3>
                   <p style={{ marginBottom: 16 }}>Intenta con otra categoría o término.</p>
                   <button onClick={resetFiltros} style={{ background: '#2B7FD4', color: '#fff', border: 'none', padding: '10px 20px', borderRadius: 8, cursor: 'pointer', fontFamily: 'DM Sans, sans-serif', fontWeight: 600 }}>

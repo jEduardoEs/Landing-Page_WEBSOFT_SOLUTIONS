@@ -6,6 +6,7 @@ import CartDrawer from '@/components/CartDrawer'
 import CheckoutModal from '@/components/CheckoutModal'
 import Footer from '@/components/Footer'
 import WAButton from '@/components/WAButton'
+import Image from 'next/image'
 import ProductCard from '@/components/ProductCard'
 import CuotasModal from '@/components/CuotasModal'
 import { Producto, CartItem } from '@/lib/types'
@@ -132,7 +133,10 @@ export default function ProductoPage({ params }: { params: { id: string } }) {
     <>
       <Navbar cartCount={0} onCartOpen={() => {}} />
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '60vh', flexDirection: 'column', gap: 16 }}>
-        <div style={{ fontSize: 48 }}>📦</div>
+        <svg width={56} height={56} viewBox="0 0 24 24" fill="none" stroke="#2B7FD4" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" style={{ opacity: .4, marginBottom: 16 }}>
+          <rect x="2" y="7" width="20" height="15" rx="2"/>
+          <polyline points="16 2 12 6 8 2"/>
+        </svg>
         <h2 style={{ fontFamily: 'Rajdhani, sans-serif', fontSize: 24, color: '#1a1f36' }}>Producto no encontrado</h2>
         <Link href="/catalogo" style={{ color: '#2B7FD4', fontWeight: 600, textDecoration: 'none' }}>← Volver al catálogo</Link>
       </div>
@@ -209,9 +213,9 @@ export default function ProductoPage({ params }: { params: { id: string } }) {
                   <span style={{ fontSize: 13, color: '#475569' }}>
                     Cuotas desde <strong style={{ color: '#1a1f36' }}>Q {(producto.precio / 3).toFixed(2)}</strong> al mes
                   </span>
-                  <div style={{ display: 'flex', gap: 4 }}>
-                    {['VISA', 'MC', 'AMEX'].map(card => (
-                      <div key={card} style={{ background: card === 'VISA' ? '#1A1F71' : card === 'MC' ? '#EB001B' : '#006FCF', color: '#fff', fontSize: 8, fontWeight: 800, padding: '2px 6px', borderRadius: 4 }}>{card}</div>
+                  <div style={{ display: 'flex', gap: 6, alignItems: 'center' }}>
+                    {['/bancos/visa.png', '/bancos/mastercard.png', '/bancos/amex.png'].map(src => (
+                      <img key={src} src={src} alt="" style={{ height: 18, width: 'auto', objectFit: 'contain' }} />
                     ))}
                   </div>
                   <button onClick={() => setCuotasOpen(true)} style={{ fontSize: 12, fontWeight: 600, color: '#2B7FD4', background: 'none', border: 'none', cursor: 'pointer', textDecoration: 'underline', fontFamily: 'DM Sans, sans-serif', padding: 0 }}>
