@@ -7,6 +7,7 @@ export interface Producto {
   stock: number
   categoria: string | null
   imagenUrl: string | null
+  imagenesExtra: string | null  // JSON array de URLs adicionales
 }
 
 export interface CartItem extends Producto {

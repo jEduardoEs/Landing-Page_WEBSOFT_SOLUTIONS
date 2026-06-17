@@ -171,25 +171,34 @@ export default function ProductoPage({ params }: { params: { id: string } }) {
               <div style={S.mainImg}>
                 {agotado && <div style={{ position: 'absolute', top: 14, left: 14, background: '#fef2f2', color: '#dc2626', fontSize: 11, fontWeight: 700, padding: '4px 12px', borderRadius: 20 }}>Agotado</div>}
                 {pocaExistencia && <div style={{ position: 'absolute', top: 14, left: 14, background: '#fef3c7', color: '#d97706', fontSize: 11, fontWeight: 700, padding: '4px 12px', borderRadius: 20 }}>Últimas {producto.stock} unidades</div>}
-                {producto.imagenUrl
-                  ? <img src={producto.imagenUrl} alt={producto.nombre} style={{ maxWidth: '75%', maxHeight: '75%', objectFit: 'contain' }} onError={e => { e.currentTarget.style.display = 'none' }} />
-                  : <svg width={120} height={120} viewBox="0 0 24 24" fill="none" stroke="#2B7FD4" strokeWidth={1} strokeLinecap="round" strokeLinejoin="round" style={{ opacity: .2 }}>
-                      {CAT_ICON(producto.categoria || '').split(' M').map((d, i) => <path key={i} d={i === 0 ? d : 'M' + d} />)}
-                    </svg>
-                }
+                {(() => {
+                  const extras: string[] = (() => { try { return JSON.parse(producto.imagenesExtra || '[]') } catch { return [] } })()
+                  const allImgs = [producto.imagenUrl, ...extras].filter(Boolean) as string[]
+                  const currentImg = allImgs[activeImg] || allImgs[0]
+                  return currentImg
+                    ? <img src={currentImg} alt={producto.nombre} style={{ maxWidth: '75%', maxHeight: '75%', objectFit: 'contain' }} onError={e => { e.currentTarget.style.display = 'none' }} />
+                    : <svg width={120} height={120} viewBox="0 0 24 24" fill="none" stroke="#2B7FD4" strokeWidth={1} strokeLinecap="round" strokeLinejoin="round" style={{ opacity: .2 }}>
+                        {CAT_ICON(producto.categoria || '').split(' M').map((d, i) => <path key={i} d={i === 0 ? d : 'M' + d} />)}
+                      </svg>
+                })()}
               </div>
-              {/* Thumbnails — same image for now, future multiple images */}
+              {/* Thumbnails con imágenes reales */}
               <div style={{ display: 'flex', gap: 8 }}>
-                {[0, 1, 2, 3].map(i => (
-                  <div key={i} style={S.thumb(activeImg === i)} onClick={() => setActiveImg(i)}>
-                    {producto.imagenUrl && i === 0
-                      ? <img src={producto.imagenUrl} alt="" style={{ width: '70%', height: '70%', objectFit: 'contain' }} onError={e => { e.currentTarget.style.display = 'none' }} />
-                      : <svg width={24} height={24} viewBox="0 0 24 24" fill="none" stroke={activeImg === i ? '#2B7FD4' : '#aab4c4'} strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
-                          {CAT_ICON(producto.categoria || '').split(' M').map((d, j) => <path key={j} d={j === 0 ? d : 'M' + d} />)}
-                        </svg>
-                    }
-                  </div>
-                ))}
+                {(() => {
+                  const extras: string[] = (() => { try { return JSON.parse(producto.imagenesExtra || '[]') } catch { return [] } })()
+                  const allImgs = [producto.imagenUrl, ...extras].filter(Boolean) as string[]
+                  if (allImgs.length === 0) allImgs.push('')
+                  return allImgs.slice(0, 5).map((url, i) => (
+                    <div key={i} style={S.thumb(activeImg === i)} onClick={() => setActiveImg(i)}>
+                      {url
+                        ? <img src={url} alt="" style={{ width: '70%', height: '70%', objectFit: 'contain' }} onError={e => { e.currentTarget.style.display = 'none' }} />
+                        : <svg width={24} height={24} viewBox="0 0 24 24" fill="none" stroke={activeImg === i ? '#2B7FD4' : '#aab4c4'} strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+                            {CAT_ICON(producto.categoria || '').split(' M').map((d, j) => <path key={j} d={j === 0 ? d : 'M' + d} />)}
+                          </svg>
+                      }
+                    </div>
+                  ))
+                })()}
               </div>
             </div>
 
