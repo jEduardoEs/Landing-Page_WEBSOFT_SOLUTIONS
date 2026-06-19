@@ -154,7 +154,7 @@ export default function HomePage() {
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 2 }} className="three-col">
             {[
-              { n: '01', title: 'Sistemas CCTV', desc: 'Instalación y configuración profesional de cámaras IP, domo y analógicas. DVR/NVR, visualización remota y mantenimiento preventivo.', img: '/galeria/Foto2.jpeg', href: '/catalogo?cat=CCTV' },
+              { n: '01', title: 'Redes y sistemas de Seguridad', desc: 'Instalación y configuración profesional de cámaras IP, domo y analógicas. DVR/NVR, visualización remota y mantenimiento preventivo.', img: '/galeria/Foto11.jpeg', href: '/catalogo?cat=CCTV' },
               { n: '02', title: 'PC y Laptops', desc: 'Mantenimiento preventivo y correctivo, reparación de hardware y pantallas, instalación de software y recuperación de datos. Diagnóstico gratuito.', img: '/galeria/Foto9.jpeg', href: null },
               { n: '03', title: 'Venta de Tecnología', desc: 'Catálogo completo de periféricos, accesorios, cables y componentes. Todo con garantía y precio justo.', img: '/galeria/Foto10.jpeg', href: '/catalogo' },
             ].map(s => (
