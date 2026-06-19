@@ -66,7 +66,7 @@ export default function HomePage() {
         <div style={{ position: 'absolute', inset: 0, zIndex: 1, background: 'linear-gradient(to right, rgba(0,0,0,.72) 0%, rgba(0,0,0,.35) 55%, rgba(0,0,0,.1) 100%)' }} 
         />
         <img
-          src="/galeria/Foto1.jpeg"
+          src="/galeria/Fondo.jpeg"
           alt="WebSoft Solutions"
           style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }}
           onError={e => { (e.currentTarget as HTMLImageElement).style.display = 'none' }}
@@ -235,7 +235,7 @@ export default function HomePage() {
           <div style={{ fontSize: 11, fontWeight: 700, color: 'var(--blue)', letterSpacing: 4, textTransform: 'uppercase', marginBottom: 16 }}>Nuestro trabajo</div>
           <h2 style={{ fontFamily: 'Rajdhani, sans-serif', fontSize: 48, fontWeight: 700, color: 'var(--text)' }}>Proyectos realizados.</h2>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gridTemplateRows: 'auto auto', padding: '0 24px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gridTemplateRows: 'auto auto', padding: '0 34px' }}>
           {galeria.map((src, i) => (
             <div key={src} onClick={() => { setLbIdx(i); setLbOpen(true) }}
               style={{ aspectRatio: i === 0 ? '16/9' : '4/3', gridColumn: i === 0 ? '1/3' : 'auto', overflow: 'hidden', cursor: 'pointer', position: 'relative', background: '#e0e0e0' }}>
