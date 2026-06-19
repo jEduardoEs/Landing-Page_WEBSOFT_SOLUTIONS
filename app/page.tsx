@@ -236,10 +236,10 @@ export default function HomePage() {
           <div style={{ fontSize: 11, fontWeight: 700, color: 'var(--blue)', letterSpacing: 4, textTransform: 'uppercase', marginBottom: 16 }}>Nuestro trabajo</div>
           <h2 style={{ fontFamily: 'Rajdhani, sans-serif', fontSize: 48, fontWeight: 700, color: 'var(--text)' }}>Proyectos realizados.</h2>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gridTemplateRows: 'auto auto', padding: '0 34px' }}>
+        <div style={{  maxWidth: 1400, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gridTemplateRows: 'auto auto', padding: '0 34px' }}>
           {galeria.map((src, i) => (
             <div key={src} onClick={() => { setLbIdx(i); setLbOpen(true) }}
-              style={{ aspectRatio: i === 0 ? '16/9' : '4/3', gridColumn: i === 0 ? '1/3' : 'auto', overflow: 'hidden', cursor: 'pointer', position: 'relative', background: '#e0e0e0' }}>
+              style={{ height: i === 0 ? '350px' : '250px', gridColumn: i === 0 ? '1/3' : 'auto', overflow: 'hidden', cursor: 'pointer', position: 'relative', background: '#e0e0e0'}}>
               <img src={src} alt={`Proyecto ${i+1}`} style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform .5s' }}
                 onMouseEnter={e => (e.currentTarget.style.transform = 'scale(1.04)')}
                 onMouseLeave={e => (e.currentTarget.style.transform = '')}
