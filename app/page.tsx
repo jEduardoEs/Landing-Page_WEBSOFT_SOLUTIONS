@@ -21,7 +21,9 @@ export default function HomePage() {
   const observerRef = useRef<IntersectionObserver | null>(null)
 
   const galeria = ['/galeria/Foto1.jpeg','/galeria/Foto2.jpeg','/galeria/Foto3.jpeg','/galeria/Foto4.jpeg','/galeria/Foto5.jpeg','/galeria/Foto6.jpeg']
+  const galeria2 = ['/galeria/Foto12.jpeg','/galeria/Foto13.jpeg','/galeria/Foto14.jpeg','/galeria/Foto15.jpeg']
 
+  
   useEffect(() => {
     fetch(`${POS_URL}/api/tienda/productos?disponibles=true`)
       .then(r => r.json())
@@ -131,7 +133,7 @@ export default function HomePage() {
             </button>
           </div>
           <div className="fade-up" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 3 }}>
-            {galeria.slice(0, 4).map((src, i) => (
+            {galeria2.slice(0, 4).map((src, i) => (
               <div key={i} style={{ aspectRatio: '1', overflow: 'hidden', background: '#f0f0f0' }}>
                 <img src={src} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform .4s' }}
                   onMouseEnter={e => (e.currentTarget.style.transform = 'scale(1.05)')}
