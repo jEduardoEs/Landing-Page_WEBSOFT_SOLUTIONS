@@ -9,6 +9,7 @@ export const CATEGORY_ICONS: Record<string, string> = {
   'Componentes PC': 'M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18',
   'Accesorios': 'M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z',
   'Cables': 'M9 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h4 M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4 M9 12h6',
+  'Aires Acondicionados': 'M3 9h18M3 15h18M8 9v6M16 9v6M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z',
 }
 
 export const FALLBACK_PRODUCTOS: Omit<import('./types').Producto, 'codigo'>[] = [

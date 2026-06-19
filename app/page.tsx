@@ -154,11 +154,12 @@ export default function HomePage() {
               Lo que hacemos por ti.
             </h2>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 2 }} className="three-col">
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 2 }} className="four-col-services">
             {[
               { n: '01', title: 'Redes y sistemas de Seguridad', desc: 'Instalación y configuración profesional de cámaras IP, domo y analógicas. DVR/NVR, visualización remota y mantenimiento preventivo.', img: '/galeria/Foto11.jpeg', href: '/catalogo?cat=CCTV' },
               { n: '02', title: 'PC y Laptops', desc: 'Mantenimiento preventivo y correctivo, reparación de hardware y pantallas, instalación de software y recuperación de datos. Diagnóstico gratuito.', img: '/galeria/Foto9.jpeg', href: null },
-              { n: '03', title: 'Venta de Tecnología', desc: 'Catálogo completo de periféricos, accesorios, cables y componentes. Todo con garantía y precio justo.', img: '/galeria/Foto10.jpeg', href: '/catalogo' },
+              { n: '03', title: 'Aires Acondicionados', desc: 'Venta e instalación de aires acondicionados para hogar y negocio. Mantenimiento, recarga de gas y reparación de unidades.', img: '/galeria/Foto8.jpeg', href: null },
+              { n: '04', title: 'Venta de Tecnología', desc: 'Catálogo completo de periféricos, accesorios, cables y componentes. Todo con garantía y precio justo.', img: '/galeria/Foto10.jpeg', href: '/catalogo' },
             ].map(s => (
               <div key={s.n} className="fade-up" style={{ background: '#fff', overflow: 'hidden' }}>
                 <div style={{ height: 280, overflow: 'hidden', background: '#e0e0e0' }}>
@@ -324,6 +325,7 @@ export default function HomePage() {
         @media(max-width:1024px) {
           .prod-grid-4 { grid-template-columns: repeat(2,1fr) !important; }
           .four-col { grid-template-columns: repeat(2,1fr) !important; }
+          .four-col-services { grid-template-columns: repeat(2,1fr) !important; }
         }
         @media(max-width:900px) {
           .two-col { grid-template-columns: 1fr !important; gap: 40px !important; }
@@ -334,6 +336,7 @@ export default function HomePage() {
         @media(max-width:600px) {
           .prod-grid-4 { grid-template-columns: 1fr !important; }
           .four-col { grid-template-columns: 1fr !important; }
+          .four-col-services { grid-template-columns: 1fr !important; }
         }
       `}</style>
     </>
