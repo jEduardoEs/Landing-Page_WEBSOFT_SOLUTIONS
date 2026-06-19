@@ -238,7 +238,7 @@ export default function HomePage() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gridTemplateRows: 'auto auto', padding: '0 24px' }}>
           {galeria.map((src, i) => (
             <div key={src} onClick={() => { setLbIdx(i); setLbOpen(true) }}
-              style={{ aspectRatio: i === 0 ? '16/9' : '4/3', gridColumn: i === 0 ? '1/3' : 'auto', overflow: 'hidden', cursor: 'pointer', position: 'center', background: '#e0e0e0' }}>
+              style={{ aspectRatio: i === 0 ? '16/9' : '4/3', gridColumn: i === 0 ? '1/3' : 'auto', overflow: 'hidden', cursor: 'pointer', position: 'relative', background: '#e0e0e0' }}>
               <img src={src} alt={`Proyecto ${i+1}`} style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform .5s' }}
                 onMouseEnter={e => (e.currentTarget.style.transform = 'scale(1.04)')}
                 onMouseLeave={e => (e.currentTarget.style.transform = '')}
