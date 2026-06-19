@@ -159,7 +159,7 @@ export default function HomePage() {
               { n: '03', title: 'Venta de Tecnología', desc: 'Catálogo completo de periféricos, accesorios, cables y componentes. Todo con garantía y precio justo.', img: '/public/galeria/Foto10.jpeg', href: '/catalogo' },
             ].map(s => (
               <div key={s.n} className="fade-up" style={{ background: '#fff', overflow: 'hidden' }}>
-                <div style={{ height: 280, overflow: 'hidden', background: '#e0e0e0' }}>
+                <div style={{ height: 260, overflow: 'hidden', background: '#e0e0e0' }}>
                   <img src={s.img} alt={s.title} style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform .5s' }}
                     onMouseEnter={e => (e.currentTarget.style.transform = 'scale(1.06)')}
                     onMouseLeave={e => (e.currentTarget.style.transform = '')}
