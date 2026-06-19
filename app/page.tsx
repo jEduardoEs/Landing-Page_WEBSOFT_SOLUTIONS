@@ -20,7 +20,7 @@ export default function HomePage() {
   const [lbIdx, setLbIdx] = useState(0)
   const observerRef = useRef<IntersectionObserver | null>(null)
 
-  const galeria = ['/galeria/Foto1.jpeg','/galeria/Foto2.jpeg','/galeria/Foto3.jpeg','/galeria/Foto4.jpeg','/galeria/Foto5.jpeg','/galeria/Foto6.jpeg','/galeria/Foto7.jpeg','/galeria/Foto8.jpeg']
+  const galeria = ['/galeria/Foto1.jpeg','/galeria/Foto2.jpeg','/galeria/Foto3.jpeg','/galeria/Foto4.jpeg','/galeria/Foto5.jpeg','/galeria/Foto6.jpeg','/galeria/Foto7.jpeg','/galeria/Foto8.jpeg', '/galeria/Foto17.jpeg']
   const galeria2 = ['/galeria/Foto12.jpeg','/galeria/Foto13.jpeg','/galeria/Foto14.jpeg','/galeria/Foto15.jpeg']
 
 
