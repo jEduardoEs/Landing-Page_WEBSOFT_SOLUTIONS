@@ -61,10 +61,12 @@ export default function HomePage() {
       {/* ── HERO full-width foto ── */}
       <section style={{ position: 'relative', minHeight: '100vh', display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
         {/* Foto de fondo - usa tu propia foto de galería o una profesional */}
-        <div style={{position: 'absolute', inset: 0, zIndex: 1, background: 'linear-gradient(to right, rgba(0,0,0,.72) 0%, rgba(0,0,0,.35) 55%, rgba(0,0,0,.1) 100%)'}}
-        />
-      <img src="/galeria/Foto1.jpeg" alt="WebSoft Solutions" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }}
-        onError={e => {(e.currentTarget as HTMLImageElement).style.display = 'none'}}
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(0,0,0,.72) 0%, rgba(0,0,0,.35) 55%, rgba(0,0,0,.1) 100%)' }} style2={{ zIndex: 1 }} />
+        <img
+          src="/galeria/Foto1.jpeg"
+          alt="WebSoft Solutions"
+          style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }}
+          onError={e => { (e.currentTarget as HTMLImageElement).style.display = 'none' }}
         />
         {/* Overlay gradiente */}
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(0,0,0,.75) 0%, rgba(0,0,0,.4) 60%, rgba(0,0,0,.1) 100%)', zIndex: 1 }} />
