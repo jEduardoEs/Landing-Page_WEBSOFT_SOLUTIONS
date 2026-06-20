@@ -34,7 +34,7 @@ export default function Footer() {
           </div>
 
           {[
-            { title: 'Servicios', links: [['/#servicios', 'Instalación CCTV'], ['/#servicios', 'Reparación de PC'], ['/#servicios', 'Mantenimiento laptops'], ['/catalogo', 'Venta de productos']] },
+            { title: 'Servicios', links: [['/servicios', 'Instalación CCTV'], ['/servicios', 'Reparación de PC'], ['/servicios', 'Aires Acondicionados'], ['/catalogo', 'Venta de productos']] },
             { title: 'Catálogo', links: [['/catalogo?cat=Periféricos', 'Periféricos'], ['/catalogo?cat=CCTV', 'Cámaras CCTV'], ['/catalogo?cat=Componentes PC', 'Componentes'], ['/catalogo?cat=Accesorios', 'Accesorios']] },
             { title: 'Contacto', links: [[openWA, 'WhatsApp: 3671-4377'], ['/#contacto', 'Guastatoya, El Progreso'], ['/#contacto', 'Guatemala City'], ['/#contacto', 'Lun – Sáb 8am – 6pm']] },
           ].map(col => (

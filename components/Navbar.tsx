@@ -48,7 +48,7 @@ export default function Navbar({ cartCount = 0, onCartOpen }: NavbarProps) {
         </Link>
 
         <ul style={{ display: 'flex', gap: 36, listStyle: 'none', margin: 0 }} className="desktop-nav">
-          {[['/', 'Inicio'], ['/catalogo', 'Catálogo'], ['/#servicios', 'Servicios'], ['/#galeria', 'Proyectos'], ['/#contacto', 'Contacto']].map(([href, label]) => (
+          {[['/', 'Inicio'], ['/catalogo', 'Catálogo'], ['/servicios', 'Servicios'], ['/#galeria', 'Proyectos'], ['/#contacto', 'Contacto']].map(([href, label]) => (
             <li key={href}>
               <Link href={href} style={{ textDecoration: 'none', color: textColor, fontSize: 13, fontWeight: 500, letterSpacing: .5, transition: 'color .25s' }}
                 onMouseEnter={e => (e.currentTarget.style.color = heroSection ? '#fff' : 'var(--text)')}
@@ -88,7 +88,7 @@ export default function Navbar({ cartCount = 0, onCartOpen }: NavbarProps) {
       {menuOpen && (
         <div style={{ background: '#fff', padding: '20px 0 28px', borderTop: '1px solid #f0f0f0' }}>
           <ul style={{ listStyle: 'none', maxWidth: 1200, margin: '0 auto', padding: '0 24px' }}>
-            {[['/', 'Inicio'], ['/catalogo', 'Catálogo'], ['/#servicios', 'Servicios'], ['/#galeria', 'Proyectos'], ['/#contacto', 'Contacto']].map(([href, label]) => (
+            {[['/', 'Inicio'], ['/catalogo', 'Catálogo'], ['/servicios', 'Servicios'], ['/#galeria', 'Proyectos'], ['/#contacto', 'Contacto']].map(([href, label]) => (
               <li key={href} style={{ borderBottom: '1px solid #f5f5f5' }}>
                 <Link href={href} onClick={() => setMenuOpen(false)} style={{ display: 'block', padding: '13px 0', color: 'var(--text)', fontSize: 15, textDecoration: 'none', fontWeight: 500 }}>{label}</Link>
               </li>

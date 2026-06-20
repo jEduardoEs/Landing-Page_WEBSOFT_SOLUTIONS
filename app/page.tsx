@@ -148,11 +148,14 @@ export default function HomePage() {
       {/* ── SERVICIOS ── */}
       <section style={{ padding: '110px 24px', background: '#f9f9f7' }} id="servicios">
         <div style={{ maxWidth: 1140, margin: '0 auto' }}>
-          <div className="fade-up" style={{ marginBottom: 70 }}>
-            <div style={{ fontSize: 11, fontWeight: 700, color: 'var(--blue)', letterSpacing: 4, textTransform: 'uppercase', marginBottom: 16 }}>Servicios</div>
-            <h2 style={{ fontFamily: 'Rajdhani, sans-serif', fontSize: 48, fontWeight: 700, color: 'var(--text)', maxWidth: 480 }}>
-              Lo que hacemos por ti.
-            </h2>
+          <div className="fade-up" style={{ marginBottom: 70, display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: 16 }}>
+            <div>
+              <div style={{ fontSize: 11, fontWeight: 700, color: 'var(--blue)', letterSpacing: 4, textTransform: 'uppercase', marginBottom: 16 }}>Servicios</div>
+              <h2 style={{ fontFamily: 'Rajdhani, sans-serif', fontSize: 48, fontWeight: 700, color: 'var(--text)', maxWidth: 480 }}>
+                Lo que hacemos por ti.
+              </h2>
+            </div>
+            <Link href="/servicios" style={{ fontSize: 13, fontWeight: 700, color: 'var(--text)', textDecoration: 'none', borderBottom: '1.5px solid var(--text)', paddingBottom: 2, whiteSpace: 'nowrap', marginBottom: 8 }}>Ver todos los servicios →</Link>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 2 }} className="four-col-services">
             {[
@@ -289,27 +292,27 @@ export default function HomePage() {
       </section>
 
       {/* ── CTA FINAL ── */}
-      <section style={{ padding: '120px 24px', background: 'var(--text)' }} id="contacto">
+      <section style={{ padding: '120px 24px', background: 'linear-gradient(135deg, #1581E3 0%, #0d5fb0 100%)' }} id="contacto">
         <div style={{ maxWidth: 800, margin: '0 auto', textAlign: 'center' }}>
           <div className="fade-up">
-            <div style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.4)', letterSpacing: 4, textTransform: 'uppercase', marginBottom: 24 }}>Contáctanos</div>
+            <div style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.65)', letterSpacing: 4, textTransform: 'uppercase', marginBottom: 24 }}>Contáctanos</div>
             <h2 style={{ fontFamily: 'Rajdhani, sans-serif', fontSize: 56, fontWeight: 700, color: '#fff', lineHeight: 1.06, marginBottom: 24 }}>
               ¿Listo para mejorar<br />tu negocio?
             </h2>
-            <p style={{ fontSize: 16, color: 'rgba(255,255,255,.55)', lineHeight: 1.8, marginBottom: 44, maxWidth: 440, margin: '0 auto 44px' }}>
+            <p style={{ fontSize: 16, color: 'rgba(255,255,255,.85)', lineHeight: 1.8, marginBottom: 44, maxWidth: 440, margin: '0 auto 44px' }}>
               Cotizaciones sin costo. Servicio en Guastatoya, El Progreso y toda Guatemala.
             </p>
             <div style={{ display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>
-              <button onClick={() => openWA()} style={{ background: '#fff', color: 'var(--text)', border: 'none', padding: '16px 36px', borderRadius: 4, fontSize: 15, fontWeight: 700, cursor: 'pointer', fontFamily: 'inherit', letterSpacing: .5 }}>
+              <button onClick={() => openWA()} style={{ background: '#fff', color: '#1581E3', border: 'none', padding: '16px 36px', borderRadius: 4, fontSize: 15, fontWeight: 700, cursor: 'pointer', fontFamily: 'inherit', letterSpacing: .5 }}>
                 Escribir al 3671-4377
               </button>
-              <Link href="/catalogo" style={{ background: 'transparent', color: '#fff', border: '1.5px solid rgba(255,255,255,.3)', padding: '16px 36px', borderRadius: 4, fontSize: 15, fontWeight: 600, textDecoration: 'none', letterSpacing: .5 }}>
+              <Link href="/catalogo" style={{ background: 'transparent', color: '#fff', border: '1.5px solid rgba(255,255,255,.5)', padding: '16px 36px', borderRadius: 4, fontSize: 15, fontWeight: 600, textDecoration: 'none', letterSpacing: .5 }}>
                 Ver catálogo
               </Link>
             </div>
-            <div style={{ marginTop: 48, paddingTop: 40, borderTop: '1px solid rgba(255,255,255,.1)', display: 'flex', justifyContent: 'center', gap: 40, flexWrap: 'wrap' }}>
+            <div style={{ marginTop: 48, paddingTop: 40, borderTop: '1px solid rgba(255,255,255,.25)', display: 'flex', justifyContent: 'center', gap: 40, flexWrap: 'wrap' }}>
               {['Guastatoya, El Progreso', 'Guatemala City', 'Lun – Sáb · 8:00am – 6:00pm'].map(t => (
-                <div key={t} style={{ fontSize: 13, color: 'rgba(255,255,255,.35)' }}>{t}</div>
+                <div key={t} style={{ fontSize: 13, color: 'rgba(255,255,255,.7)' }}>{t}</div>
               ))}
             </div>
           </div>

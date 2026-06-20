@@ -177,12 +177,12 @@ export default function CheckoutModal({ open, items, onClose, onSuccess }: Props
   ]
 
   return (
-    <div style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,.6)', zIndex: 600, display: 'flex', alignItems: 'flex-end', justifyContent: 'center', padding: 0 }}
+    <div className="checkout-overlay" style={{ position: 'fixed', inset: 0, background: 'rgba(15,23,42,.55)', zIndex: 600, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 24 }}
       onClick={e => e.target === e.currentTarget && step !== 'confirmado' && cerrar()}>
-      <div className='checkout-glass' style={{ background: '#fff', borderRadius: '18px 18px 0 0', width: '100%', maxWidth: 540, maxHeight: '92vh', display: 'flex', flexDirection: 'column', boxShadow: '0 -8px 40px rgba(0,0,0,.2)' }}>
+      <div className='checkout-glass' style={{ background: '#fff', borderRadius: 18, width: '100%', maxWidth: 540, maxHeight: '88vh', display: 'flex', flexDirection: 'column', boxShadow: '0 20px 60px rgba(0,0,0,.3)' }}>
 
-        {/* Drag handle */}
-        <div style={{ display: 'flex', justifyContent: 'center', padding: '12px 0 0' }}>
+        {/* Drag handle (solo mobile) */}
+        <div className="drag-handle" style={{ display: 'none', justifyContent: 'center', padding: '12px 0 0' }}>
           <div style={{ width: 40, height: 4, background: '#e2e8f0', borderRadius: 2 }} />
         </div>
 
@@ -360,7 +360,14 @@ export default function CheckoutModal({ open, items, onClose, onSuccess }: Props
           )}
         </div>
       </div>
-      <style>{`@keyframes spin{to{transform:rotate(360deg)}}`}</style>
+      <style>{`
+        @keyframes spin{to{transform:rotate(360deg)}}
+        @media(max-width:640px){
+          .checkout-overlay{align-items:flex-end!important;padding:0!important}
+          .checkout-glass{border-radius:18px 18px 0 0!important;max-height:92vh!important}
+          .drag-handle{display:flex!important}
+        }
+      `}</style>
     </div>
   )
 }
