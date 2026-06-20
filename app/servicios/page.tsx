@@ -13,7 +13,7 @@ const SERVICIOS = [
   {
     n: '01',
     title: 'Redes y Sistemas de Seguridad',
-    img: '/galeria/Fondo.jpeg',
+    img: '/galeria/Foto11.jpeg',
     resumen: 'Instalación profesional de cámaras CCTV, DVR/NVR y monitoreo remoto.',
     detalle: 'Diseñamos e instalamos sistemas de videovigilancia para hogares y negocios: cámaras IP, domo y analógicas, con grabación en DVR/NVR y visualización remota desde tu celular o computadora. Incluye cableado estructurado, configuración de red y mantenimiento preventivo.',
     incluye: ['Cámaras IP, domo y analógicas', 'Configuración DVR / NVR', 'Visualización remota desde el celular', 'Cableado estructurado profesional', 'Mantenimiento preventivo periódico', 'Garantía de instalación'],
@@ -76,7 +76,7 @@ export default function ServiciosPage() {
 
       {/* HERO */}
       <section style={{ position: 'relative', minHeight: '52vh', display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
-        <img src="/galeria/Foto2.jpeg" alt="Servicios WebSoft Solutions" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} onError={e => { (e.currentTarget as HTMLImageElement).style.display = 'none' }} />
+        <img src="/galeria/Fondo.jpeg" alt="Servicios WebSoft Solutions" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} onError={e => { (e.currentTarget as HTMLImageElement).style.display = 'none' }} />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(0,0,0,.75) 0%, rgba(0,0,0,.4) 60%, rgba(0,0,0,.1) 100%)', zIndex: 1 }} />
         <div style={{ position: 'relative', zIndex: 2, maxWidth: 1140, margin: '0 auto', padding: '140px 24px 70px', width: '100%' }}>
           <div style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.65)', letterSpacing: 4, textTransform: 'uppercase', marginBottom: 20 }}>Lo que hacemos</div>
