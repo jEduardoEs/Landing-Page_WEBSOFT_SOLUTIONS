@@ -13,7 +13,7 @@ const SERVICIOS = [
   {
     n: '01',
     title: 'Redes y Sistemas de Seguridad',
-    img: '/galeria/Foto11.jpeg',
+    img: '/galeria/Fondo.jpeg',
     resumen: 'Instalación profesional de cámaras CCTV, DVR/NVR y monitoreo remoto.',
     detalle: 'Diseñamos e instalamos sistemas de videovigilancia para hogares y negocios: cámaras IP, domo y analógicas, con grabación en DVR/NVR y visualización remota desde tu celular o computadora. Incluye cableado estructurado, configuración de red y mantenimiento preventivo.',
     incluye: ['Cámaras IP, domo y analógicas', 'Configuración DVR / NVR', 'Visualización remota desde el celular', 'Cableado estructurado profesional', 'Mantenimiento preventivo periódico', 'Garantía de instalación'],
@@ -31,7 +31,7 @@ const SERVICIOS = [
   {
     n: '03',
     title: 'Aires Acondicionados',
-    img: '/galeria/Foto8.jpeg',
+    img: '/galeria/Foto1.jpeg',
     resumen: 'Venta, instalación y mantenimiento de unidades de aire acondicionado.',
     detalle: 'Instalamos y damos mantenimiento a aires acondicionados tipo split para hogar y negocio. Incluye recarga de gas refrigerante, limpieza de unidades, reparación de fallas y asesoría para elegir el equipo ideal según el espacio.',
     incluye: ['Instalación de unidades nuevas', 'Mantenimiento preventivo', 'Recarga de gas refrigerante', 'Reparación de fallas', 'Limpieza de filtros y unidades', 'Asesoría según el espacio'],
