@@ -26,7 +26,7 @@ export default function Navbar({ cartCount = 0, onCartOpen }: NavbarProps) {
   const openWA = () => window.open(`https://wa.me/${WA}?text=${encodeURIComponent('Hola WebSoft Solutions! Me interesa obtener información sobre sus servicios.')}`, '_blank')
 
   const textColor = heroSection && !menuOpen ? 'rgba(255,255,255,.85)' : 'var(--text2)'
-  const logoFilter = heroSection && !menuOpen ? 'brightness(10)' : 'none'
+  const logoFilter = heroSection && !menuOpen ? 'brightness(0) invert(1)' : 'none'
   const bg = heroSection && !menuOpen ? 'transparent' : 'rgba(255,255,255,.98)'
   const border = heroSection && !menuOpen ? 'transparent' : 'rgba(0,0,0,.07)'
 
