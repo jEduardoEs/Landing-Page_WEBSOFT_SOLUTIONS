@@ -8,12 +8,13 @@ interface Props {
 }
 
 const BANCOS = [
-  { nombre: 'BAC Credomatic', logo: '/bancos/bac.png', cuotas: [3,6,10,12,18,24,36,48] },
-  { nombre: 'BAM', logo: '/bancos/bam.png', cuotas: [2,3,6,10,12,15,18] },
-  { nombre: 'Banco Industrial', logo: '/bancos/bi.png', cuotas: [3,6,12,18,24] },
-  { nombre: 'Banrural', logo: '/bancos/banrural.png', cuotas: [2,3,6,10,12,15,18] },
-  { nombre: 'Banco CHN', logo: '/bancos/chn.png', cuotas: [3,6,12,18] },
+  { nombre: 'BAC Credomatic', logo: '/bancos/bac.png',       cuotas: [3,6,10,12,18,24,36,48] },
+  { nombre: 'Banco Industrial', logo: '/bancos/bi.png',      cuotas: [3,6,12,18,24] },
+  { nombre: 'G&T Continental', logo: '/bancos/gyt.png',       cuotas: [3,6,12,18,24] },
+  { nombre: 'Banrural',        logo: '/bancos/banrural.png',  cuotas: [2,3,6,10,12,15,18] },
+  { nombre: 'BAM',             logo: '/bancos/bam.png',       cuotas: [2,3,6,10,12,15,18] },
   { nombre: 'Banco Promerica', logo: '/bancos/promerica.png', cuotas: [3,6,12,18,24] },
+  { nombre: 'Banco CHN',       logo: '/bancos/chn.png',       cuotas: [3,6,12,18] },
 ]
 
 const TASA: Record<number, number> = {
@@ -57,13 +58,13 @@ export default function CuotasModal({ precio, onClose }: Props) {
                 style={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '14px 20px', background: expanded === banco.nombre ? '#fafbfc' : '#fff', border: 'none', cursor: 'pointer', fontFamily: 'DM Sans, sans-serif', transition: 'background .15s' }}
               >
                 <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
-                  <div style={{ width: 80, height: 32, position: 'relative', flexShrink: 0, background: '#fff' }}>
-                    <Image
-                      src={banco.logo}
-                      alt={banco.nombre}
-                      fill
-                      style={{ objectFit: 'contain', objectPosition: 'left center' }}
-                    />
+                  <div style={{ width: 80, height: 32, flexShrink: 0, display: 'flex', alignItems: 'center' }}>
+                    {banco.logo
+                      ? <div style={{ width: 80, height: 32, position: 'relative' }}>
+                          <Image src={banco.logo} alt={banco.nombre} fill style={{ objectFit: 'contain', objectPosition: 'left center' }} />
+                        </div>
+                      : <div style={{ padding: '4px 10px', background: '#f1f5f9', borderRadius: 6, fontSize: 11, fontWeight: 700, color: '#475569' }}>{banco.nombre.replace('Banco ', '')}</div>
+                    }
                   </div>
                   <span style={{ fontSize: 14, fontWeight: 600, color: '#1a1f36' }}>{banco.nombre}</span>
                 </div>
