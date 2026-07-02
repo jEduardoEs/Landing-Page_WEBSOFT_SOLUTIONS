@@ -319,9 +319,14 @@ export default function CheckoutModal({ open, items, onClose, onSuccess }: Props
           {/* STEP 4: Pago con tarjeta */}
           {step === 'pago' && (
             <div>
-              <div style={{ background: '#f8fafc', borderRadius: 10, padding: '10px 14px', marginBottom: 16, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <span style={{ fontSize: 13, color: '#64748b' }}>Total a pagar</span>
-                <span style={{ fontSize: 18, fontWeight: 800, color: '#2B7FD4' }}>Q {total.toFixed(2)}</span>
+              <div style={{ background: '#f8fafc', borderRadius: 10, padding: '10px 14px', marginBottom: 16 }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <span style={{ fontSize: 13, color: '#64748b' }}>Total a pagar</span>
+                  <span style={{ fontSize: 18, fontWeight: 800, color: '#2B7FD4' }}>Q {total.toFixed(2)}</span>
+                </div>
+                <div style={{ fontSize: 11, color: '#94a3b8', marginTop: 4, textAlign: 'right' }}>
+                  ≈ USD ${(total / 7.75).toFixed(2)} · El cobro se procesa en dólares
+                </div>
               </div>
               {!clientSecret ? (
                 <div style={{ textAlign: 'center', padding: '32px 0' }}>
