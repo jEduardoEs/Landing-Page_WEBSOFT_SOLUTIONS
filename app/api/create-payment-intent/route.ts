@@ -2,8 +2,21 @@ import { NextRequest, NextResponse } from 'next/server'
 
 export const dynamic = 'force-dynamic'
 
-// Tipo de cambio aproximado Q → USD (1 USD ≈ 7.75 GTQ)
-const GTQ_TO_USD = 7.75
+// Obtener tipo de cambio GTQ→USD desde Banguat (Banco de Guatemala)
+async function getTipoCambio(): Promise<number> {
+  try {
+    const hoy = new Date()
+    const fecha = hoy.toISOString().slice(0, 10) // YYYY-MM-DD
+    const url = `https://www.banguat.gob.gt/variables/ws/TipoCambio.asmx/TipoCambioDia?fecha=${fecha.split('-').reverse().join('/')}`
+    const res = await fetch(url, { next: { revalidate: 3600 } }) // cache 1 hora
+    const xml = await res.text()
+    // El XML devuelve <VentaRef>7.75000</VentaRef>
+    const match = xml.match(/<VentaRef>([0-9.]+)<\/VentaRef>/)
+    if (match) return parseFloat(match[1])
+  } catch {}
+  // Fallback al tipo de cambio aproximado si falla Banguat
+  return 7.75
+}
 
 export async function POST(req: NextRequest) {
   try {
@@ -18,10 +31,12 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Monto inválido' }, { status: 400 })
     }
 
-    // Convertir de centavos de GTQ a centavos de USD
-    // amount viene en centavos de GTQ (ej: Q63.00 = 6300)
+    // Obtener tipo de cambio en tiempo real
+    const tipoCambio = await getTipoCambio()
+
+    // Convertir de centavos GTQ a centavos USD
     const amountGTQ = amount / 100
-    const amountUSD = Math.round((amountGTQ / GTQ_TO_USD) * 100) // centavos USD
+    const amountUSD = Math.round((amountGTQ / tipoCambio) * 100)
 
     if (amountUSD < 50) {
       return NextResponse.json({ error: 'Monto mínimo no alcanzado' }, { status: 400 })
@@ -38,6 +53,7 @@ export async function POST(req: NextRequest) {
       })
     }
     params.append('metadata[monto_gtq]', amountGTQ.toFixed(2))
+    params.append('metadata[tipo_cambio]', tipoCambio.toFixed(4))
 
     const res = await fetch('https://api.stripe.com/v1/payment_intents', {
       method: 'POST',
@@ -54,7 +70,12 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: intent?.error?.message || 'Error Stripe' }, { status: 400 })
     }
 
-    return NextResponse.json({ clientSecret: intent.client_secret, intentId: intent.id })
+    return NextResponse.json({
+      clientSecret: intent.client_secret,
+      intentId: intent.id,
+      tipoCambio,
+      amountUSD: amountUSD / 100,
+    })
   } catch (e: any) {
     return NextResponse.json({ error: e?.message || 'Error interno' }, { status: 500 })
   }

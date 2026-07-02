@@ -35,7 +35,14 @@ function PaymentForm({ total, onPaid, onBack, loading, setLoading }: {
     if (submitErr) { setError(submitErr.message || 'Error'); setLoading(false); return }
     const { error: confirmErr } = await stripe.confirmPayment({
       elements,
-      confirmParams: { return_url: `${window.location.origin}/gracias` },
+      confirmParams: {
+        return_url: `${window.location.origin}/gracias`,
+        payment_method_data: {
+          billing_details: {
+            address: { country: 'GT' },
+          },
+        },
+      },
       redirect: 'if_required',
     })
     if (confirmErr) { setError(confirmErr.message || 'Pago rechazado'); setLoading(false) }
@@ -80,6 +87,8 @@ export default function CheckoutModal({ open, items, onClose, onSuccess }: Props
   const [loading, setLoading] = useState(false)
   const [numeroPedido, setNumeroPedido] = useState('')
   const [clientSecret, setClientSecret] = useState('')
+  const [tipoCambio, setTipoCambio] = useState(7.75)
+  const [amountUSD, setAmountUSD] = useState(0)
   const [form, setForm] = useState<PedidoForm>({ nombre: '', telefono: '', email: '', nit: '', direccion: '', notas: '' })
 
   const subtotal = items.reduce((s, i) => s + i.precio * i.qty, 0)
@@ -91,8 +100,12 @@ export default function CheckoutModal({ open, items, onClose, onSuccess }: Props
     if (step === 'pago' && metodo === 'tarjeta' && !clientSecret) {
       fetch('/api/create-payment-intent', {
         method: 'POST', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ amount: Math.round(total * 100), currency: 'gtq', metadata: { cliente: form.nombre, telefono: form.telefono } }),
-      }).then(r => r.json()).then(d => { if (d.clientSecret) setClientSecret(d.clientSecret) })
+        body: JSON.stringify({ amount: Math.round(total * 100), metadata: { cliente: form.nombre, telefono: form.telefono } }),
+      }).then(r => r.json()).then(d => {
+        if (d.clientSecret) setClientSecret(d.clientSecret)
+        if (d.tipoCambio) setTipoCambio(d.tipoCambio)
+        if (d.amountUSD) setAmountUSD(d.amountUSD)
+      })
     }
   }, [step, metodo, clientSecret, total, form.nombre, form.telefono])
 
@@ -325,7 +338,7 @@ export default function CheckoutModal({ open, items, onClose, onSuccess }: Props
                   <span style={{ fontSize: 18, fontWeight: 800, color: '#2B7FD4' }}>Q {total.toFixed(2)}</span>
                 </div>
                 <div style={{ fontSize: 11, color: '#94a3b8', marginTop: 4, textAlign: 'right' }}>
-                  ≈ USD ${(total / 7.75).toFixed(2)} · El cobro se procesa en dólares
+                  ≈ USD ${amountUSD > 0 ? amountUSD.toFixed(2) : (total / tipoCambio).toFixed(2)} · Tipo de cambio: Q {tipoCambio.toFixed(2)} por dólar
                 </div>
               </div>
               {!clientSecret ? (
